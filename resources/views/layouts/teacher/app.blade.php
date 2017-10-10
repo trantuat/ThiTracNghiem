@@ -27,7 +27,7 @@
 
     <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
     <link href="{{ URL::asset("loading/dist/loading.min.css") }}" rel="stylesheet" type="text/css">
-
+    @yield('head')
     @yield('title_page')
 
 </head>

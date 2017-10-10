@@ -67,6 +67,9 @@ Route::group(['prefix'=> 'Teachers'], function() {
     Route::post('/Question', 'Teacher\ManageQuestionController@addQuestion');
     Route::get('/GetSubject', 'Teacher\ManageQuestionController@getSubject');
 
+     Route::get('/AddNewQuestion', 'Teacher\AddNewQuestionController@showAddNewQuestion');
+     Route::get('/UpdateQuestion/{id}', 'Teacher\UpdateQuestionController@showUpdateQuestion');
+
     Route::post('/UpdateAccount', 'Teacher\ProfileController@updateAccount');
     Route::post('/UpdatePassword', 'Teacher\ProfileController@updatePassword');
     Route::get('/UncheckedQuestion', 'Teacher\ManageUncheckedQuestionController@showListOfUncheckedQuestion');
