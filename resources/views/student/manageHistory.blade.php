@@ -25,7 +25,6 @@
                     <th>Tên bài thi</th>
                     <th>Tổng số câu</th>
                     <th>Thời gian làm</th>
-                    <th>Ngày làm</th>
                     <th>Hành động</th>
                   </tr>
                 </thead>
@@ -35,7 +34,6 @@
                     <th>Tên bài thi</th>
                     <th>Tổng số câu</th>
                     <th>Thời gian làm</th>
-                    <th>Ngày làm</th>
                     <th>Hành động</th>
                   </tr>
                 </tfoot>
@@ -49,13 +47,12 @@
                     <td>{{$data[$i]['quizz_name']}}</td>
                     <td>{{$data[$i]['total']}}</td>
                     <td>{{$data[$i]['duration']}}</td>
-                    <td>NULL</td>
-                    <td>
+                    <td style="text-align:center;">
                       <!-- <button style="color: red; border: 0; background:none;" data-toggle='modal' title='see result' data-target='#seeResultOfStudent'><b><i class="fa fa-list"></i></b></button> -->
                       
                       <a href="{{ url('/Students/TestTime', $data[$i]['id']) }}" ><button style="color: red; border: 0;background:none;" ><b><i class="fa fa-list"></i></b></button></a>
                       <!-- <button style="color: red; border: 0; background:none;" data-toggle='modal' title='Update info' data-target='#updateStudent'><b><i class="fa fa-pencil-square-o"></i></b></button> -->
-                      <button style="color: red; border: 0; background:none;" data-toggle='confirmation' title='Delete student' ><b><i class="fa fa-trash"></i></b></button>
+                      <button style="color: red; border: 0; background:none;" data-toggle='confirmation' title='Delete history' ><b><i class="fa fa-trash"></i></b></button>
                     </td>
                   </tr>
                   @endfor

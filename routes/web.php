@@ -46,14 +46,14 @@ Route::group(['prefix'=> 'Students'], function() {
     Route::get('/Profile', 'Student\ManageProfileController@showProfile');
     Route::get('/History', 'Student\ManageHistoryController@showHistory');
     Route::get('/TestTime/{quizzId}', 'Student\ManageHistoryController@showTestTime');
-    Route::get('/Test', 'Student\ManageTestController@showTest');
+    Route::get('/CreateQuizz', 'Student\ManageTestController@createQuizz');
     Route::get('/Quizz', 'Student\ManageQuizzController@showListOfQuizz');
-    Route::get('/DoTest/{quizzId}', 'Student\DoTestController@doTest');
+    Route::get('/DoTest/{quizzId}/{duration}', 'Student\DoTestController@doTest');
     Route::get('/GetQuizzScore', 'Student\DoTestController@getQuizzScore');
     Route::post('/Answer', 'Student\DoTestController@submitQuizz');
     Route::post('/Profile', 'Student\ManageProfileController@updateAccount');
     Route::post('/UpdatePassword', 'Student\ManageProfileController@updatePassword');
-    Route::get('/Result', 'Student\SeeResultTestController@showResult');
+    Route::get('/Result/{historyId}', 'Student\SeeResultTestController@showResult');
      // add route here
 });
 

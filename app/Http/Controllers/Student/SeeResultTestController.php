@@ -10,8 +10,11 @@ class SeeResultTestController extends Controller
 {
     public function showResult(Request $request){
         $historyId=$request->historyId;
-        var_dump($historyId);
-        // return view("student.seeResultTest");
+        $responseData = QuizzService::getInstance()->getResultTest($historyId);
+        if ($responseData->error != null) {
+            return view("student.seeResultTest",['error'=>$responseData->error ]);
+        }
+        return view("student.seeResultTest",['data'=>$responseData->data]);
     }
    
 }

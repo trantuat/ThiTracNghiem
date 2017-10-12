@@ -412,3 +412,10 @@ footer.sticky-footer {
   color: red;
   font-size:11px;
 }
+
+table th, .btncol{
+  text-align: center;
+}
+button .btn{
+  display: flex; justify-content: center;
+}

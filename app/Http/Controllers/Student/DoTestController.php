@@ -10,13 +10,14 @@ class DoTestController extends Controller
 {
     public function doTest(Request $request){
         $quizzId=$request->quizzId;
+        $duration=$request->duration;
         $responseData = QuizzService::getInstance()->doTest($quizzId);
         
-        return view("student.doTest",['data'=>$responseData->data,'quizzId'=>$quizzId]);
+        return view("student.doTest",['data'=>$responseData->data,'quizzId'=>$quizzId,'duration'=>$duration]);
     }
     public function submitQuizz(Request $request){
         $json=$request->sendJson;
-        $quizzId=$request->quizzId;
+        // $quizzId=$request->quizzId;
         // return json_encode($quizzId);
         $responseData['history_id']= QuizzService::getInstance()->submitQuizz($json);
         if($responseData['history_id']->data!=null){

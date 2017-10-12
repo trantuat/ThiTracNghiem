@@ -17,7 +17,7 @@
                 <a class="nav-link" href="/Students/History" style="margin-right:50px;"><i class='fa fa-history'><b> Lịch sử thi </b></i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link"  data-toggle='modal' title='test' data-target='#formTest' style="margin-right:50px;"><i class='fa fa-diamond'><b> Làm bài thi </b></i></a>
+                <a class="nav-link"  data-toggle='modal' title='test' data-target='#formTest' onclick="showOptionChoose()" style="margin-right:50px;"><i class='fa fa-diamond'><b> Làm bài thi </b></i></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link"  href="/Students/Quizz"  style="margin-right:50px;"><i class='fa fa-list'><b> Danh sách đề thi </b></i></a>
@@ -64,72 +64,106 @@
       <div class="modal-dialog modal-lg" style="width:600px;">
          <!-- Modal content-->
          <div class="modal-content">
-            <form id="formDoTest" class="form-horizontal" action="DoTest" >
+            <form id="formDoTest" class="form-horizontal" action="/Students/CreateQuizz">
+            {!! csrf_field() !!}
                <div class="modal-header">
                 <h4 class="modal-tittle">CHỌN LỰA BÀI THI</h4>
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                </div>
                <div class="modal-body" style="margin: 10px;">
-                <div class="row">
-                    <div class="col-sm-6">
-                      <div class="row">
-                        <div class="control-label col-sm-4">
-                        <h7 style="font-size:16px; margin-top:5px;"><b>Lớp</b></h7>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="control-label col-sm-4">
+                                    <h7 style="font-size:16px; margin-top:5px;"><b>Tên bài quizz</b></h7>
+                                </div>
+                                <div class="col-sm-8">
+                                    <input type="text" pattern=".{5,45}" required title="5 to 45 characters" id="doTestQuizzName" name="doTestQuizzName" class="form-control" >
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-sm-8">
-                          <select name="doTestClass" id="doTestClass" class="form-control">
-                            <option value="1">Lớp 1</option>
-                            <option value="2">Lớp 2</option>
-                            <option value="3">Lớp 3</option>
-                            <option value="4">Lớp 4</option>
-                            <option value="5">Lớp 5</option>
-                            <option value="6">Lớp 6</option>
-                            <option value="7">Lớp 7</option>
-                            <option value="8">Lớp 8</option>
-                            <option value="9">Lớp 9</option>
-                            <option value="10">Lớp 10</option>
-                            <option value="11">Lớp 11</option>
-                            <option value="12">Lớp 12</option>
-                          </select>
+
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="control-label col-sm-5">
+                                    <h7 style="font-size:16px; margin-top:5px;"><b>Số câu</b></h7>
+                                </div>
+                                <div class="col-sm-7">
+                                    <input type="number" id="doTestTotal" name="doTestTotal" min="1" max="45" class="form-control" required>
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                      <br>
-                      <div class="row">
-                        <div class="control-label col-sm-4">
-                          <h7 style="font-size:16px; margin-top:5px;"><b>Mức độ</b></h7>
-                          </div>
-                          <div class="col-sm-8">
-                            <select name="doTestLevel" id="doTestLevel" class="form-control">
-                              <option value="de">Dễ</option>
-                              <option value="trungbinh">Trung bình</option>
-                              <option value="kho">Khó</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    <div class="col-sm-6">
-                      <div class="row">
-                        <div class="control-label col-sm-5">
-                        <h7 style="margin-left:20px; font-size:16px; margin-top:5px;"><b>Môn học</b></h7>
-                        </div>
-                        <div class="col-sm-7">
-                          <select name="doTestSubject" id="doTestSubject" class="form-control">
-                            <option value="toan">Toán</option>
-                            <option value="van">Văn</option>
-                            <option value="anhvan">Anh Văn</option>
-                            <option value="dia">Đia lý</option>
-                            <option value="su">Lịch sử</option>
-                          </select>
-                        </div>
-                      </div>  
                     </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="control-label col-sm-4">
+                                <h7 style="font-size:16px; margin-top:5px;"><b>Lớp</b></h7>
+                            </div>
+                            <div class="col-sm-8">
+                            <select name="doTestClass" id="doTestClass" class="form-control">
+                                <option value="1">Lớp 1</option>
+                                <option value="2">Lớp 2</option>
+                                <option value="3">Lớp 3</option>
+                                <option value="4">Lớp 4</option>
+                                <option value="5">Lớp 5</option>
+                                <option value="6">Lớp 6</option>
+                                <option value="7">Lớp 7</option>
+                                <option value="8">Lớp 8</option>
+                                <option value="9">Lớp 9</option>
+                                <option value="10">Lớp 10</option>
+                                <option value="11">Lớp 11</option>
+                                <option value="12">Lớp 12</option>
+                            </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="control-label col-sm-4">
+                                <h7 style="font-size:16px; margin-top:5px;"><b>Mức độ</b></h7>
+                            </div>
+                            <div class="col-sm-8">
+                                <select name="doTestLevel" id="doTestLevel" class="form-control">
+                                <option value="1">Dễ</option>
+                                <option value="2">Trung bình</option>
+                                <option value="3">Khó</option>
+                                </select>
+                            </div>
+                        </div>
+                      </div>
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="control-label col-sm-5">
+                                    <h7 style=" font-size:16px; margin-top:5px;"><b>Môn học</b></h7>
+                                </div>
+                                <div class="col-sm-7">
+                                    <select name="doTestSubject" id="doTestSubject" class="form-control">
+                                        
+                                    </select>
+                                </div>
+                            </div>  
+                            <br>
+                            <div class="row">
+                                <div class="control-label col-sm-5">
+                                    <h7 style="font-size:16px; margin-top:5px;"><b>Thời gian</b></h7>
+                                </div>
+                                <div class="col-sm-7">
+                                    <select name="doTestTime" id="doTestTime" class="form-control">
+                                        <option value="30">30 phút</option>
+                                        <option value="45">45 phút</option>
+                                        <option value="60">60 phút</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
                 </div>
-                <br>
-             </div>
-             <div class="modal-footer">
-                <input type="submit" id="btnDoTest" class="btn btn-success btnDo" value='Bắt đầu làm bài'>
-                <button class="btn btn-default btn-close-popup" data-dismiss="modal">Cancel</button>
-             </div>
+                <div class="modal-footer">
+                    <input type="submit" id="btnDoTest" class="btn btn-success btnDo" value='Bắt đầu làm bài'>
+                    <button class="btn btn-default btn-close-popup" data-dismiss="modal">Cancel</button>
+                </div>
           </form>
         </div>
       </div>

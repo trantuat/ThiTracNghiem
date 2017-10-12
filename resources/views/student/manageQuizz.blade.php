@@ -57,10 +57,8 @@
                     <td>{{$data[$i]['total']}}</td>
                     <td>{{$data[$i]['duration']}}</td>
                     <!-- <td>{{$data[$i]['updated_at']}}</td> -->
-                    <td>
-                        <!-- <input type="hidden" id="quizzId" name="quizzId" value="{{$data[$i]['quizz_id']}}"> -->
-                        <a href="{{ url('/Students/DoTest', $data[$i]['quizz_id']) }}" class="btn btn-success">Làm bài</a>
-                        <!-- <a href="/Students/DoTest/{{$data[$i]['quizz_id']}}" class="btn btn-success">Làm bài</a> -->
+                    <td style="text-align:center;">
+                          <a href="/Students/DoTest/{{$data[$i]['quizz_id']}}/{{$data[$i]['duration']}}" class='btn btn-success' onclick='setTime($ob)'>Làm bài</a>
                     </td>
                   </tr>
                   @endfor
@@ -73,26 +71,6 @@
       </div>
 
 
-    <!-- Logout Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                Select "Logout" below if you are ready to end your current session.
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="./Admin/Login">Logout</a>
-            </div>
-        </div>
-      </div>
-    </div>
 
 
 @endsection

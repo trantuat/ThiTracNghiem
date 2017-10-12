@@ -73,6 +73,16 @@
          public function getTestTime($quizzId){
             return ApiHelper::getInstance()->get('api/quizz/getHistoryDetail/quizzId='.$quizzId);
          }
+
+         public function getResultTest($historyId){
+            return ApiHelper::getInstance()->get('api/quizz/getResultTest/historyID='.$historyId);
+         }
+
+         public function createQuizz($parameters){
+            return ApiHelper::getInstance()->post('api/quizz/create',$parameters);
+         }
+
+         
          
     }
 

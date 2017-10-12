@@ -32,5 +32,9 @@
         public function getQuizzScore($quizzId);
 
         public function getTestTime($quizzId);
+
+        public function getResultTest($historyId);
+
+        public function createQuizz($parameters);
     }
 ?>

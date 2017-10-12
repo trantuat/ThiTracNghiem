@@ -5,11 +5,21 @@
 @endsection
 @section('content')
 
+@if (isset($error)) 
+<script language='javascript'>
+  alert("{{ $error }}");
+</script>
+@endif
+
+
 <div class="container-fluid" >
+
     <div id="clocktimer" style="font-size:40px; float:right" class="clock">
         <div>
-            <span id="timer"></span>
+            <!-- @if(isset($duration)) -->
+            <span id="timer">{{$duration}}:00</span>
             <div class="smalltext"><b>Remaining time</b></div>
+            <!-- @endif -->
         </div>
     </div>
     <input type="hidden" id="quizzId" name="quizzId" value="{{ $quizzId}}">
@@ -30,7 +40,7 @@
             
                 <div class="card mb-3" style="background-color:#EEEEEE;">
                     <div class="card-body" id="questionContent">
-                        <label><b>Question {{$i}}: {{$data[$i]['content']}}</b></label>
+                        <label><b>Question {{$i+1}}: {{$data[$i]['content']}}</b></label>
                     </div>
                     <div class="row">
                         <div class="col-lg-3" style="text-align:center; "><b>
@@ -104,44 +114,46 @@
          <!-- Modal content-->
          <div class="modal-content">
             <input type="hidden" id="historyId" >
-            <!-- <form id="formShowResult" method="" class="form-horizontal" > -->
+           
+            <!-- <form id="formShowResult" action="/Students/Result" class="form-horizontal" > -->
             {{ csrf_field() }}
                 <div class="modal-header">
                   <h4 class="modal-tittle">KẾT QUẢ</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                <div class="modal-body" >
-                    <div class="col-sm-4">
-                    </div>
                     <div class="row">
-                        <div class="col-sm-4">
-                        <strong>
-                                <label>Số câu đúng</label>
-                                <br>
-                                <label>Số câu sai</label>
-                                <br>
-                                <label>Điểm số</label>
-                                <br>
-                        </strong>
+                        <div class="col-sm-3">
                         </div>
                         <div class="col-sm-4">
-                            <label for="correctAnswer" id="correctAnswer"></label>
-                            <br>
-                            <label for="wrongAnswer" id="wrongAnswer"></label>
-                            <br>
-                            <label for="point" id="point"></label>
-                            <br>
+                            <!-- <div class="row"> -->
+                            <strong>
+                                    <label>Số câu đúng</label>
+                                    <br>
+                                    <label>Số câu sai</label>
+                                    <br>
+                                    <label>Điểm số</label>
+                                    <br>
+                            </strong>
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="correctAnswer" id="correctAnswer"></label>
+                                <br>
+                                <label for="wrongAnswer" id="wrongAnswer"></label>
+                                <br>
+                                <label for="point" id="point"></label>
+                                <br>
+                            </div>
+                        <!-- </div> -->
+                        <div class="col-sm-3">
                         </div>
-                    </div>
-                    <div class="col-sm-4">
                     </div>
               </div>
+              
              <div class="modal-footer">
-                <!-- <a href="{{ url('/Students/Result', 1) }}" class="btn btn-success">Xem chi tiết</a> -->
                 <button id="btnDetailResult" class="btn btn-success" >Xem chi tiết</button>
-                <button class="btn btn-default btn-close-popup" data-dismiss="modal">Cancel</button>
+                <a href="/Students/Quizz"><button class="btn btn-default">Cancel</button></a>
              </div>
-          </form>
+             <!-- </form> -->
         </div>
       </div>
   </div>
