@@ -28,9 +28,9 @@
           var right_answer=document.querySelectorAll('input[type="checkbox"]:checked').length ;
           var is_multichoise= (right_answer>1 ? 1:0); 
           var content = CKEDITOR.instances['questionContent'].getData();
-          var level_id=parseInt($('#addQuestionLevel').val());
-          var topic_id=parseInt($('#addQuestionSubject').val());
-          var class_id=parseInt($('#addQuestionClass').val());
+          var level_id=$('#addQuestionLevel').val();
+          var topic_id=$('#addQuestionSubject').val();
+          var class_id=$('#addQuestionClass').val();
           var data = {"content":content,"img_link": null,"topic_id":topic_id,"level_id":level_id,"class_id":class_id,
                     "is_multichoise":is_multichoise,"number_answer":n_answer};
           var jsonArray1=[];
@@ -57,9 +57,7 @@
           var object1 = {"answer":jsonArray1};
           $.extend(data, object1);
           let json = JSON.stringify(data);
-          alert(json);
-
-          return;
+       
           $.ajax({
             // url: 'http://127.0.0.1:8088/api/question/add',
             url: '/Teachers/Question',
@@ -85,6 +83,87 @@
             success: function (response) {
                 console.log(response);
                 alert("Thêm câu hỏi thành công");
+            },
+            error: function (response) {
+                console.log(response);
+                alert("Đã xảy ra lỗi");
+            }
+          });
+
+        });
+
+        $(document).on("click","#btnUpdateQuestion",function() {
+          if (!confirm("Do you want to update this question?")) return;
+          var question_id=$('#question_id').val();
+          var number_answer=$('#numberOfAnswer').val();
+          var n_answer = 0;
+          for(var i=0; i<number_answer; i++) {
+            if ($('#answer'.concat(i)).length == 0) {
+              continue;
+            }
+            n_answer++ ;
+          }
+          var right_answer=document.querySelectorAll('input[type="checkbox"]:checked').length ;
+          var is_multichoise= (right_answer>1 ? 1:0); 
+          var content = CKEDITOR.instances['questionContent'].getData();
+          var level_id=$('#updateQuestionLevel').val();
+          var topic_id=$('#updateQuestionSubject').val();
+          var class_id=$('#updateQuestionClass').val();
+          var data = {"question_id":question_id,"content":content,"img_link": null,"topic_id":topic_id,"level_id":level_id,"class_id":class_id,
+                    "is_multichoise":is_multichoise,"number_answer":n_answer};
+          var jsonArray1=[];
+          
+        //   alert(json);
+          var tmp = {};
+          var is_correct_answer=0;
+          for(var i=0;i<number_answer; i++) {
+            if ($('#answer'.concat(i)).length == 0) {
+              continue;
+            }
+            var answer = CKEDITOR.instances['answer'.concat(i)].getData();
+            var answer_id=$('#answer_id'.concat(i)).val();
+            if($("#checkbox_answer".concat(i)).is(':checked')){
+                is_correct_answer=1;
+            } else{
+                is_correct_answer=0;
+            }
+            var img_link=null;
+            var question=[{"answer_id":answer_id,"content":answer,"is_correct_answer":is_correct_answer,"img_link":img_link}];
+            // alert(JSON.stringify(question));
+            jsonArray1 = jsonArray1.concat(question);
+
+          }          
+          var object1 = {"answer":jsonArray1};
+          $.extend(data, object1);
+          let json = JSON.stringify(data);
+          alert(json);
+       
+          $.ajax({
+            // url: 'http://127.0.0.1:8088/api/question/add',
+            url: '/Teachers/UpdateQuestion',
+            // headers: {
+            //     // 'Content-Type': 'application/json',
+            //     // 'api_token':api,
+            //     // 'Access-Control-Allow-Origin' : '*'
+            //     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            // },
+            type: "PUT", /* or type:"GET" or type:"PUT" */
+            beforeSend: function (xhr) {
+              var token = $('meta[name="csrf_token"]').attr('content');
+  
+              if (token) {
+                    return xhr.setRequestHeader('X-CSRF-TOKEN', token);
+              } else{
+              }
+            },
+            dataType: "json",
+            data: {
+              sendJson: data
+            },
+            success: function (response) {
+                console.log(response);
+                window.location.href="/Teachers/UncheckedQuestion";
+                alert("Cập nhật câu hỏi thành công");
             },
             error: function (response) {
                 console.log(response);
@@ -138,39 +217,7 @@
     
     })(jQuery); 
 
-    function showUpdateForm(detail){
-
-        loadSubjectForUpdate();
-        // console.log(detail.level_id);
-        // alert("OK");
-        // console.log(detail.content);
-        $('#updateQuestionClass').val(detail.topic_class_id);
-        var subject=detail.topic_id;
-        switch (subject){
-          case 1: $('#updateQuestionSubject').val("toan"); break;
-        }
-        $('#updateQuestionLevel').val(detail.level_id);
-        
-       
-        
-        //   $.ajax({
-        //     method: "GET",
-        //     url: "http://127.0.0.1:8088/api/question/answer/2",
-        //     // data: {
-        //     //   questionId : $('#updateQuestion1').val(detail.content);
-        //     // }
-        //   })
-        //   .done(function(data){
-        //     console.log(data);
-        //     // var dataObj = JSON.parse(data);
-        //     // console.log(dataObj);
-        //     // inform(dataObj);
-        // });
-      }
-      
-
-
-      function loadSubject(){
+      function loadSubjectForAdd(){
         $.ajax({
           url: '/Teachers/GetSubject',
           type: "GET",
@@ -188,14 +235,53 @@
               }
         });
       }
+      function loadLevelForAdd(){
+        $.ajax({
+          url: '/Teachers/GetLevel',
+          type: "GET",
+          dataType : "html",
+          data: {
+            // classId: $('#addQuestionClass').val()
+          },
+           success: function(response){ // What to do if we succeed
+            $('#formAddQuestion').find("select[name='addQuestionLevel']").html(response);
+              // console.log(response);
+              //   alert("OK"); 
+          },
+          error: function(response){
+              alert('Error'+response);
+              }
+        });
+      }
+
+        function loadClassForUpdate(){
+            $.ajax({
+              url: '/Teachers/GetClassForUpdate',
+              type: "GET",
+              dataType : "html",
+              data: {
+                classId: $('#class_id').val(),
+                question_id: $('#question_id').val()
+              },
+              success: function(response){ // What to do if we succeed
+                $('#formUpdateQuestion').find("select[name='updateQuestionClass']").html(response);
+                  // console.log(response);
+                  //   alert("OK"); 
+              },
+              error: function(response){
+                  alert('Error'+response);
+                  }
+            });
+        }
 
         function loadSubjectForUpdate(){
           $.ajax({
-            url: '/Teachers/GetSubject',
+            url: '/Teachers/GetSubjectForUpdate',
             type: "GET",
             dataType : "html",
             data: {
-              classId: $('#updateQuestionClass').val()
+              topicId: $('#topic_id').val(),
+              classId: $('#class_id').val()
             },
              success: function(response){ // What to do if we succeed
               $('#formUpdateQuestion').find("select[name='updateQuestionSubject']").html(response);
@@ -206,6 +292,26 @@
                 alert('Error'+response);
                 }
           });
+      }
+
+      function loadLevelForUpdate(){
+        $.ajax({
+          url: '/Teachers/GetLevelForUpdate',
+          type: "GET",
+          dataType : "html",
+          data: {
+            levelId: $('#level_id').val(),
+            question_id: $('#question_id').val()
+          },
+           success: function(response){ // What to do if we succeed
+            $('#formUpdateQuestion').find("select[name='updateQuestionLevel']").html(response);
+              // console.log(response);
+              //   alert("OK"); 
+          },
+          error: function(response){
+              alert('Error'+response);
+              }
+        });
       }
       
       

@@ -24,7 +24,7 @@
     <script src="{{ URL::asset("http://code.jquery.com/jquery-1.12.4.min.js") }}"></script>
     <link href="{{ URL::asset("loading/dist/loading.min.css") }}" rel="stylesheet" type="text/css">
     
-
+    @yield('head')
     @yield('title_page')
 
 </head>
@@ -80,6 +80,7 @@
 
     <!-- Custom scripts for this template -->
     <script src="{{ URL::asset("admin/js/sb-admin.min.js") }}"></script>
+    <script src="{{ URL::asset("admin/js/sb-admin.js") }}"></script>
 
     <script src="{{ URL::asset("http://code.jquery.com/jquery-1.12.4.min.js") }}"></script>
     <script src="{{ URL::asset("loading/dist/jquery.loading.min.js") }}"></script>

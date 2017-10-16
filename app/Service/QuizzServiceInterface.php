@@ -13,13 +13,15 @@
 
         public function getHistory();
 
-        public function getListOfQuestion();
-
         public function register($parameters);
         
         public function logout();
 
         public function getSubject($classId);
+
+        public function getAllLevel();
+
+        public function getAllClass();
 
         public function addQuestion($parameters);
 
@@ -36,5 +38,19 @@
         public function getResultTest($historyId);
 
         public function createQuizz($parameters);
+
+        public function showDetailQuestion($questionId);
+
+        public function updateQuestion($parameters);
+
+        public function getQuestionPublicByTeacher();
+
+        public function getQuestionNonPublicByTeacher();
+
+        public function getListOfUser($role);
+
+        public function getAllQuestionPublicByAdmin();
+
+        public function getAllQuestionNonPublicByAdmin();
     }
 ?>

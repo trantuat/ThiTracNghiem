@@ -10,6 +10,14 @@
 @section('head')
   <script type="text/javascript" language = "javascript"  src="{{ URL::asset("editor\ckeditor\ckeditor.js") }}"></script>
   <script type="text/javascript" language = "javascript"  src="{{ URL::asset("editor\ckfinder\ckfinder.js") }}"></script>
+  <!-- <script language='javascript'>
+       window.addEventListener('load',function(){
+            history.pushState(null,null,window.location.pathname);
+        });
+        window.addEventListener('popstate',function(){
+            window.location.href = "/Teachers";
+        });
+        </script> -->
 @endsection
 @section('content')
 
@@ -28,7 +36,7 @@
                 <h5><i class="fa fa-table"></i> Danh sách câu hỏi</h5>
               </div>
               <div class="col-sm-1">
-               <a href="AddNewQuestion"> <button  class="btn btn-danger" title='Add new question' ><b><i class="fa fa-plus"></i></b></button></a>
+               <a href="AddNewQuestion"> <button  class="btn btn-danger" title='Add new question' onclick="loadSubject()"><b><i class="fa fa-plus"></i></b></button></a>
               </div>
             </div>
             
@@ -74,7 +82,7 @@
                       $detail=json_encode($data[$i]);
                       echo "<button style='color: red; border: 0; background:none;' data-toggle='modal' title='update' data-target='#updateQuestion' onclick='showUpdateForm($detail)'><b><i class='fa fa-pencil-square-o'></i></b></button>";?></td>
  -->
-                     <a href="UpdateQuestion/{{$data[$i]['question_id']}}"> <button style='color: red; border: 0; background:none;' title='update' ><b><i class='fa fa-pencil-square-o'></i></b></button> </a>                    
+                     <a href="ShowDetailQuestion/{{$data[$i]['question_id']}}"> <button style='color: red; border: 0; background:none;' title='update' ><b><i class='fa fa-info-circle'></i></b></button> </a>                    
                     </center>
                   </tr>
                   @endfor

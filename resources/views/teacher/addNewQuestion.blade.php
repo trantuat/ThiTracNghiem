@@ -1,12 +1,21 @@
 
-
-
 @extends('layouts.teacher.app')
 <meta name="csrf_token" content="{{ csrf_token() }}" />
 
 @section('head')
   <script type="text/javascript" language = "javascript"  src="{{ URL::asset("editor\ckeditor\ckeditor.js") }}"></script>
   <script type="text/javascript" language = "javascript"  src="{{ URL::asset("editor\ckfinder\ckfinder.js") }}"></script>
+
+  <script language='javascript'>
+      window.addEventListener('load',function(){
+        loadSubjectForAdd();
+        loadLevelForAdd();
+      });
+      
+      
+  </script>
+
+
 @endsection
 
 @section('title_page')
@@ -58,9 +67,6 @@
                         </div>
                         <div class="col-sm-8">
                           <select name="addQuestionLevel" id="addQuestionLevel" class="form-control">
-                            <option value="1" id="1">Dễ</option>
-                            <option value="2" id="2">Trung bình</option>
-                            <option value="3" id="3">Khó</option>
                           </select>
                         </div>
                       </div>
@@ -70,13 +76,7 @@
                         </div>
                         <div class="col-sm-7">
                           <select name="addQuestionSubject" id="addQuestionSubject" class="form-control">
-                            <option value="1">Toán</option>
-                            <option value="2">Vật lý</option>
-                            <option value="3">Hoá học</option>
-                            <option value="4">Sinh học</option>
-                            <option value="5">Ngũ văn</option>
-                            <option value="6">Lịch sử</option>
-                            <option value="7">Tiếng anh</option>
+                            
                           </select>
                         </div>
                       </div>  
@@ -175,9 +175,9 @@
                         </div>
                       </div>
                     
-                      <input type="hidden" id="numberOfAnswer" name="numberOfAnswer" value="2">
+                      <input type="hidden" id="numberOfAnswer" name="numberOfAnswer" value="4">
                     </div>
-                     <input type="submit" id="btnAddQuestion" class="btn btn-success btnAdd" value='THÊM CÂU HỎI' style="float: right;margin-top: 20px;">
+                     <center><input type="submit" id="btnAddQuestion" class="btn btn-success btnAdd" value='THÊM CÂU HỎI' style="margin-top: 20px;"></center>
               </div>
               </div>
            

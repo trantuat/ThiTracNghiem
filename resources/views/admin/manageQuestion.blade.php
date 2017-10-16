@@ -6,8 +6,7 @@
       <div class="container-fluid">
         <div class="">
           <div class="card-header">
-            <i class="fa fa-table"></i>
-            <b>Danh sách câu hỏi trong hệ thống</b>
+          <h5><i class="fa fa-table"></i> Danh sách câu hỏi trong hệ thống</h5>
           </div>
           <div class="card-body">
             <div class="table-responsive">
@@ -18,6 +17,7 @@
                     <th>Lớp</th>
                     <th>Môn</th>
                     <th>Nội dung</th>
+                    <th>Mức độ</th>
                     <th>Ngày đăng</th>
                     <th>Hành động</th>
                   </tr>
@@ -27,28 +27,37 @@
                     <th>ID</th>
                     <th>Lớp</th>
                     <th>Môn</th>
+                    <th>Mức độ</th>
                     <th>Nội dung</th>
                     <th>Ngày đăng</th>
                     <th>Hành động</th>
                   </tr>
                 </tfoot>
                 <tbody>
-                  <td>01</td>
-                  <td>10</td>
-                  <td>Toán</td>
-                  <td>199+299=?</td>
-                  <td>29/08/1995</td>
                   
-                  <td>
-                  <button style="color: red; border: 0; background:none;" data-toggle='modal' title='Update' data-target='#updateQuestion'><b><i class="fa fa-pencil-square-o"></i></b></button>
+                  @for($i=0;$i<count($data);$i++)
+                  <tr>
+                    <td>{{$i+1}}</td>
+                   
+                    <td>{{$data[$i]['class_id']}}</td>
+                    <td>{{$data[$i]['topic_name']}}</td>
+                    <td>{{$data[$i]['level_name']}}</td>
+                    <td><?php echo $data[$i]['content'];?></td>
+                    <td>{{$data[$i]['updated_at']}}</td>
+                    <td><center>
+                      
+                      <a href="/Admins/ShowDetailQuestion/{{$data[$i]['question_id']}}"><button style='color: red; border: 0; background:none;' ><b><i class='fa fa-info-circle'></i></b></button></a>
                       <button style="color: red; border: 0; background:none;" data-toggle='confirmation' title='Delete' ><b><i class="fa fa-trash"></i></b></button>
-                  </td>
+                    </center</td>
+                  </tr>
+                  @endfor
 
                 </tbody>
               </table>
             </div>
           </div>
         </div>
+        <br>
       </div>
 
     <!--UPDATE QUESTION-->
@@ -58,7 +67,7 @@
          <div class="modal-content">
             <form id="formupdateQuestion" method="" class="form-horizontal" >
                <div class="modal-header">
-                <h4 class="modal-tittle">CẬP NHẬT CÂU HỎI</h4>
+                <h4 class="modal-tittle">NỘI DUNG CÂU HỎI</h4>
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                </div>
                <div class="modal-body" style="margin: 10px;">

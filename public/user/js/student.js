@@ -91,8 +91,6 @@
          var object1 = {"answer":answer};
          $.extend(data, object1);
          let json = JSON.stringify(data);
-         alert(json);
-
   
          $.ajax({
           url: '/Students/Answer',

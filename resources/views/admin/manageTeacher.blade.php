@@ -31,14 +31,18 @@
                   </tr>
                 </tfoot>
                 <tbody>
-                <td>102</td>
-                  <td>lenghi</td>
-                  <td>Lê hải Nghi</td>
-                  <td>hainghi@gmail.com</td>
-                  <td>
-                    <button style="color: red; border: 0; background:none;" data-toggle='modal' title='Update' data-target='#updateTeacher'><b><i class="fa fa-pencil-square-o"></i></b></button>
-                    <button style="color: red; border: 0; background:none;" data-toggle='confirmation' title='Delete' ><b><i class="fa fa-trash"></i></b></button>
-                  </td>
+                    @for($i=0;$i<count($data);$i++)
+                    <tr>
+                    <td>{{$i+1}}</td>
+                    <td>{{$data[$i]['username']}}</td>
+                    <td>{{$data[$i]['fullname']}}</td>
+                    <td>{{$data[$i]['email']}}</td>
+                    <td>
+                        <center><button class="btn btn-danger " data-toggle='modal' title='see result' data-target='#'>Chặn</button></center>
+
+                    </td>
+                    </tr>
+                    @endfor
                 </tbody>
               </table>
             </div>

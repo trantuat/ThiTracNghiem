@@ -8,16 +8,16 @@ use App\Service\QuizzService;
 
 class ManageQuestionController extends Controller
 {
-    public function showListOfQuestion(){
-        $responseData = QuizzService::getInstance()->getListOfQuestion();
+    public function showQuestionPublicByTeacher(){
+        $responseData = QuizzService::getInstance()->getQuestionPublicByTeacher();
         // var_dump($responseData->data);
         if ($responseData->error != null) {
             return view("teacher.manageQuestion",['error'=>$responseData->error ]);
         }
         return view("teacher.manageQuestion",['data'=>$responseData->data]);
     }
+    
     public function getSubject(Request $request){
-        // console.log("abc");
         $classId=$request->classId;
         $responseData = QuizzService::getInstance()->getSubject($classId);
         $data=$responseData->data;
@@ -32,7 +32,22 @@ class ManageQuestionController extends Controller
         return $html;
         
     }
-
+    
+    public function getLevel(Request $request){
+        // console.log("abc");
+        $responseData = QuizzService::getInstance()->getAllLevel();
+        $data=$responseData->data;
+        $html="";
+        if($data){
+            foreach($data as $row){
+                $text= htmlspecialchars($row['level_name']);
+                $html=$html."<option value='".$row["id"]."'>".$text."</option>";
+            }
+		} else{
+        }
+        return $html;
+        
+    }
     public function addQuestion(Request $request){
         $json=$request->sendJson;
         // return $json;
@@ -42,4 +57,5 @@ class ManageQuestionController extends Controller
         }
         return json_encode($responseData->data);
     }
+    
 }

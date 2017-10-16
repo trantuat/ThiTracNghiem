@@ -31,6 +31,11 @@
     @yield('title_page')
 
 </head>
+@if (session('error'))
+    <script language='javascript'>
+      alert(" {{ session('error_create_quiz') }}");
+    </script>
+  @endif 
 
 <?php
      if(session('api_token', '') == null ||  session('role', 0) != 2) {

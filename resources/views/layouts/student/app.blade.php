@@ -27,10 +27,10 @@
 
     <link href="{{ URL::asset("user/css/carousel.css") }} " rel="stylesheet">
 
-    <script type="text/javascript" src="{{ URL::asset("js/jquery-1.11.2.min.js")}}"></script>
+ 
     <link href="loading/dist/loading.min.css" rel="stylesheet" type="text/css">
     <link href="{{ URL::asset("loading/dist/loading.min.css") }}" rel="stylesheet" type="text/css">
-
+    @yield('head')
     @yield('title_page')
 
 </head>
