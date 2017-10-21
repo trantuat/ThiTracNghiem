@@ -107,7 +107,7 @@
                     </form>
                 </div>
                 <div class="col-lg-4">
-                    <form  class="form-horizontal" method="POST" id="formUpdatePassword">
+                    <form action="" class="form-horizontal" method="POST" id="formUpdatePassword">
                         {!! csrf_field() !!}
                         <div class="input-group">
                             <input type = "hidden" class="form-control" value = '{{json_encode($data)}}' id="data" name="data" />
@@ -134,9 +134,7 @@
                                     <span class="text-danger">{{ $errors->first('confirmPassword') }}</span>
                                 </div>
                                 <br>
-                                <center><input type="submit" class="btn btn-success btn-block col-lg-5" id="updatePass" value="Lưu mật khẩu"></button></center>
-                                
-                                <!-- <center><button class="btn btn-success btn-block col-lg-5" id="updatePass" >Lưu mật khẩu</button></center> -->
+                                <center><button class="btn btn-success btn-block col-lg-5" id="updatePass" >Lưu mật khẩu</button></center>
                             </div> 
                             
                         </div>

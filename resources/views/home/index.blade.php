@@ -20,21 +20,22 @@
       </div>
     </div>
   </div>
+  
   <div class="carousel-item">
-    <img class="second-slide" src="img/slide-2.jpg" alt="Second slide">
+    <img class="third-slide" src="img/slide-5.jpg" alt="Second slide">
     <div class="container">
-      <div class="carousel-caption d-none d-md-block ">
-        <h1>Điều quan trọng không phải vị trí đứng mà là hướng đi.</h1>
+      <div class="carousel-caption d-none d-md-block text-right">
+        <h1>Thất bại đơn giản chỉ là cơ hội để bắt đầu lại mọi thứ thông minh hơn</h1>
         <p><a class="btn btn-lg btn-primary" href="Login" role="button">Thi Thử</a></p>
-        <!-- <p>Điều quan trọng không phải vị trí đứng mà là hướng đi.</p> -->
+        <!-- <p>Thất bại đơn giản chỉ là cơ hội để bắt đầu lại mọi thứ thông minh hơn.</p> -->
       </div>
     </div>
   </div>
   <div class="carousel-item">
-    <img class="third-slide" src="img/slide-1.jpg" alt="Third slide">
+    <img class="third-slide" src="img/slide-4.jpg" alt="Fourth slide">
     <div class="container">
       <div class="carousel-caption d-none d-md-block text-right">
-        <h1>Thất bại đơn giản chỉ là cơ hội để bắt đầu lại mọi thứ thông minh hơn.</h1>
+        <h1>Thà học muộn còn hơn không bao giờ học</h1>
         <p><a class="btn btn-lg btn-primary" href="Login" role="button">Thi Thử</a></p>
         <!-- <p>Thất bại đơn giản chỉ là cơ hội để bắt đầu lại mọi thứ thông minh hơn.</p> -->
       </div>

@@ -42,8 +42,8 @@
       });
 
       $(document).ready(function() {
-        $('.dataTable').DataTable( {
-      } );
+        // $('.dataTable').DataTable( {
+      // } );
 
       // Configure tooltips globally
       $('[data-toggle="tooltip"]').tooltip()
@@ -120,23 +120,23 @@
       });
     }
     function showProfile(userId){
+      alert(userId);
       $.ajax({
         url: '/Admins/GetInfoUser',
         type: "GET",
-        
         dataType: "json",
         data: {
           userId: userId
         },
         success: function (response) {
             console.log(response);
-            // $('#username').val(response['']);
-            // $('#fullname').val(response['']);
-            // $('#address').val(response['']);
-            // $('#phone').val(response['']);
-            // $('#dayOfBirth').val(response['']);
-            // $('#gender').val(response['']);
-            // $('#email').val(response['']);
+            $('#username').val(response['username']);
+            $('#fullname').val(response['info']['fullname']);
+            $('#address').val(response['info']['address']);
+            $('#phone').val(response['info']['phone']);
+            $('#dayOfBirth').val(response['info']['day_of_birth']);
+            $('#gender').val(response['info']['gender']);
+            $('#email').val(response['email']);
         },
         error: function (response) {
             console.log(response);

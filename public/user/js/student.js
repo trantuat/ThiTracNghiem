@@ -160,6 +160,7 @@
       return sec;
     }
 
+
     $('#formUpdatePassword').validate({
       rules: {
           oldPassword: "required",
@@ -169,7 +170,7 @@
           }
       },
       messages: {
-          currentPass: "Please enter your current password !",
+          oldPassword: "Please enter your current password !",
           newPassword: "Please enter your new password !",
           confirmPassword:{
               equalTo: "This password is not match  !"

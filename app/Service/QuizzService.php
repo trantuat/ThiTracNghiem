@@ -123,6 +123,10 @@
             return ApiHelper::getInstance()->put('api/admin/blockUser/userId='.$userId);
         }
 
+        public function getUserByUserId($userId){
+            return ApiHelper::getInstance()->get('api/admin/getUserByUserID/userID='.$userId);
+        }
+
 
     }
 

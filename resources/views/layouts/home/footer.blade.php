@@ -1,8 +1,4 @@
-<!-- <footer class="py-5 bg-dark">
-<div class="container">
-  <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
-</div>
-</footer> -->
+
 
 <footer class="py-5 mb-1 bg-dark text-white ">
   <div class="container-fluid">
@@ -10,8 +6,7 @@
       <div class="col-md-4 col-sm-6 footerleft ">
           <div class="row">
               <div class="col-lg-3">
-                <img data-holder-rendered="true" class="rounded-circle img-fluid d-block "src="../img/quiz.jpg" style="width: 100px; height: 100px;"  class="img-thumbnail" alt="Team logo">
-          <!-- <img data-holder-rendered="true" src="" style="height:100px; margin-left:20px;" data-src="holder.js/200x200" class="img-thumbnail" alt="The avenger team logo"> -->
+                <img data-holder-rendered="true" class="rounded-circle img-fluid d-block "src="img/quiz.jpg" style="width: 100px; height: 100px;"  class="img-thumbnail" alt="Team logo">
               </div>
               <div class="col-lg-9">
                 <h5>Trung tâm luyện thi trắc nghiệm</h5>
