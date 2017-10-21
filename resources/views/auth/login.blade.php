@@ -21,6 +21,12 @@
     <link href="css/sb-admin.css" rel="stylesheet">
     <!-- <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script> -->
     <link href="loading/dist/loading.min.css" rel="stylesheet" type="text/css">
+  
+    <link href="{{ URL::asset("/validation/css/cmxform.css") }}" rel="stylesheet">
+    <script src="{{ URL::asset("/validation/lib/jquery.js") }}"></script>
+    
+    <script src="{{ URL::asset("/validation/dist/jquery.validate.js") }}"></script>
+    <script src="{{ URL::asset("/user/js/validate.js") }}"></script>
     
   </head>
 
@@ -73,7 +79,7 @@
           <b><center>Đăng nhập</center></b>
         </div>
         <div class="card-body">
-          <form method = "POST" action="PerformLogin">
+          <form method = "POST" action="PerformLogin" id="formLogin">
           {!! csrf_field() !!}
             <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
               <label for="inputEmail"><b>Email</b></label>
@@ -86,12 +92,7 @@
               <span class="text-danger">{{ $errors->first('password') }}</span>
             </div>
             <div class="form-group">
-              <!-- <div class="form-check">
-                <label class="form-check-label">
-                  <input type="checkbox" class="form-check-input">
-                  Nhớ mật khẩu
-                </label>
-              </div> -->
+              
             </div>
             <input type="submit" class="btn btn-primary btn-block login" value="Đăng nhập" >
           </form>
@@ -109,6 +110,9 @@
 
     <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="loading/dist/jquery.loading.min.js"></script>
+
+    <script src="{{ URL::asset("validation/lib/jquery.js") }}"></script>
+    <script src="{{ URL::asset("validation/dist/jquery.validate.js") }}"></script>
     <script>
         $( ".login" ).click(function() {
        // $.showLoading({name: 'circle-fade',allowHide: false});  

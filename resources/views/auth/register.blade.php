@@ -19,6 +19,11 @@
 
     <!-- Custom styles for this template -->
     <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="{{ URL::asset("/validation/css/cmxform.css") }}" rel="stylesheet">
+    <script src="{{ URL::asset("/validation/lib/jquery.js") }}"></script>
+    
+    <script src="{{ URL::asset("/validation/dist/jquery.validate.js") }}"></script>
+    <script src="{{ URL::asset("/user/js/validate.js") }}"></script>
 
   </head>
 
@@ -36,7 +41,7 @@
           Đăng ký tài khoản
         </div>
         <div class="card-body">
-          <form method="post" action="PerformRegister">
+          <form method="post" action="PerformRegister" id="formRegister">
           {!! csrf_field() !!}
             <div class="form-group">
               <div class="form-row">
@@ -114,7 +119,7 @@
                   <label class="col-md-4 radio-inline"><input type="radio" name="role" id="2" value = "2" >Giáo viên</label>
               </div>
             </div>
-            <button class="btn btn-primary btn-block" >Đăng ký</button>
+            <input type="submit" class="btn btn-primary btn-block" value="Đăng ký">
           </form>
           <div class="text-center">
             <a class="d-block small mt-3" href="Login">Đăng nhập</a>
@@ -127,6 +132,8 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper/popper.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{ URL::asset("validation/lib/jquery.js") }}"></script>
+    <script src="{{ URL::asset("validation/dist/jquery.validate.js") }}"></script>
 
   </body>
 

@@ -17,17 +17,17 @@ class RegisterController extends Controller
     }
 
     public function register(Request $request) {
-        $v = Validator::make($request->all(), [
-            'username' => 'required|max:255',
-            'email' =>'required|email',
-            'password' =>'required|min:6|max:25',
-            'confirmPassword' =>'required|min:6|max:25|same:password'
+        // $v = Validator::make($request->all(), [
+        //     'username' => 'required|max:255',
+        //     'email' =>'required|email',
+        //     'password' =>'required|min:6|max:25',
+        //     'confirmPassword' =>'required|min:6|max:25|same:password'
 
-        ]);
-        if ($v->fails())
-        {
-            return redirect()->back()->withErrors($v->errors());
-        }
+        // ]);
+        // if ($v->fails())
+        // {
+        //     return redirect()->back()->withErrors($v->errors());
+        // }
         $username = $request->username;
         $password = $request->password;
         $role = $request->role;

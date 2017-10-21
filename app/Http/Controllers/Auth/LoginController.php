@@ -15,15 +15,15 @@ class LoginController extends Controller
     }
     public function login(Request $request)
     {
-        $v = Validator::make($request->all(), [
-            'email' =>'required|email',
-            'password' =>'required|min:6|max:25'
+        // $v = Validator::make($request->all(), [
+        //     'email' =>'required|email',
+        //     'password' =>'required|min:6|max:25'
 
-        ]);
-        if ($v->fails())
-        {
-            return redirect()->back()->withErrors($v->errors());
-        }
+        // ]);
+        // if ($v->fails())
+        // {
+        //     return redirect()->back()->withErrors($v->errors());
+        // }
         $email = $request->email;
         $password = $request->password;
         $responseData = QuizzService::getInstance()->login($email,$password);
