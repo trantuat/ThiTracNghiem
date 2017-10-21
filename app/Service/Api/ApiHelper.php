@@ -24,7 +24,7 @@
         public function get($url,$contentType = null) {
             return self::request(HttpMethod::GET,$url,null,$contentType);  
         }
-        public function put($url,$parameter,$contentType = null) {
+        public function put($url,$parameter=null,$contentType = null) {
             return self::request(HttpMethod::PUT,$url,$parameter,$contentType);
         }
         public function delete($url,$parameter,$contentType = null) {

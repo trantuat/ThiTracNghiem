@@ -6,11 +6,11 @@
       <div class="container-fluid">
         <div class="">
           <div class="card-header">
-            <h5><i class="fa fa-table"></i>Danh sách câu hỏi chờ xét duyệt</h5>
+            <h5 style="color:red;"><i class="fa fa-pause"></i> Danh sách câu hỏi chờ xét duyệt</h5>
           </div>
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-bordered" width="100%" id="dataTable" cellspacing="0">
+              <table class="table table-hover table-bordered table-striped table-order-column dataTable" width="100%" id="dataTable" cellspacing="0">
                 <thead>
                   <tr>
                     <th>ID</th>
@@ -45,6 +45,8 @@
                     <td><center>
                       <a href="/Admins/ShowDetailNonPublicQuestion/{{$data[$i]['question_id']}}"><button style='color: red; border: 0; background:none;' ><b><i class='fa fa-info-circle'></i></b></button></a>
                       <button style='color: red; border: 0; background:none;' data-toggle='confirmation' title='Delete' ><b><i class='fa fa-trash'></i></b></button>
+                     
+                    
                     </center></td>
                   </tr>
                   @endfor

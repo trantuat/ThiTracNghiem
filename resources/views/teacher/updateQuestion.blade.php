@@ -176,10 +176,12 @@
                       <input type="hidden" id="numberOfAnswer" name="numberOfAnswer" value="{{$data[0]['number_answer']}}">
                     </div>
                      <center><input type="submit" id="btnUpdateQuestion" class="btn btn-success btnUpdate" value='CẬP NHẬT CÂU HỎI' style="margin-top: 20px;"></center>
+                     
               </div>
            
           </div>
       </div>
+
 
   <script language='javascript'>
       window.addEventListener('load',function(){

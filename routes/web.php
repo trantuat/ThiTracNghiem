@@ -30,11 +30,14 @@ Route::group(['prefix'=> 'Admins'], function() {
     Route::get('/', 'Admin\IndexController@index')->name('Admins');
     Route::get('/Profile', 'Admin\ProfileController@showProfile');
     Route::get('/Student', 'Admin\ManageStudentController@showListOfStudent');
+    Route::get('/GetInfoUser', 'Admin\ManageStudentController@showProfile');
+    Route::put('/BlockUser', 'Admin\ManageStudentController@blockUser');
     Route::get('/Teacher', 'Admin\ManageTeacherController@showListOfTeacher');
     Route::get('/Question', 'Admin\ManageQuestionController@showAllQuestionPublic');
     Route::get('/UncheckedQuestion', 'Admin\ManageUncheckedQuestionController@showAllQuestionNonPublic');
     Route::get('/ShowDetailQuestion/{id}', 'Admin\ManageQuestionController@showDetailQuestion');
     Route::get('/ShowDetailNonPublicQuestion/{id}', 'Admin\ManageUncheckedQuestionController@showDetailQuestion');
+    Route::put('/CheckQuestion', 'Admin\ManageUncheckedQuestionController@checkQuestion');
     Route::get('/Statistics', 'Admin\StatisticsController@showStatistics');
     // add route here
 });

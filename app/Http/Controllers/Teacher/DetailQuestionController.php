@@ -94,7 +94,7 @@ class DetailQuestionController extends Controller
         // return $json;
         $responseData = QuizzService::getInstance()->updateQuestion($json);
         if ($responseData->error != null) {
-                return json_encode($responseData->error);
+            return json_encode($responseData->error);
         }
         return json_encode($responseData->data);
     }

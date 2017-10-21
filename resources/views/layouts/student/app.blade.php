@@ -51,8 +51,10 @@
 <body class="fixed-nav sticky-footer " id="page-top">
     @include('layouts.student.header')
     @yield('carousel')
+    <div style="background-color:#ECECEC;">
     <div class="content-wrapper" >     
     @yield('content')
+    </div>
     </div>
     @include('layouts.student.footer')
 
@@ -62,6 +64,8 @@
 
     <!-- Bootstrap core JavaScript -->
     <script src="{{ URL::asset("vendor/jquery/jquery.min.js") }}"></script>
+    <script src="{{ URL::asset("vendor/jquery/jquery.validate.js") }}"></script>
+    <script src="{{ URL::asset("vendor/jquery/jquery.validate.min.js") }}"></script>
     <script src="{{ URL::asset("vendor/popper/popper.min.js") }}"></script>
     <script src="{{ URL::asset("vendor/bootstrap/js/bootstrap.min.js") }}"></script>
 

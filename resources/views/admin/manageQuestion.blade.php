@@ -6,11 +6,11 @@
       <div class="container-fluid">
         <div class="">
           <div class="card-header">
-          <h5><i class="fa fa-table"></i> Danh sách câu hỏi trong hệ thống</h5>
+          <h5 style="color:red;"><i class="fa fa-question-circle"></i> Danh sách câu hỏi trong hệ thống</h5>
           </div>
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-bordered" width="100%" id="dataTable" cellspacing="0">
+              <table class="table table-hover table-bordered table-striped table-order-column dataTable" width="100%" id="dataTable" cellspacing="0">
                 <thead>
                   <tr>
                     <th>ID</th>
@@ -47,7 +47,8 @@
                     <td><center>
                       
                       <a href="/Admins/ShowDetailQuestion/{{$data[$i]['question_id']}}"><button style='color: red; border: 0; background:none;' ><b><i class='fa fa-info-circle'></i></b></button></a>
-                      <button style="color: red; border: 0; background:none;" data-toggle='confirmation' title='Delete' ><b><i class="fa fa-trash"></i></b></button>
+                      <!-- <button style='color: red; border: 0; background:none;' data-toggle="modal" data-target="#detailQuestion" onclick="showDetailQuestion()"><b><i class='fa fa-info-circle'></i></b></button> -->
+                    
                     </center</td>
                   </tr>
                   @endfor
@@ -60,12 +61,12 @@
         <br>
       </div>
 
-    <!--UPDATE QUESTION-->
-   <div class="modal fade" id="updateQuestion" role="dialog">
+    <!--DETAIL QUESTION-->
+   <div class="modal fade" id="detailQuestion" role="dialog">
       <div class="modal-dialog modal-lg" style="width:600px;">
          <!-- Modal content-->
          <div class="modal-content">
-            <form id="formupdateQuestion" method="" class="form-horizontal" >
+            <!-- <form id="formupdateQuestion" method="" class="form-horizontal" > -->
                <div class="modal-header">
                 <h4 class="modal-tittle">NỘI DUNG CÂU HỎI</h4>
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -77,21 +78,8 @@
                         <div class="control-label col-sm-4">
                           <h7 style="font-size:16px; margin-top:5px;"><b>Lớp</b></h7>
                         </div>
-                        <div class="col-sm-8">
-                          <select name="updateQuestionClass" id="updateQuestionClass" class="form-control">
-                            <option value="1">Lớp 1</option>
-                            <option value="2">Lớp 2</option>
-                            <option value="3">Lớp 3</option>
-                            <option value="4">Lớp 4</option>
-                            <option value="5">Lớp 5</option>
-                            <option value="6">Lớp 6</option>
-                            <option value="7">Lớp 7</option>
-                            <option value="8">Lớp 8</option>
-                            <option value="9">Lớp 9</option>
-                            <option value="10">Lớp 10</option>
-                            <option value="11">Lớp 11</option>
-                            <option value="12">Lớp 12</option>
-                          </select>
+                        <div class="col-sm-8 form-group">
+                          <input type="text" class="form-control" id="detailClass" name="detailClass">
                         </div>
                       </div>
                       <br>
@@ -99,28 +87,18 @@
                         <div class="control-label col-sm-4">
                           <h7 style="font-size:16px; margin-top:5px;"><b>Mức độ</b></h7>
                           </div>
-                          <div class="col-sm-8">
-                            <select name="updateQuestionLevel" id="updateQuestionLevel" class="form-control">
-                              <option value="de">Dễ</option>
-                              <option value="trungbinh">Trung bình</option>
-                              <option value="kho">Khó</option>
-                            </select>
+                          <div class="col-sm-8 form-group">
+                            <input type="text" class="form-control" id="detailLevel" name="detailLevel">
                           </div>
                         </div>
                       </div>
                     <div class="col-sm-6">
                       <div class="row">
                         <div class="control-label col-sm-5">
-                        <h7 style="margin-left:20px; font-size:16px; margin-top:5px;"><b>Môn học</b></h7>
+                        <h7 style="font-size:16px; margin-top:5px;"><b>Môn học</b></h7>
                         </div>
-                        <div class="col-sm-7">
-                          <select name="updateQuestionSubject" id="updateQuestionSubject" class="form-control">
-                            <option value="toan">Toán</option>
-                            <option value="van">Văn</option>
-                            <option value="anhvan">Anh Văn</option>
-                            <option value="dia">Đia lý</option>
-                            <option value="su">Lịch sử</option>
-                          </select>
+                        <div class="col-sm-7 form-group">
+                          <input type="text" class="form-control" id="detailSubject" name="detailSubject">
                         </div>
                       </div>  
                     </div>
@@ -130,11 +108,11 @@
                     <label for="updateQuestion"><b>Câu hỏi</b></label>
                     <textarea class="form-control" id="updateQuestion1" cols="40" rows="3"></textarea> 
                  </div>
-                 <div class="input-group">
-                    <span class="input-group-addon">
-                      <input type="radio" aria-label="The right answer" id="updateRadioA" name="question">
-                    </span>
-                    <input type="text" class="form-control" id="updateAnswerA" >
+                 <div class="form-group">
+                 <table>
+                    <td style= "width: 20px; vertical-align:top;"><input style= "margin-top:5px;" type="radio" aria-label="The right answer" value="" name=""></td>
+                    <td style= "vertical-align:top">ABC</td>
+             </table>
                  </div>
                  <br>
                  <div class="input-group">

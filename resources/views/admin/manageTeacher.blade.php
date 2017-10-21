@@ -1,4 +1,5 @@
 @extends('layouts.admin.app')
+<meta name="csrf_token" content="{{ csrf_token() }}" />
 @section('title_page')
 <title>Quản lý giáo viên</title>
 @endsection
@@ -6,12 +7,11 @@
       <div class="container-fluid">
         <div class="">
           <div class="card-header">
-            <i class="fa fa-table"></i>
-            <b>Danh sách giáo viên</b>
+            <h5 style="color:red;"><i class="fa fa-user-secret"></i> Danh sách giáo viên</h5>
           </div>
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-bordered" width="100%" id="dataTable" cellspacing="0">
+              <table class="table table-hover table-bordered table-striped table-order-column dataTable" width="100%" id="dataTable" cellspacing="0">
                 <thead>
                   <tr>
                     <th>ID</th>
@@ -38,8 +38,17 @@
                     <td>{{$data[$i]['fullname']}}</td>
                     <td>{{$data[$i]['email']}}</td>
                     <td>
-                        <center><button class="btn btn-danger " data-toggle='modal' title='see result' data-target='#'>Chặn</button></center>
-
+                    <?php 
+                    $detail=$data[$i]['user_id'];
+                    $userId=json_encode($detail);
+                    if($data[$i]['is_active']==1){
+                        $status=json_encode("1");
+                        echo "<center><button class='btn btn-danger ' id='btnBlock.$i' data-toggle='modal' title='Chặn' data-target='#' onclick='blockUser($userId,$status)'>Chặn</button></center>";
+                    }else {
+                        $status=json_encode("0");
+                        echo "<center><button class='btn btn-danger ' id='btnUnblock.$i' data-toggle='modal' title='Bỏ chặn' data-target='#' onclick='blockUser($userId,$status)'>Bỏ chặn</button></center>";
+                    } 
+                    ?>
                     </td>
                     </tr>
                     @endfor

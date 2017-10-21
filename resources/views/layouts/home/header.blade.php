@@ -8,7 +8,7 @@
   <div class="collapse navbar-collapse" id="navbarResponsive">
     <ul class="navbar-nav ">
         <li class="nav-item ">
-            <a class="nav-link" href="/" style="margin-right:70px;"><i class='fa fa-home'><b>Trang chủ </b></i> <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/" style="margin-right:70px;"><i class='fa fa-home'></i> Trang chủ<span class="sr-only">(current)</span></a>
         </li>
     </ul>
     <ul class="navbar-nav ml-auto">

@@ -27,7 +27,6 @@
     </script>
 @endif
 
-
       <div class="container-fluid">
         <div class="">
           <div class="card-header">
@@ -35,6 +34,8 @@
              <div class="col-sm-11">
                 <h5><i class="fa fa-table"></i> Danh sách câu hỏi</h5>
               </div>
+              <div id="error_message" class="ajax_response" style="float:left"></div>
+	            <div id="success_message" class="ajax_response" style="float:left"></div>
               <div class="col-sm-1">
                <a href="AddNewQuestion"> <button  class="btn btn-danger" title='Add new question' onclick="loadSubject()"><b><i class="fa fa-plus"></i></b></button></a>
               </div>
@@ -44,7 +45,7 @@
           
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-bordered dataTable" width="100%" id="questionList" cellspacing="0">
+              <table class="table table-hover table-bordered table-striped table-order-column dataTable" width="100%" id="questionList" cellspacing="0">
                 <thead>
                   <tr>
                     <th>STT</th>
@@ -78,10 +79,6 @@
                     <td>{{$data[$i]['updated_at']}}</td>
                     <td> <center>
                     <input type="hidden" id="question_id" name="question_id" value="{{$data[$i]['question_id']}}">
-                   <!--  <?php 
-                      $detail=json_encode($data[$i]);
-                      echo "<button style='color: red; border: 0; background:none;' data-toggle='modal' title='update' data-target='#updateQuestion' onclick='showUpdateForm($detail)'><b><i class='fa fa-pencil-square-o'></i></b></button>";?></td>
- -->
                      <a href="ShowDetailQuestion/{{$data[$i]['question_id']}}"> <button style='color: red; border: 0; background:none;' title='update' ><b><i class='fa fa-info-circle'></i></b></button> </a>                    
                     </center>
                   </tr>

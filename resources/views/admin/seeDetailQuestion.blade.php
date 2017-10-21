@@ -1,4 +1,6 @@
 @extends('layouts.admin.app')
+<meta name="csrf_token" content="{{ csrf_token() }}" />
+
 @section('head')
   <script type="text/javascript" language = "javascript"  src="{{ URL::asset("editor\ckeditor\ckeditor.js") }}"></script>
   <script type="text/javascript" language = "javascript"  src="{{ URL::asset("editor\ckfinder\ckfinder.js") }}"></script>
@@ -8,22 +10,19 @@
 <title>Nội dung câu hỏi</title>
 @endsection
 
-@if (isset($check))
-    <script language='javascript'>
-      alert(" {{ $check }}");
-    </script>
-@endif
 @section('content')
       <div class="container-fluid">
         <div class="">
+        <input type="hidden" id="questionId" value="{{$data[0]['answer'][0]['question_id']}}">
           <div class="card-header">
-            <h5><i class="fa fa-table"></i> Nội dung câu hỏi</b>
+            <h5 style="color:red;"><i class="fa fa-asterisk"></i> Nội dung câu hỏi</b>
           </div>
           <div class="card-body"  style="margin-bottom: 40px;">
+          {{ csrf_field() }}
             <div class="row">
               <div class="col-sm-4">
                 <div class="row">
-                  <input type="hidden" id="numberAnswer" name="numberAnswer">
+                  
                   <div class="control-label col-sm-4">
                     <h7 style="font-size:16px; margin-top:5px;"><b>Lớp</b></h7>
                   </div>
@@ -56,7 +55,7 @@
             <br>
             <div class="form-group">
               <label for="checkQuestion"><b>Câu hỏi</b></label>
-              <Textarea class="form-control" id="checkQuestion" name="checkQuestion" cols="40" rows="3" ><?php echo $data[0]['content']?></Textarea>
+              <Textarea class="form-control" id="checkQuestion" name="checkQuestion" cols="40" rows="3" readonly ><?php echo $data[0]['content']?></Textarea>
               <script>
                           CKEDITOR.replace( "checkQuestion",
                    {
@@ -82,7 +81,7 @@
                 
                   <div class="input-group" >
                       <span class="input-group-addon" style="border-bottom: none; border-radius: 0px;">
-                        <input type="checkbox" aria-label="The right answer" id="<?php echo 'checkbox_answer'.$i ;?>" <?php if($answer[$i]['is_correct_answer']) echo "checked";?>>
+                        <input type="checkbox" aria-label="The right answer" id="<?php echo 'checkbox_answer'.$i ;?>" <?php if($answer[$i]['is_correct_answer']) echo "checked";?> disabled>
                       </span>
                       <input type="text" class="form-control"  value="Ðáp án đúng" style="border-bottom: none; border-radius: 0px;" readonly>
                     
@@ -110,18 +109,15 @@
                   <br>
                   <?php 
                     }
-                    if($check!=null && $check==1){
-                      // log($check);
+                    if($check==1){
                     
                   ?>
-                  
-                    <center><input type="submit" id="btnCheckQuestion" class="btn btn-success btnCheck" value='Duyệt'>
+                    <center><button id="btnCheckQuestion" class="btn btn-success btnCheck" >Duyệt</button>
                     <input type="submit" id="btnUncheckedQuestion" class="btn btn-success btnUncheked" value='Không đạt'></center>
                     
                   <?php }?>
                 </div>
               <br>
-                
                 
         </div>
       </div>

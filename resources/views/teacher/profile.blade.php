@@ -4,22 +4,31 @@
 @endsection
 @section('content')
 @if (isset($error)) 
-<script language='javascript'>
-  alert(" {{ $error }}");
-</script>
+<div class='alert alert-danger alert-dismissible fade show'>
+    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    <span aria-hidden='true'>&times;</span>
+    </button>
+    <strong>Lỗi</strong> {{$error}}
+</div>
 @endif
 
 @if (isset($status))
-<script language='javascript'>
-  alert(" {{ $status }}");
-</script>
+<div class='alert alert-warning alert-dismissible fade show'>
+    <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+    <span aria-hidden='true'>&times;</span>
+    </button>
+    <strong>Lỗi: </strong>{{$status}}
+</div>;
 @endif
 
 @if (isset($update))
 @if ($update == 1) 
-<script language='javascript'>
-  alert(" {{ "Cập nhật dữ liệu thành công." }}");
-</script>
+    <div class='alert alert-success alert-dismissible fade show'>
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        <span aria-hidden='true'>&times;</span>
+        </button>
+        <strong>Thành công</strong> Cập nhật thành công
+    </div>
 @endif
 @endif
 
@@ -33,7 +42,7 @@
                 </div>
                 <div class="card-body">
                     <form class="form-horizontal" method="POST" action="UpdateAccount">
-                    {!! csrf_field() !!}
+                        {!! csrf_field() !!}
                         <div class="row">
                             <div class="col-sm-offset-2 col-sm-3">
                                 <h7 style="margin-left:20px; font-size:15px; margin-top:5px;"><b>Username</b></h7>
@@ -89,9 +98,9 @@
                             </div>
                             <div class="input-group col-sm-6">
                                 <span class="input-group-addon"><i class="fa fa-transgender"></i></span>
-                                <select name="gender" id="gender" class="form-control" value="{{$data['info']['gender']}}">
-                                    <option value="Nam" <?php echo $data['info']['gender'] == 'Nam'? 'selected="selected"' : '';?>>Nam</option>
-                                    <option value="Nu" <?php echo $data['info']['gender'] == 'Nữ'? 'selected="selected"' : '';?>>Nữ</option>
+                                <select name="gender" id="gender" class="form-control" >
+                                    <option value="Nam" <?php echo $data['info']['gender'] == 'Nam'? 'selected="selected"':'';?>>Nam</option>
+                                    <option value="Nữ" <?php echo $data['info']['gender'] == 'Nữ'? 'selected="selected"':'';?>>Nữ</option>
                                 </select>
                             </div>
                         </div>

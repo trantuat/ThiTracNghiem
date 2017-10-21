@@ -16,7 +16,7 @@
     
    //submit form add question
         $(document).on("click","#btnAddQuestion",function() {
-          if (!confirm("Do you want to add this question?")) return;
+          if (!confirm("Bạn có muốn thêm câu hỏi này?")) return;
           var number_answer=parseInt($('#numberOfAnswer').val());
           var n_answer = 0;
           for(var i=1; i<= number_answer; i++) {
@@ -93,7 +93,7 @@
         });
 
         $(document).on("click","#btnUpdateQuestion",function() {
-          if (!confirm("Do you want to update this question?")) return;
+          if (!confirm("Bạn có muốn cập nhật câu hỏi này?")) return;
           var question_id=$('#question_id').val();
           var number_answer=$('#numberOfAnswer').val();
           var n_answer = 0;
@@ -136,18 +136,12 @@
           var object1 = {"answer":jsonArray1};
           $.extend(data, object1);
           let json = JSON.stringify(data);
-          alert(json);
+          // alert(json);
        
           $.ajax({
-            // url: 'http://127.0.0.1:8088/api/question/add',
             url: '/Teachers/UpdateQuestion',
-            // headers: {
-            //     // 'Content-Type': 'application/json',
-            //     // 'api_token':api,
-            //     // 'Access-Control-Allow-Origin' : '*'
-            //     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            // },
-            type: "PUT", /* or type:"GET" or type:"PUT" */
+            
+            type: "PUT",
             beforeSend: function (xhr) {
               var token = $('meta[name="csrf_token"]').attr('content');
   
@@ -163,6 +157,10 @@
             success: function (response) {
                 console.log(response);
                 window.location.href="/Teachers/UncheckedQuestion";
+                // $('#success_message').fadeIn().html("Cập nhật câu hỏi thành công");
+                // setTimeout(function() {
+                //   $('#success_message').fadeOut("slow");
+                // }, 2000 );
                 alert("Cập nhật câu hỏi thành công");
             },
             error: function (response) {
@@ -213,6 +211,7 @@
 
        
       });
+      
       
     
     })(jQuery); 

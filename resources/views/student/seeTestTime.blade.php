@@ -18,7 +18,7 @@
           </div>
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-bordered dataTable" width="100%" cellspacing="0">
+              <table class="table table-hover table-bordered table-striped table-order-column dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
                     <th>STT</th>
@@ -27,7 +27,7 @@
                     <th>Thời gian làm</th>
                     <th>Ngày làm</th>
                     <th>Lần thi</th>
-                    <th>Kết quả</th>
+                    <th>Điểm số</th>
                     <th>Chi tiết</th>
                   </tr>
                 </thead>
@@ -39,7 +39,7 @@
                     <th>Thời gian làm</th>
                     <th>Ngày làm</th>
                     <th>Lần thi</th>
-                    <th>Kết quả</th>
+                    <th>Điểm số</th>
                     <th>Chi tiết</th>
                   </tr>
                 </tfoot>
@@ -53,9 +53,9 @@
                     <td>{{$data[$i]['quizz_name']}}</td>
                     <td>{{$data[$i]['total']}}</td>
                     <td>{{$data[$i]['duration']}}</td>
-                    <td>NULL</td>
+                    <td>{{$data[$i]['created_at']}}</td>
                     <td>{{$data[$i]['quizz_times']}}</td>
-                    <td>10 điêm</td>
+                    <td>{{$data[$i]['score']}}</td>
                     <td>
                       <input type="hidden" id="historiesId" value="{{$data[$i]['histories_id']}}">
                       <!-- <button style="color: red; border: 0; background:none;" data-toggle='modal' title='see result' data-target='#seeResultOfStudent'><b><i class="fa fa-list"></i></b></button> -->

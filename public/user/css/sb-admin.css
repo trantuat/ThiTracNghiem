@@ -419,3 +419,18 @@ table th, .btncol{
 button .btn{
   display: flex; justify-content: center;
 }
+
+.box-for{
+  padding: 10px 0px;
+  border: 1px solid #EEE;
+  transition: all 0.2s ease 0s;
+  box-shadow: none;
+  background-color: #FFF;
+}
+
+.profile-container{
+  padding:10px 0px;
+  border:1px solid #EEE;
+  transition: all 0.2s ease 0s;
+
+}

@@ -1,11 +1,8 @@
 
 (function($) {
       "use strict"; // Start of use strict
-      // function showUpdateForm(detail){
-      //   alert("OK");
-      //   var_dump(detail);
-      //   // ('#updateQuestion').val(detail.content);
-      // }
+     
+      $(document).ready(function() {
 
       // Configure tooltips for collapsed side navigation
       $('.navbar-sidenav [data-toggle="tooltip"]').tooltip({
@@ -44,6 +41,10 @@
         }
       });
 
+      $(document).ready(function() {
+        $('.dataTable').DataTable( {
+      } );
+
       // Configure tooltips globally
       $('[data-toggle="tooltip"]').tooltip()
 
@@ -56,11 +57,94 @@
         event.preventDefault();
       });
 
-      
+      $(document).on("click","#btnCheckQuestion",function() {
+        $.ajax({
+          url: '/Admins/CheckQuestion',
+          type: "PUT",
+          beforeSend: function (xhr) {
+            var token = $('meta[name="csrf_token"]').attr('content');
+            if (token) {
+                  return xhr.setRequestHeader('X-CSRF-TOKEN', token);
+            } else{
+            }
+          },
+          dataType: "json",
+          data: {
+            questionId: $('#questionId').val()
+          },
+          success: function (response) {
+              console.log(response);
+              window.location.href="/Admins/UncheckedQuestion";
+              alert("Câu hỏi đã được xét duyệt");
+          },
+          error: function (response) {
+              console.log(response);
+              alert("Đã xảy ra lỗi");
+          }
+        });
+      });
+  });
+});
     
-
-
     })(jQuery); 
+    
+    function blockUser(userId,status){
+      if(status==1){
+        if(!confirm("Bạn có muốn chặn user này?")) return;
+      } else{
+        if (!confirm("Bạn có muốn bỏ chặn user này?")) return;
+      }
+      $.ajax({
+        url: '/Admins/BlockUser',
+        type: "PUT",
+        beforeSend: function (xhr) {
+          var token = $('meta[name="csrf_token"]').attr('content');
+          if (token) {
+                return xhr.setRequestHeader('X-CSRF-TOKEN', token);
+          } else{
+          }
+        },
+        dataType: "json",
+        data: {
+          userId: userId
+        },
+        success: function (response) {
+            console.log(response);
+            alert("Thực hiện thành công");
+            window.location.reload();
+        },
+        error: function (response) {
+            console.log(response);
+            alert("Đã xảy ra lỗi");
+        }
+      });
+    }
+    function showProfile(userId){
+      $.ajax({
+        url: '/Admins/GetInfoUser',
+        type: "GET",
+        
+        dataType: "json",
+        data: {
+          userId: userId
+        },
+        success: function (response) {
+            console.log(response);
+            // $('#username').val(response['']);
+            // $('#fullname').val(response['']);
+            // $('#address').val(response['']);
+            // $('#phone').val(response['']);
+            // $('#dayOfBirth').val(response['']);
+            // $('#gender').val(response['']);
+            // $('#email').val(response['']);
+        },
+        error: function (response) {
+            console.log(response);
+            alert("Đã xảy ra lỗi");
+        }
+      });
+    }
+  
     
     
 
@@ -178,4 +262,5 @@ var myPieChart = new Chart(ctx, {
     }],
   },
 });
+
 

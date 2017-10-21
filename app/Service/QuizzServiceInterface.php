@@ -52,5 +52,10 @@
         public function getAllQuestionPublicByAdmin();
 
         public function getAllQuestionNonPublicByAdmin();
+
+        public function checkQuestion($questionId);
+
+        public function blockUser($userId);
+
     }
 ?>

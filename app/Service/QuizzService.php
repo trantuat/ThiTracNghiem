@@ -31,7 +31,7 @@
         }
         
         public function updatePassword($parameters) {
-            return ApiHelper::getInstance()->put('api/user/password', $parameters);
+            return ApiHelper::getInstance()->post('api/user/password', $parameters);
         }
         public function getHistory(){
             return ApiHelper::getInstance()->get('api/quizz/getHistory');
@@ -114,6 +114,13 @@
         
         public function getAllQuestionNonPublicByAdmin(){
             return ApiHelper::getInstance()->get('api/admin/nonPublic');
+        }
+        public function checkQuestion($questionId){
+            return ApiHelper::getInstance()->put('api/admin/verify/questionId='.$questionId);
+        }
+
+        public function blockUser($userId){
+            return ApiHelper::getInstance()->put('api/admin/blockUser/userId='.$userId);
         }
 
 

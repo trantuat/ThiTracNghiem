@@ -18,8 +18,8 @@ class ProfileController extends Controller
     }
     public function updateAccount(Request $request){
         $v = Validator::make($request->all(), [
-            'username' => 'required|alpha|min:6|max:255', 
-            'fullname' => 'min:6|max:50',
+            'username' => 'required|AlphaNum|min:6|max:255', 
+            'fullname' => 'min:6|max:50|regex:/^[\pL\s\-]+$/u',
             'phone' => 'numeric|digits_between:10,11',
             'address' =>'min:2|max:50',
 
@@ -27,6 +27,7 @@ class ProfileController extends Controller
         if ($v->fails())
         {
             return redirect()->back()->withErrors($v->errors());
+            
         }
 
         $address = $request->address;
@@ -35,10 +36,8 @@ class ProfileController extends Controller
         $birthday = $request->birthday;
         $username = $request->username;
         $gender = $request->gender;
-
-        // var_dump($request-);
-        $responseData = QuizzService::getInstance()->updateAccount(['address'=>$address,'phone'=>$phone,'fullname'=>$fullname,'username'=>$username, 'gender'=>$gender,'birthday'=>'2017-10-06']);
-        //diiecho($responseData->data);
+        $responseData = QuizzService::getInstance()->updateAccount(['address'=>$address,'phone'=>$phone,'fullname'=>$fullname,'username'=>$username, 'gender'=>$gender,'birthday'=>$birthday]);
+        // var_dump($responseData->data);
         if ($responseData->error != null) {
            return view("teacher.profile",['error'=>$responseData->error, 'update'=>1]);
         } else{

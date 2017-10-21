@@ -22,8 +22,8 @@ class ManageProfileController extends Controller
    
     public function updateAccount(Request $request){
         $v = Validator::make($request->all(), [
-            'username' => 'required|alpha|min:6|max:255', 
-            'fullname' => 'min:6|max:50',
+            'username' => 'required|AlphaNum|min:6|max:255', 
+            'fullname' => 'min:6|max:50|regex:/^[\pL\s\-]+$/u',
             'phone' => 'numeric|digits_between:10,11',
             'address' =>'min:2|max:50',
 
@@ -31,6 +31,7 @@ class ManageProfileController extends Controller
         if ($v->fails())
         {
             return redirect()->back()->withErrors($v->errors());
+            // return back()->withInput()->withError($v->errors());
         }
 
         $address = $request->address;
@@ -65,15 +66,11 @@ class ManageProfileController extends Controller
         $data = (array)json_decode($request->data);
         $data['info'] = (array)(json_decode(json_encode($data['info'])));
 
-        // if($newPassword!=$confirmPassword){
-        //     return view("student.manageProfile",['data'=>$data,'error'=>'Xác nhận mật khẩu mới không đúng']);
-        //  } else{
              $responseData = QuizzService::getInstance()->updatePassword(['email'=>session('email',''),'old_password'=>$oldPassword,'new_password'=>$newPassword]);
                if ($responseData->error != null) {
                 return view("student.manageProfile",['data'=>$data,'update'=>0,'status'=>'Mật khẫu không đúng']);
               }
-              return view("student.manageProfile",['data'=>$data, 'status'=>'Thay đổi mật khẩu thành công']);
-        //  }
+               return view("student.manageProfile",['data'=>$data, 'status'=>'Thay đổi mật khẩu thành công']);
     }
 }
 ?>

@@ -23,4 +23,10 @@ class ManageUncheckedQuestionController extends Controller
         }
         return view('admin.seeDetailQuestion',['data'=>$responseData->data,'check'=>1]);
     }
+
+    public function checkQuestion(Request $request){
+        $question_id=$request->questionId;
+        $responseData=QuizzService::getInstance()->checkQuestion($question_id);
+        return json_encode($responseData);
+    }
 }

@@ -31,6 +31,32 @@
 
 </head>
 
+<?php
+     if(session('api_token', '') != null ) {
+          $role = session('role', 0);
+  
+          switch ($role) {
+              case 1 :
+                  echo "<script language='javascript'>
+                    location.href='/Students';
+                  </script>";
+                  break;
+              case 2: 
+                   echo "<script language='javascript'>
+                      location.href='/Teachers';
+                    </script>";
+                  break;
+              case 3:
+                   echo "<script language='javascript'>
+                    location.href='/Admins';
+                   </script>";
+                    break;
+              default:
+                   break;
+          }
+      } 
+ ?> 
+
 <body class="fixed-nav sticky-footer " id="page-top">
     @include('layouts.home.header')
     @yield('carousel')
