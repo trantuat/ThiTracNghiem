@@ -49,7 +49,7 @@
                         echo "<button style='color: red; border: 0; background:none;' id='btnBlock.$i' data-toggle='modal' title='Chặn' data-target='#' onclick='blockUser($userId,$status)'><i class='fa fa-lock'></i></button>";
                       }else {
                         $status=json_encode("0");
-                        echo "<center><button style='color: red; border: 0; background:none;' id='btnUnblock.$i' data-toggle='modal' title='Bỏ chặn' data-target='#' onclick='blockUser($userId,$status)'><i class='fa fa-unlock'></i></button></center>";
+                        echo "<button style='color: red; border: 0; background:none;' id='btnUnblock.$i' data-toggle='modal' title='Bỏ chặn' data-target='#' onclick='blockUser($userId,$status)'><i class='fa fa-unlock'></i></button>";
                       } 
                       ?>
                       </center></td>

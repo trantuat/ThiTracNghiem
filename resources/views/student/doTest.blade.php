@@ -51,7 +51,7 @@
         <div class="col-sm-10">
             <div class="form-horizontal quizzPages">
             {!! csrf_field() !!}
-                <? 
+                <?php  
                 for($i=0;$i<count($data);$i++){
                 
                 ?>

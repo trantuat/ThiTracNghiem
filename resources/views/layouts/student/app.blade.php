@@ -50,7 +50,6 @@
     <div class="content-wrapper" >     
     @yield('content')
     </div>
-    </div>
     @include('layouts.student.footer')
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

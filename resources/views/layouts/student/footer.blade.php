@@ -10,7 +10,7 @@
       <div class="col-md-4 col-sm-6 footerleft ">
           <div class="row">
               <div class="col-lg-3">
-                <img data-holder-rendered="true" class="rounded-circle img-fluid d-block "src="../img/quiz.jpg" style="width: 100px; height: 100px;"  class="img-thumbnail" alt="Team logo">
+                <img data-holder-rendered="true" class="rounded-circle img-fluid d-block "src="{{ URL::asset("/img/quiz.jpg" )}}"style="width: 100px; height: 100px;"  class="img-thumbnail" alt="Team logo">
           <!-- <img data-holder-rendered="true" src="" style="height:100px; margin-left:20px;" data-src="holder.js/200x200" class="img-thumbnail" alt="The avenger team logo"> -->
               </div>
               <div class="col-lg-9">
@@ -18,7 +18,7 @@
                 <br>
                 <p><i class="fa fa-map-marker"></i> 113 Nguyễn Lương Bằng</p>
                 <p><i class="fa fa-phone"></i> Điện thoại : +111111111</p>
-                <i class="fa fa-envelope"></i><a href="#" > E-mail : info@webenlance.com</a>
+                <i class="fa fa-envelope"></i><a href="#" > E-mail : info@webenlance.com</a2>
                 </div>
           </div>
       </div>

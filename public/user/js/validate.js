@@ -1,8 +1,5 @@
 
 	$().ready(function() {
-
-
-		// validate signup form on keyup and submit
 		$("#formUpdatePassword").validate({
 			rules: {
 				oldPassword: {
@@ -35,11 +32,35 @@
                 }
             },
             submitHandler: function (form) {
-               alert(123);
+				alert("OK");
+                $.ajax({
+					url: '/Students/UpdatePassword',
+					type: "POST", 
+					beforeSend: function (xhr) {
+					  var token = $('meta[name="csrf_token"]').attr('content');
+			
+					  if (token) {
+							return xhr.setRequestHeader('X-CSRF-TOKEN', token);
+					  } else{
+					  }
+					},
+					dataType: "json",
+					data: {
+					  oldPassword :$('#oldPassword').val(),
+					  newPassword: $('#newPassword').val()
+					},
+					success: function (response) {
+						if(response=="Thành công")
+							$("#result").html("<div class='alert alert-success alert-dismissible fade show'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><strong>Thành công:</strong> Cập nhật thành công</div>");
+						else{
+							$("#result").html("<div class='alert alert-danger alert-dismissible fade show'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><strong>Lỗi:</strong> Mật khẩu cũ nhập vào không đúng</div>");
+							
+						}
+					}
+				  });
             }
         });
         
-        	// validate signup form on keyup and submit
 		$("#formUpdateProfile").validate({
 			rules: {
 				username: {
@@ -68,7 +89,7 @@
                 }
             },
             submitHandler: function (form) {
-               alert("update profile");
+				form.submit();
             }
 		});
 

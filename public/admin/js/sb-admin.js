@@ -120,7 +120,6 @@
       });
     }
     function showProfile(userId){
-      alert(userId);
       $.ajax({
         url: '/Admins/GetInfoUser',
         type: "GET",

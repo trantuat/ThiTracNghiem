@@ -1,4 +1,5 @@
 @extends('layouts.student.app')
+<meta name="csrf_token" content="{{ csrf_token() }}" />
 @section('title_page')
 <title>Thông tin cá nhân</title>
 @endsection
@@ -38,13 +39,15 @@
     </div>
 @endif
 @endif
-
+<div id="result">
+</div>
 <div class= "container-fluid" style="margin-top:20px;">
 <div class="row">
 
 <div class="col-sm-12">
 <h4 ><i class="fa fa-user"></i> Thông tin tài khoản  </h4>
 <hr>
+
 <div class="row">
     <div class="col-lg-12">
         <div class="row" >
@@ -148,7 +151,7 @@
                             <!-- <center><button class="btn btn-success btn-block col-lg-5" id="updatePass" >Lưu mật khẩu</button></center> -->
                         </div> 
 
-</fieldset>
+                    </fieldset>
                     </div>
 
                 </form>
