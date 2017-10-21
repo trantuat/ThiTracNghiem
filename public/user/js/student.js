@@ -159,45 +159,6 @@
       if (sec < 0) {sec = "59"};
       return sec;
     }
-
-
-    $('#formUpdatePassword').validate({
-      rules: {
-          oldPassword: "required",
-          newPassword: "required",
-          confirmPassword:{
-              equalTo: "#newPassword"
-          }
-      },
-      messages: {
-          oldPassword: "Please enter your current password !",
-          newPassword: "Please enter your new password !",
-          confirmPassword:{
-              equalTo: "This password is not match  !"
-
-          }
-      },
-      submitHandler: function (form) {
-          // if (!confirm("Do you want to update your password this course ?")) return
-          // $.post(
-          //     "index.php?ctr=trainee&act=postUpdatePassword",
-          //     {
-          //         currentPass: $("#currentPass").val(),
-          //         newPassword: $("#newPassword").val(),
-          //         confirmPassword: $("#confirmPassword").val()
-          //     },
-          //     function (data, status) {
-          //         //console.log(data);
-          //         var dataObj = JSON.parse(data);
-          //         inform(dataObj);
-          //     }
-          // );
-      }
-  });
-    
-    
-    
-
     })(jQuery); 
 
     function showOptionChoose(){
