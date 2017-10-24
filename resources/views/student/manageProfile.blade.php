@@ -123,7 +123,7 @@
                 <form  class="cmxform" method="POST" id="formUpdatePassword">
                     {!! csrf_field() !!}
                     <fieldset>
-                    <legend style = "padding-left: 20px; width: 200px; ">Mật khẩu:</legend>
+                    <legend style = "padding-left: 20px; width: 200px; ">Mật khẩu</legend>
                     <div class="input-group">
                         <input type = "hidden" class="form-control" value = '{{json_encode($data)}}' id="data" name="data" />
                     </div>

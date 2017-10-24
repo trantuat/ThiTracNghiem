@@ -6,7 +6,7 @@
        //add more answers for question
         var ans=3;
         $(document).on("click","#addAnswer",function() {
-          $('#addMoreAnswer').append('<div class="editor'+ans+'" > <div class="input-group"><span class="input-group-addon" style="border-bottom: none; border-radius: 0px;"><input type="checkbox" aria-label="The right answer" id="checkbox_answer'+ans_update+'" ></span><input type="text" class="form-control"  value="Ðáp án đúng" style="border-bottom: none; border-radius: 0px;" readonly><span class="input-group-btn"><button class="btn btn-secondary" type="button" id ="editor'+ans_update+'" onclick="deleteAnswer(this.id)" style="height: 38px; border-bottom: none; border-radius: 0px; background-color: #e9ecef; border-color: rgba(0,0,0,.15);" ><img src="/img/ic_delete.png" ></button></span><span class="input-group-btn"><button class="btn btn-secondary" name="addAnswerForUpdate" id="addAnswerForUpdate" style="height: 38px; border-bottom: none; border-radius: 0px;  background-color: #e9ecef; border-color: rgba(0,0,0,.15);" ><img src="/img/ic_add.png" ></button></span></div><Textarea class="form-control" id="answer'+ans_update+'"  name="answer'+ans_update+'" ></Textarea><script>CKEDITOR.replace( "answer'+ans_update+'",{filebrowserBrowseUrl : "/editor/ckfinder/ckfinder.html",filebrowserImageBrowseUrl : "/editor/ckfinder/ckfinder.html?type=Images",filebrowserFlashBrowseUrl : "/editor/ckfinder/ckfinder.html?type=Flash",filebrowserUploadUrl : "/editor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files",filebrowserImageUploadUrl : "/editor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images",filebrowserFlashUploadUrl : "/editor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash"});</script><br></div></div>');
+          $('#addMoreAnswer').append('<div class="editor'+ans+'" > <div class="input-group"><span class="input-group-addon" style="border-bottom: none; border-radius: 0px;"><input type="checkbox" aria-label="The right answer" id="checkbox_answer'+ans+'" ></span><input type="text" class="form-control"  value="Ðáp án đúng" style="border-bottom: none; border-radius: 0px;" readonly><span class="input-group-btn"><button class="btn btn-secondary" type="button" id ="editor'+ans+'" onclick="deleteAnswer(this.id)" style="height: 38px; border-bottom: none; border-radius: 0px; background-color: #e9ecef; border-color: rgba(0,0,0,.15);" ><img src="/img/ic_delete.png" ></button></span><span class="input-group-btn"><button class="btn btn-secondary" name="addAnswer" id="addAnswer" style="height: 38px; border-bottom: none; border-radius: 0px;  background-color: #e9ecef; border-color: rgba(0,0,0,.15);" ><img src="/img/ic_add.png" ></button></span></div><Textarea class="form-control" id="answer'+ans+'"  name="answer'+ans+'" ></Textarea><script>CKEDITOR.replace( "answer'+ans+'",{filebrowserBrowseUrl : "/editor/ckfinder/ckfinder.html",filebrowserImageBrowseUrl : "/editor/ckfinder/ckfinder.html?type=Images",filebrowserFlashBrowseUrl : "/editor/ckfinder/ckfinder.html?type=Flash",filebrowserUploadUrl : "/editor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files",filebrowserImageUploadUrl : "/editor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images",filebrowserFlashUploadUrl : "/editor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash"});</script><br></div></div>');
           $('#numberOfAnswer').val(ans);
           ans++;
           event.preventDefault();
@@ -21,7 +21,7 @@
           event.preventDefault();
         });
     
-   //submit form add question
+        //submit form add question
         $(document).on("click","#btnAddQuestion",function() {
           if (!confirm("Bạn có muốn thêm câu hỏi này?")) return;
           var number_answer=parseInt($('#numberOfAnswer').val());
@@ -64,20 +64,12 @@
           var object1 = {"answer":jsonArray1};
           $.extend(data, object1);
           let json = JSON.stringify(data);
-       
+          // alert(json);
           $.ajax({
-            // url: 'http://127.0.0.1:8088/api/question/add',
-            url: '/Teachers/Question',
-            // headers: {
-            //     // 'Content-Type': 'application/json',
-            //     // 'api_token':api,
-            //     // 'Access-Control-Allow-Origin' : '*'
-            //     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            // },
-            type: "POST", /* or type:"GET" or type:"PUT" */
+            url: '/Teachers/AddNewQuestion',
+            type: "POST", 
             beforeSend: function (xhr) {
               var token = $('meta[name="csrf_token"]').attr('content');
-  
               if (token) {
                     return xhr.setRequestHeader('X-CSRF-TOKEN', token);
               } else{
@@ -90,6 +82,7 @@
             success: function (response) {
                 console.log(response);
                 alert("Thêm câu hỏi thành công");
+                window.location.href="/Teachers/Question";
             },
             error: function (response) {
                 console.log(response);
@@ -229,6 +222,23 @@
     
     })(jQuery); 
 
+      function loadClassForAdd(){
+        $.ajax({
+          url: '/Teachers/GetClass',
+          type: "GET",
+          dataType : "html",
+          data: {
+          },
+          success: function(response){ // What to do if we succeed
+            $('#formAddQuestion').find("select[name='addQuestionClass']").html(response);
+              // console.log(response);
+              //   alert("OK"); 
+          },
+          error: function(response){
+              alert('Error'+response);
+              }
+        });
+      }
       function loadSubjectForAdd(){
         $.ajax({
           url: '/Teachers/GetSubject',
@@ -329,7 +339,7 @@
       
        function deleteAnswer(id) {
          var numberAnswer=$('#numberOfAnswer').val();
-         if(numberAnswer=2){
+         if(numberAnswer<=2){
            alert("Câu hỏi phải có ít nhất 2 câu trả lời");
          } else{
             $(".".concat(id)).remove();
@@ -347,6 +357,34 @@
            $(".".concat(id)).remove();
            
         }
+      }
+
+      function deleteQuestion(questionId){
+        if(!confirm("Bạn muốn xoá câu hỏi này?")) return;
+        $.ajax({
+          url: '/Teachers/DeleteQuestion',
+          type: "DELETE",
+          beforeSend: function (xhr) {
+            var token = $('meta[name="csrf_token"]').attr('content');
+  
+            if (token) {
+                  return xhr.setRequestHeader('X-CSRF-TOKEN', token);
+            } else{
+            }
+          },
+          dataType : "json",
+          data: {
+            questionId: questionId
+          },
+           success: function(response){ // What to do if we succeed
+              console.log(response);
+              alert("Xoá câu hỏi thành công");
+              location.reload();
+          },
+          error: function(response){
+              alert('Error'+response);
+              }
+        });
       }
       
     

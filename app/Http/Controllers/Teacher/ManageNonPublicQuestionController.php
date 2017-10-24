@@ -18,5 +18,15 @@ class ManageNonPublicQuestionController extends Controller
         return view("teacher.manageNonPublicQuestion",['data'=>$responseData->data]);
     }
 
+    public function deleteQuestion(Request $request){
+        $questionId=$request->questionId;
+        $responseData= QuizzService::getInstance()->deleteQuestion($questionId);
+        if ($responseData->error != null) {
+            return json_encode($responseData->error);
+        } 
+         return json_encode($responseData->data);
+        
+    }
+
     
 }

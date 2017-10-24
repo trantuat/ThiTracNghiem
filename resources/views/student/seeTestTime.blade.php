@@ -18,7 +18,7 @@
               <h5><i class="fa fa-table"></i> Chi tiết lịch sử bài thi</h5>
             </div>
             <div class="col-sm-1" style="margin-left:30px;">
-            <a href="/Students/DoTest/{{$quizzId}}/{{$duration}}" class='btn btn-primary' >Làm lại bài</a>
+            <a href="/Students/DoTest/{{$quizzId}}/{{$duration}}" class='btn btn-success' >Làm lại bài</a>
             </div>
           </div>
           

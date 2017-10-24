@@ -94,7 +94,7 @@
             <div class="form-group">
               
             </div>
-            <input type="submit" class="btn btn-primary btn-block login" value="Đăng nhập" >
+            <input type="submit" class="btn btn-success btn-block login" value="Đăng nhập" >
           </form>
           <div class="text-center">
             <a class="d-block small mt-3" href="Register">Đăng ký tài khoản</a>

@@ -45,7 +45,7 @@
                                 <hr>
                                 <div class="row">
                                     <div class="col-lg-6">
-                                            <a href="/Students/Profile" class="btn btn-primary btn-block"><i class="fa fa-user-md"></i><b> Profile</b></a>
+                                            <a href="/Students/Profile" class="btn btn-success btn-block"><i class="fa fa-user-md"></i><b> Profile</b></a>
                                     </div>
                                     <div class="col-lg-6">
                                             <a href="/Logout" class="btn btn-danger btn-block"><i class="fa fa-sign-out"></i><b>Đăng xuất </b></a>
@@ -125,9 +125,9 @@
                             </div>
                             <div class="col-sm-8">
                                 <select name="doTestLevel" id="doTestLevel" class="form-control">
-                                <option value="1">Dễ</option>
-                                <option value="2">Trung bình</option>
-                                <option value="3">Khó</option>
+                                    <option value="1">Dễ</option>
+                                    <option value="2">Trung bình</option>
+                                    <option value="3">Khó</option>
                                 </select>
                             </div>
                         </div>

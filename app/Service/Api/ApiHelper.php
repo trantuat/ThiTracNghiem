@@ -27,7 +27,7 @@
         public function put($url,$parameter=null,$contentType = null) {
             return self::request(HttpMethod::PUT,$url,$parameter,$contentType);
         }
-        public function delete($url,$parameter,$contentType = null) {
+        public function delete($url,$parameter=null,$contentType = null) {
             return  self::request(HttpMethod::DELETE,$url,$parameter,$contentType);
         }
 

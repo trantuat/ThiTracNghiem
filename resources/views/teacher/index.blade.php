@@ -1,7 +1,7 @@
 
 @extends('layouts.teacher.app')
 @section('title_page')
-<title>Teacher page</title>
+<title>Trang chủ</title>
 @endsection
 @section('content')
       <div class="container-fluid">

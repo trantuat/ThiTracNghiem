@@ -1,4 +1,5 @@
 @extends('layouts.teacher.app')
+<meta name="csrf_token" content="{{ csrf_token() }}" />
 @section('title_page')
 <title>Danh sách câu hỏi chờ xét duyệt</title>
 @endsection
@@ -49,8 +50,12 @@
                 <td> <center>
                 <input type="hidden" id="question_id" name="question_id" value="{{$data[$i]['question_id']}}">
                  <a href="ShowDetailQuestionNonPublic/{{$data[$i]['question_id']}}"> <button style='color: red; border: 0; background:none;' title='update' ><b><i class='fa fa-pencil-square-o'></i></b></button> </a>                    
-                 <button style='color: red; border: 0; background:none;' data-toggle='confirmation' title='Delete' ><b><i class='fa fa-trash'></i></b></button>
-                </center>
+                 <?php 
+                  $id=$data[$i]['question_id'];
+                  $questionId=json_encode($id);
+                 echo "<button style='color: red; border: 0; background:none;' data-toggle='confirmation' title='Delete' onclick='deleteQuestion($questionId)'><b><i class='fa fa-trash'></i></b></button>";
+                ?>
+                 </center>
                 </td>
               </tr>
               @endfor

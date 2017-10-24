@@ -4,64 +4,63 @@
 <title>Quản lý thành viên</title>
 @endsection
 @section('content')
-      <div class="container-fluid">
+    <div class="container-fluid">
         <div class="">
-          <div class="card-header">
-            <h5 style="color:red;"><i class="fa fa-graduation-cap"></i> Danh sách thí sinh</h5>
-          </div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-hover table-bordered table-striped table-order-column dataTable" width="100%" id="table" cellspacing="0">
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Username</th>
-                    <th>Tên</th>
-                    <th>Email</th>
-                    <th>Hành động</th>
-                  </tr>
-                </thead>
-                <tfoot>
-                  <tr>
-                    <th>ID</th>
-                    <th>Username</th>
-                    <th>Tên</th>
-                    <th>Email</th>
-                    <th>Hành động</th>
-                  </tr>
-                </tfoot>
-                <tbody>
-                  
-                  @for($i=0;$i<count($data);$i++)
-                  <tr>
-                    <td>{{$i+1}}</td>
-                    <td>{{$data[$i]['username']}}</td>
-                    <td>{{$data[$i]['fullname']}}</td>
-                    <td>{{$data[$i]['email']}}</td>
-                    <td><center>
-                      <?php 
-                      $detail=$data[$i]['user_id'];
-                      $userId=json_encode($detail);
-                      echo "<button style='color: red; border: 0; background:none;' id='btnBlock.$i' data-toggle='modal' title='Chặn' data-target='#showProfile' onclick='showProfile($userId)'><i class='fa fa-info-circle'></i></button>";
-                      
-                      if($data[$i]['is_active']==1){
-                        $status=json_encode("1");
-                        echo "<button style='color: red; border: 0; background:none;' id='btnBlock.$i' data-toggle='modal' title='Chặn' data-target='#' onclick='blockUser($userId,$status)'><i class='fa fa-lock'></i></button>";
-                      }else {
-                        $status=json_encode("0");
-                        echo "<button style='color: red; border: 0; background:none;' id='btnUnblock.$i' data-toggle='modal' title='Bỏ chặn' data-target='#' onclick='blockUser($userId,$status)'><i class='fa fa-unlock'></i></button>";
-                      } 
-                      ?>
-                      </center></td>
-                  </tr>
-                  @endfor
-                  
-                </tbody>
-              </table>
+            <div class="card-header">
+                <h5 style="color:red;"><i class="fa fa-graduation-cap"></i> Danh sách thí sinh</h5>
             </div>
-          </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered table-striped table-order-column dataTable" width="100%"  cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Username</th>
+                            <th>Tên</th>
+                            <th>Email</th>
+                            <th>Hành động</th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th>ID</th>
+                            <th>Username</th>
+                            <th>Tên</th>
+                            <th>Email</th>
+                            <th>Hành động</th>
+                        </tr>
+                        </tfoot>
+                        <tbody>
+                        
+                        @for($i=0;$i<count($data);$i++)
+                        <tr>
+                            <td>{{$i+1}}</td>
+                            <td>{{$data[$i]['username']}}</td>
+                            <td>{{$data[$i]['fullname']}}</td>
+                            <td>{{$data[$i]['email']}}</td>
+                            <td><center>
+                            <?php 
+                                $detail=$data[$i]['user_id'];
+                                $userId=json_encode($detail);
+                                echo "<button style='color: red; border: 0; background:none;' id='btnBlock.$i' data-toggle='modal' title='Chặn' data-target='#showProfile' onclick='showProfile($userId)'><i class='fa fa-info-circle'></i></button>";
+                                
+                                if($data[$i]['is_active']==1){
+                                    $status=json_encode("1");
+                                    echo "<button style='color: red; border: 0; background:none;' id='btnBlock.$i' data-toggle='modal' title='Chặn' data-target='#' onclick='blockUser($userId,$status)'><i class='fa fa-lock'></i></button>";
+                                }else {
+                                    $status=json_encode("0");
+                                    echo "<button style='color: red; border: 0; background:none;' id='btnUnblock.$i' data-toggle='modal' title='Bỏ chặn' data-target='#' onclick='blockUser($userId,$status)'><i class='fa fa-unlock'></i></button>";
+                                } 
+                                ?>
+                            </center></td>
+                        </tr>
+                        @endfor
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-      </div>
+    </div>
 
     <!--SHOW PROFILE STUDENT-->
    <div class="modal fade" id="showProfile" role="dialog">
@@ -160,7 +159,6 @@
                 </div>
                 <br>
               <div class="modal-footer">
-                  
                   <button class="btn btn-default btn-close-popup" data-dismiss="modal">Cancel</button>
               </div>
             </form>

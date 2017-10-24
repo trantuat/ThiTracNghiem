@@ -1,4 +1,5 @@
 @extends('layouts.admin.app')
+<meta name="csrf_token" content="{{ csrf_token() }}" />
 @section('title_page')
 <title>Dạnh sách chờ xét duyệt</title>
 @endsection
@@ -10,7 +11,7 @@
           </div>
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-hover table-bordered table-striped table-order-column dataTable" width="100%" id="dataTable" cellspacing="0">
+              <table class="table table-hover table-bordered table-striped table-order-column dataTable" width="100%"  cellspacing="0">
                 <thead>
                   <tr>
                     <th>ID</th>
@@ -44,10 +45,14 @@
                     <td>{{$data[$i]['updated_at']}}</td>
                     <td><center>
                       <a href="/Admins/ShowDetailNonPublicQuestion/{{$data[$i]['question_id']}}"><button style='color: red; border: 0; background:none;' ><b><i class='fa fa-info-circle'></i></b></button></a>
-                      <button style='color: red; border: 0; background:none;' data-toggle='confirmation' title='Delete' ><b><i class='fa fa-trash'></i></b></button>
-                     
-                    
-                    </center></td>
+                      <?php 
+                      $id=$data[$i]['question_id'];
+                      $questionId=json_encode($id);
+                      echo "<button style='color: red; border: 0; background:none;' title='check' onclick='checkQuestion($questionId)'><b><i class='fa fa-check-circle'></i></b></button>";
+                      
+                      echo"<button style='color: red; border: 0; background:none;'  title='uncheck' onclick='deleteQuestion($questionId)' ><b><i class='fa fa-trash'></i></b></button>";
+                    ?>
+                      </center></td>
                   </tr>
                   @endfor
                 </tbody>

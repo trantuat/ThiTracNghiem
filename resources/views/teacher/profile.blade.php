@@ -1,7 +1,7 @@
 @extends('layouts.teacher.app')
 <meta name="csrf_token" content="{{ csrf_token() }}" />
 @section('title_page')
-<title>Profile</title>
+<title>Trang thông tin cá nhân</title>
 @endsection
 
 @section('head')

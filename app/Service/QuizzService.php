@@ -159,6 +159,10 @@
             return ApiHelper::getInstance()->get('api/admin/numberQuestion');
         }
 
+        public function deleteQuestion($questionId){
+            return ApiHelper::getInstance()->delete('api/admin/deleteQuestion/questionID='.$questionId);
+        }
+
 
     }
 

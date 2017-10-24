@@ -119,7 +119,7 @@
                   <label class="col-md-4 radio-inline"><input type="radio" name="role" id="2" value = "2" >Giáo viên</label>
               </div>
             </div>
-            <input type="submit" class="btn btn-primary btn-block" value="Đăng ký">
+            <input type="submit" class="btn btn-success btn-block" value="Đăng ký">
           </form>
           <div class="text-center">
             <a class="d-block small mt-3" href="Login">Đăng nhập</a>

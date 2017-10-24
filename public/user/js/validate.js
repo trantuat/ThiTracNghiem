@@ -141,16 +141,16 @@
 			return this.optional(element) || value == value.match(/^[A-Za-z][A-Za-z0-9]*(?:_[A-Za-z0-9]+)*$/);
 			},"Nhập đúng định dạng username ");
 			
-		// $.validator.addMethod("fullname", function(value, element) {
-		// 	return this.optional(element) || value == value.match(/^[a-zA-Z]+$/);
-		// 	},"Nhập đúng định dạng tên ");
+		$.validator.addMethod("fullname", function(value, element) {
+			return this.optional(element) || value == value.match(/^[A-Za-zÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ]+ [A-Za-zÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ]+ [A-Za-zÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ]+$/);
+			},"Nhập đúng định dạng tên ");
 
-		$.validator.addMethod("fullname", function (value, element) {
-			var unicodeWord = XRegExp('^[\\p{L} ]+$');
-			return unicodeWord.test(value);
-			},
-			"Please enter a valid full name"
-		);
+		// $.validator.addMethod("fullname", function (value, element) {
+		// 	var unicodeWord = XRegExp('^[\\p{L} ]+$');
+		// 	return unicodeWord.test(value);
+		// 	},
+		// 	"Please enter a valid full name"
+		// );
 
 		// $.validator.addMethod("customemail",
 		// 	function (value, element) {

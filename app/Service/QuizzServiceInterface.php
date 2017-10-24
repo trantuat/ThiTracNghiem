@@ -75,5 +75,7 @@
 
         public function getNumberQuestion();
 
+        public function deleteQuestion($questionId);
+
     }
 ?>
