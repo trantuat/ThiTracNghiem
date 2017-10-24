@@ -17,6 +17,7 @@
   
     <!-- Plugin CSS -->
     <link href="{{ URL::asset("vendor/datatables/dataTables.bootstrap4.css") }}" rel="stylesheet">
+    <link href="{{ URL::asset("vendor/daterangepicker/daterangepicker.css") }}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="{{ URL::asset("user/css/sb-admin.css") }}" rel="stylesheet">
@@ -64,6 +65,7 @@
     <!-- Plugin JavaScript -->
     <script src="{{ URL::asset("vendor/jquery-easing/jquery.easing.min.js") }}"></script>
     <script src="{{ URL::asset("vendor/chart.js/Chart.min.js") }}"></script>
+    <script src="{{ URL::asset("vendor/daterangepicker/daterangepicker.js") }}"></script>
     <script src="{{ URL::asset("vendor/datatables/jquery.dataTables.js") }}"></script>
     <script src="{{ URL::asset("vendor/datatables/dataTables.bootstrap4.js") }}"></script>
     

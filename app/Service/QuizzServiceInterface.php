@@ -59,5 +59,21 @@
 
         public function getUserByUserId($userId);
 
+        public function updateAnswer($parameters);
+
+        public function getNumberQuestionPublicByTeacher();
+
+        public function getNumberQuestionNonPublicByTeacher();
+
+        public function top10Score();
+
+        public function getNumberTeacher();
+
+        public function getNumberStudent();
+
+        public function getNumberQuizz();
+
+        public function getNumberQuestion();
+
     }
 ?>

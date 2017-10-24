@@ -28,6 +28,7 @@ Route::post('/PerformRegister', 'Auth\RegisterController@register');
 */
 Route::group(['prefix'=> 'Admins'], function() {
     Route::get('/', 'Admin\IndexController@index')->name('Admins');
+
     Route::get('/Profile', 'Admin\ProfileController@showProfile');
     Route::get('/Student', 'Admin\ManageStudentController@showListOfStudent');
     Route::get('/GetInfoUser', 'Admin\ManageStudentController@showProfileUser');
@@ -67,6 +68,7 @@ Route::group(['prefix'=> 'Students'], function() {
 */
 Route::group(['prefix'=> 'Teachers'], function() {
     Route::get('/', 'Teacher\IndexController@index')->name('Teachers');
+    Route::get('/Statistic', 'Teacher\IndexController@staticsQuestion');
     Route::get('/Profile', 'Teacher\ProfileController@showProfile');
     Route::get('/Question', 'Teacher\ManageQuestionController@showQuestionPublicByTeacher');
     Route::post('/AddNewQuestion', 'Teacher\ManageQuestionController@addQuestion');

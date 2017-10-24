@@ -13,8 +13,16 @@
       <div class="container-fluid">
         <div class="">
           <div class="card-header" style="background-color:white;">
-            <i class="fa fa-table"></i>
-            <b style="font-size:20px;"> Chi tiết</b>
+          <div class="row">
+          <div class="col-sm-10">
+              <h5><i class="fa fa-table"></i> Chi tiết lịch sử bài thi</h5>
+            </div>
+            <div class="col-sm-1" style="margin-left:30px;">
+            <a href="/Students/DoTest/{{$quizzId}}/{{$duration}}" class='btn btn-primary' >Làm lại bài</a>
+            </div>
+          </div>
+          
+        </div>
           </div>
           <div class="card-body">
             <div class="table-responsive">

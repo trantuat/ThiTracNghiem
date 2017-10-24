@@ -127,6 +127,38 @@
             return ApiHelper::getInstance()->get('api/admin/getUserByUserID/userID='.$userId);
         }
 
+        public function updateAnswer($parameters){
+            return ApiHelper::getInstance()->put('api/user/updateAnswer',$parameters,'application/json');
+        }
+
+        public function getNumberQuestionPublicByTeacher(){
+            return ApiHelper::getInstance()->get('api/user/numberQuestionPublic');
+        }
+
+        public function getNumberQuestionNonPublicByTeacher(){
+            return ApiHelper::getInstance()->get('api/user/numberQuestionNonPublic');
+        }
+
+        public function top10score(){
+            return ApiHelper::getInstance()->get('api/admin/top10Score');
+        }
+
+        public function getNumberTeacher(){
+            return ApiHelper::getInstance()->get('api/admin/numberTeacher');
+        }
+
+        public function getNumberStudent(){
+            return ApiHelper::getInstance()->get('api/admin/numberStudent');
+        }
+
+        public function getNumberQuizz(){
+            return ApiHelper::getInstance()->get('api/admin/numberQuizz');
+        }
+
+        public function getNumberQuestion(){
+            return ApiHelper::getInstance()->get('api/admin/numberQuestion');
+        }
+
 
     }
 

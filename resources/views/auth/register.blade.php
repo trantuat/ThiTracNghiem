@@ -45,14 +45,14 @@
           {!! csrf_field() !!}
             <div class="form-group">
               <div class="form-row">
-                <div class="col-md-6 {{ $errors->has('username') ? 'has-error' : '' }}">
+                <div class="col-md-6 ">
                   <label for="username">Username </label>
                   <span class="text-danger">*</span>
                   <input type="text" class="form-control" id="username" name="username" aria-describedby="username" placeholder="Nhập username" value="{{old('username')}}" >
-                  <span class="text-danger" >{{ $errors->first('username') }}</span>
+                  <!-- <span class="text-danger" >{{ $errors->first('username') }}</span> -->
                 </div>
                 <div class="col-md-6">
-                  <label for="fullname">Tên đầy đủ </label>
+                  <label for="fullname">Tên đầy đủ <span class="text-danger">*</span></label>
                   <input type="text" class="form-control" id="fullname" name="fullname" aria-describedby="fullname" placeholder="Nhập tên đầy đủ">
                 </div>
               </div>
@@ -60,7 +60,7 @@
             <div class="form-group">
               <div class="form-row">
                 <div class="col-md-6">
-                  <label for="dayOfBirth">Ngày sinh </label>
+                  <label for="dayOfBirth">Ngày sinh <span class="text-danger">*</span></label>
                   <input type="date" class="form-control" placeholder="08/29/1995" id="dayOfBirth" name="dayOfBirth" >
                 </div>
                 <div class="col-md-6">
@@ -71,11 +71,11 @@
             </div>
             <div class="form-group">
               <div class="form-row">
-                <div class="col-md-6 {{ $errors->has('email') ? 'has-error' : '' }}">
+                <div class="col-md-6 ">
                   <label for="email">Email</label>
                   <span class="text-danger">*</span>
                   <input type="email" class="form-control" id="email" name="email" aria-describedby="email" placeholder="Nhập email" value="{{old('email')}}">
-                  <span class="text-danger" >{{ $errors->first('email') }}</span>
+                  <!-- <span class="text-danger" >{{ $errors->first('email') }}</span> -->
                 </div>
                 <div class="col-md-6">
                   <label for="phone">Số điện thoại</label>
@@ -85,14 +85,14 @@
             </div>
             <div class="form-group">
               <div class="form-row">
-                <div class="col-md-6 {{ $errors->has('password') ? 'has-error' : '' }}">
-                  <label for="password">Mật khẩu</label>
+                <div class="col-md-6 ">
+                  <label for="password">Mật khẩu <span class="text-danger">*</span></label>
                   <span class="text-danger">*</span>
                   <input type="password" class="form-control" id="password" name="password" placeholder="Nhập mật khẩu">
-                  <span class="text-danger" >{{ $errors->first('password') }}</span>
+                  <!-- <span class="text-danger" >{{ $errors->first('password') }}</span> -->
                 </div>
-                <div class="col-md-6 {{ $errors->has('confirmPassword') ? 'has-error' : '' }}">
-                  <label for="confirmPassword ">Xác nhận mật khẩu</label>
+                <div class="col-md-6 ">
+                  <label for="confirmPassword ">Xác nhận mật khẩu <span class="text-danger">*</span></label>
                   <span class="text-danger">*</span>
                   <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Nhập lại mật khẩu">
                   <span class="text-danger" >{{ $errors->first('confirmPassword') }}</span>

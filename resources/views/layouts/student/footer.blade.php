@@ -24,7 +24,7 @@
       </div>
 
       <div class="col-md-3 col-sm-6 paddingtop-bottom">
-        <h6 class="heading7">Các trang liên quan</h6>
+        <h6 >Các trang liên quan</h6>
         <ul class="footer-ul" >
           <li><a href="http://789.vn"> Trang luyện thi THPT</a></li>
           <li><a href="http://http://tracnghiemtienganhthpt.vn"> Trang luyện thi tiếng anh THPT</a></li>

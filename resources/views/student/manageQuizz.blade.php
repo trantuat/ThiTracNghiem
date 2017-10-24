@@ -58,7 +58,7 @@
                     <td>{{$data[$i]['duration']}}</td>
                     <!-- <td>{{$data[$i]['updated_at']}}</td> -->
                     <td style="text-align:center;">
-                          <a href="/Students/DoTest/{{$data[$i]['quizz_id']}}/{{$data[$i]['duration']}}" class='btn btn-success' onclick='setTime($ob)'>Làm bài</a>
+                          <a href="/Students/DoTest/{{$data[$i]['quizz_id']}}/{{$data[$i]['duration']}}" class='btn btn-primary' onclick='setTime($ob)'>Làm bài</a>
                     </td>
                   </tr>
                   @endfor

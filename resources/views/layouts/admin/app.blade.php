@@ -22,6 +22,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <script src="{{ URL::asset("http://code.jquery.com/jquery-1.12.4.min.js") }}"></script>
+    <script type="text/javascript" src="{{ URL::asset("chart.js") }}"></script>
     <link href="{{ URL::asset("loading/dist/loading.min.css") }}" rel="stylesheet" type="text/css">
     
     @yield('head')

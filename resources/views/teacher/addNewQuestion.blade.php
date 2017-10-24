@@ -174,8 +174,8 @@
                           <br>
                         </div>
                       </div>
-                    
-                      <input type="hidden" id="numberOfAnswer" name="numberOfAnswer" value="4">
+                      
+                      <input type="hidden" id="numberOfAnswer" name="numberOfAnswer" value="2">
                     </div>
                      <center><input type="submit" id="btnAddQuestion" class="btn btn-success btnAdd" value='THÊM CÂU HỎI' style="margin-top: 20px;"></center>
               </div>
