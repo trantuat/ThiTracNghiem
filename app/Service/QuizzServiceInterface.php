@@ -57,5 +57,7 @@
 
         public function blockUser($userId);
 
+        public function getUserByUserId($userId);
+
     }
 ?>

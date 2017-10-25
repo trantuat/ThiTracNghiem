@@ -14,7 +14,7 @@
     <!-- <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"> -->
     <!-- Custom fonts for this template -->
     <link href="{{ URL::asset("vendor/font-awesome/css/font-awesome.min.css") }}" rel="stylesheet" type="text/css">
-
+  
     <!-- Plugin CSS -->
     <link href="{{ URL::asset("vendor/datatables/dataTables.bootstrap4.css") }}" rel="stylesheet">
 
@@ -26,10 +26,6 @@
     <!-- <link href="{{ URL::asset("css/teacher.css") }}" rel="stylesheet"> -->
 
     <link href="{{ URL::asset("user/css/carousel.css") }} " rel="stylesheet">
-
- 
-    <link href="loading/dist/loading.min.css" rel="stylesheet" type="text/css">
-    <link href="{{ URL::asset("loading/dist/loading.min.css") }}" rel="stylesheet" type="text/css">
     @yield('head')
     @yield('title_page')
 
@@ -51,21 +47,18 @@
 <body class="fixed-nav sticky-footer " id="page-top">
     @include('layouts.student.header')
     @yield('carousel')
-    <div style="background-color:#ECECEC;">
     <div class="content-wrapper" >     
     @yield('content')
     </div>
     </div>
     @include('layouts.student.footer')
-
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 
 
     <!-- Bootstrap core JavaScript -->
     <script src="{{ URL::asset("vendor/jquery/jquery.min.js") }}"></script>
-    <script src="{{ URL::asset("vendor/jquery/jquery.validate.js") }}"></script>
-    <script src="{{ URL::asset("vendor/jquery/jquery.validate.min.js") }}"></script>
+  
     <script src="{{ URL::asset("vendor/popper/popper.min.js") }}"></script>
     <script src="{{ URL::asset("vendor/bootstrap/js/bootstrap.min.js") }}"></script>
 
@@ -78,9 +71,12 @@
     <!-- Custom scripts for this template -->
     <script src="{{ URL::asset("user/js/sb-admin.js") }}"></script>
     <script src="{{ URL::asset("user/js/student.js") }}"></script>
-
+    <script src="{{ URL::asset("user/js/validate.js") }}"></script>
     <script src="{{ URL::asset("http://code.jquery.com/jquery-1.12.4.min.js") }}"></script>
-    <script src="{{ URL::asset("loading/dist/jquery.loading.min.js") }}"></script>
+
+    <script src="{{ URL::asset("validation/lib/jquery.js") }}"></script>
+    <script src="{{ URL::asset("validation/dist/jquery.validate.js") }}"></script>
+    <!-- <script src="{{ URL::asset("validation/css/cmxform.css") }}"></script> -->
     @yield('script')
 </body>
 </html>

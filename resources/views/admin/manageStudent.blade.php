@@ -154,7 +154,7 @@
                     </div>
                     <div class="input-group col-sm-6">
                         <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                        <input type="text" maxlength="11" minlength="10"  class="form-control" id="phoneNumber" readonly style="background-color:white;">
+                        <input type="text" maxlength="11" minlength="10"  class="form-control" id="phone" readonly style="background-color:white;">
                     </div>
                 </div>
                 </div>

@@ -63,7 +63,7 @@
     <div class="content-wrapper" >     
     @yield('content')
     </div>
-    @include('layouts.student.footer')
+    @include('layouts.home.footer')
     @yield('script')
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

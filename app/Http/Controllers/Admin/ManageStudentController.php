@@ -21,14 +21,15 @@ class ManageStudentController extends Controller
         return json_encode($responseData->data);
     }
 
-    // public function showProfile(Request $request){
-    //     $userId=$request->userId;
-    //     $responseData = QuizzService::getInstance()->getInfor();
-    //     if ($responseData->error != null) {
-    //         return json_encode($responseData->error);
-    //     }
-    //     return json_encode($responseData->data);
-    // }
+    public function showProfileUser(Request $request){
+        $userId=$request->userId;
+        $responseData = QuizzService::getInstance()->getUserByUserId($userId);
+        // var_dump($responseData->data);
+        if ($responseData->error != null) {
+            return json_encode($responseData->error);
+        }
+        return json_encode($responseData->data);
+    }
 
 
 }

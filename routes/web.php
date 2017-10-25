@@ -30,7 +30,7 @@ Route::group(['prefix'=> 'Admins'], function() {
     Route::get('/', 'Admin\IndexController@index')->name('Admins');
     Route::get('/Profile', 'Admin\ProfileController@showProfile');
     Route::get('/Student', 'Admin\ManageStudentController@showListOfStudent');
-    Route::get('/GetInfoUser', 'Admin\ManageStudentController@showProfile');
+    Route::get('/GetInfoUser', 'Admin\ManageStudentController@showProfileUser');
     Route::put('/BlockUser', 'Admin\ManageStudentController@blockUser');
     Route::get('/Teacher', 'Admin\ManageTeacherController@showListOfTeacher');
     Route::get('/Question', 'Admin\ManageQuestionController@showAllQuestionPublic');
