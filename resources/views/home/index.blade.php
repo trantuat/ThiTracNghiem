@@ -15,7 +15,7 @@
     <div class="container">
       <div class="carousel-caption d-none d-md-block text-left">
         <h1 class="">Thành công chỉ đến với những người luôn bận rộn tìm nó</h1>
-        <p><a class="btn btn-lg btn-primary" href="Login" role="button">Thi Thử</a></p>
+        <p><a class="btn btn-lg btn-success" href="Login" role="button">Thi Thử</a></p>
         <!-- <p>.</p> -->
       </div>
     </div>
@@ -26,7 +26,7 @@
     <div class="container">
       <div class="carousel-caption d-none d-md-block text-right">
         <h1>Thất bại đơn giản chỉ là cơ hội để bắt đầu lại mọi thứ thông minh hơn</h1>
-        <p><a class="btn btn-lg btn-primary" href="Login" role="button">Thi Thử</a></p>
+        <p><a class="btn btn-lg btn-success" href="Login" role="button">Thi Thử</a></p>
         <!-- <p>Thất bại đơn giản chỉ là cơ hội để bắt đầu lại mọi thứ thông minh hơn.</p> -->
       </div>
     </div>
@@ -36,7 +36,7 @@
     <div class="container">
       <div class="carousel-caption d-none d-md-block text-right">
         <h1>Thà học muộn còn hơn không bao giờ học</h1>
-        <p><a class="btn btn-lg btn-primary" href="Login" role="button">Thi Thử</a></p>
+        <p><a class="btn btn-lg btn-success" href="Login" role="button">Thi Thử</a></p>
         <!-- <p>Thất bại đơn giản chỉ là cơ hội để bắt đầu lại mọi thứ thông minh hơn.</p> -->
       </div>
     </div>

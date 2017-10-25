@@ -6,7 +6,7 @@
             Thông tin cá nhân</span>
         </a>
     </li>
-    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="question">
+    <li class="nav-item " data-toggle="tooltip" data-placement="right" title="question">
         <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#showListOfQuestion" data-parent="#exampleAccordion">
             <i class="fa fa-question-circle"></i>
             <span class="nav-link-text">

@@ -97,24 +97,24 @@
                       for($i=0;$i<$data[0]['number_answer'];$i++){
                         if($data[0]['answer'][$i]['is_correct_answer']==1){
                     ?>
-                          <div class="editor1" >
-                          <div class="input-group" >
+                          <div class="<?php echo 'editor'.$i ?>" >
+                            <div class="input-group" >
                              <span class="input-group-addon" style="border-bottom: none; border-radius: 0px;">
                                <input type="checkbox" aria-label="The right answer" id="<?php echo 'checkbox_answer'.$i ;?>" checked>
                              </span>
                               <input type="text" class="form-control"  value="Ðáp án đúng" style="border-bottom: none; border-radius: 0px;" readonly>
                             <span class="input-group-btn">
-                                <button class="btn btn-secondary" type="button" id ="editor1" onclick="deleteAnswer(this.id)" style="height: 38px; border-bottom: none; border-radius: 0px; background-color: #e9ecef; border-color: rgba(0,0,0,.15);" ><img src="/img/ic_delete.png" ></button>
+                                <button class="btn btn-secondary" type="button" id ="<?php echo 'editor'.$i ?>" onclick="deleteAnswer(this.id)" style="height: 38px; border-bottom: none; border-radius: 0px; background-color: #e9ecef; border-color: rgba(0,0,0,.15);" ><img src="/img/ic_delete.png" ></button>
                             </span>
                             <span class="input-group-btn">
-                                <button class="btn btn-secondary" name="addAnswer" id="addAnswer" style="height: 38px; border-bottom: none; border-radius: 0px;  background-color: #e9ecef; border-color: rgba(0,0,0,.15);" ><img src="/img/ic_add.png" ></button>
+                                <button class="btn btn-secondary" name="addAnswerForUpdate" id="addAnswerForUpdate" style="height: 38px; border-bottom: none; border-radius: 0px;  background-color: #e9ecef; border-color: rgba(0,0,0,.15);" ><img src="/img/ic_add.png" ></button>
                             </span>
                          </div>
                         <!-- //  <input type="text" class="form-control" id="answer1" > -->
                         <Textarea class="form-control" id="<?php echo 'answer'.$i ;?>"  name="<?php echo 'answer'.$i; ?>"><?php echo $data[0]['answer'][$i]['content'];?></Textarea>
                         <input type="hidden" id="<?php echo 'answer_id'.$i ?>" value="{{$data[0]['answer'][$i]['id']}}">
                           <script>
-                           CKEDITOR.replace( "<?php echo 'answer'.$i; ?>",
+                           CKEDITOR.replace( "<?php echo 'answer'.$i ?>",
                                {
                                  filebrowserBrowseUrl : '/editor/ckfinder/ckfinder.html',
                                  // Image dialog, "Browse Server" button
@@ -134,17 +134,17 @@
                     <?php 
                         } else{
                     ?>
-                    <div class="editor1" >
+                    <div class="<?php echo 'editor'.$i ?>" >
                     <div class="input-group" >
                        <span class="input-group-addon" style="border-bottom: none; border-radius: 0px;">
                          <input type="checkbox" aria-label="The right answer" id="<?php echo 'checkbox_answer'.$i ;?>" >
                        </span>
                         <input type="text" class="form-control"  value="Ðáp án đúng" style="border-bottom: none; border-radius: 0px;" readonly>
                       <span class="input-group-btn">
-                          <button class="btn btn-secondary" type="button" id ="editor1" onclick="deleteAnswer(this.id)" style="height: 38px; border-bottom: none; border-radius: 0px; background-color: #e9ecef; border-color: rgba(0,0,0,.15);" ><img src="/img/ic_delete.png" ></button>
+                          <button class="btn btn-secondary" type="button" id ="<?php echo 'editor'.$i ?>" onclick="deleteAnswerUpdate(this.id)" style="height: 38px; border-bottom: none; border-radius: 0px; background-color: #e9ecef; border-color: rgba(0,0,0,.15);" ><img src="/img/ic_delete.png" ></button>
                       </span>
                       <span class="input-group-btn">
-                          <button class="btn btn-secondary" name="addAnswer" id="addAnswer" style="height: 38px; border-bottom: none; border-radius: 0px;  background-color: #e9ecef; border-color: rgba(0,0,0,.15);" ><img src="/img/ic_add.png" ></button>
+                          <button class="btn btn-secondary" name="addAnswerForUpdate" id="addAnswerForUpdate" style="height: 38px; border-bottom: none; border-radius: 0px;  background-color: #e9ecef; border-color: rgba(0,0,0,.15);" ><img src="/img/ic_add.png" ></button>
                       </span>
                    </div>
                   <!-- //  <input type="text" class="form-control" id="answer1" > -->
@@ -172,8 +172,8 @@
                         }
                       }
                    ?>
-                     
-                      <input type="hidden" id="numberOfAnswer" name="numberOfAnswer" value="{{$data[0]['number_answer']}}">
+                   </div>
+                      <input type="hidden" id="numberOfAnswerUpdate" name="numberOfAnswerUpdate" value="<?php echo $data[0]['number_answer'];?>">
                     </div>
                      <center><input type="submit" id="btnUpdateQuestion" class="btn btn-success btnUpdate" value='CẬP NHẬT CÂU HỎI' style="margin-top: 20px;"></center>
                      

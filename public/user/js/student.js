@@ -2,6 +2,7 @@
 (function($) {
   
       $(document).ready(function() {
+        // $('.datepicker').datepicker();
 
         $(document).on("click","#btnSubmitTest",function() {
           if(!confirm("Bạn có muốn nộp bài?")) return;

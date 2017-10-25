@@ -17,18 +17,18 @@ class ProfileController extends Controller
         return view("teacher.profile",['data'=>$responseData->data]);
     }
     public function updateAccount(Request $request){
-        $v = Validator::make($request->all(), [
-            'username' => 'required|AlphaNum|min:6|max:255', 
-            'fullname' => 'min:6|max:50|regex:/^[\pL\s\-]+$/u',
-            'phone' => 'numeric|digits_between:10,11',
-            'address' =>'min:2|max:50',
+        // $v = Validator::make($request->all(), [
+        //     'username' => 'required|AlphaNum|min:6|max:255', 
+        //     'fullname' => 'min:6|max:50|regex:/^[\pL\s\-]+$/u',
+        //     'phone' => 'numeric|digits_between:10,11',
+        //     'address' =>'min:2|max:50',
 
-        ]);
-        if ($v->fails())
-        {
-            return redirect()->back()->withErrors($v->errors());
+        // ]);
+        // if ($v->fails())
+        // {
+        //     return redirect()->back()->withErrors($v->errors());
             
-        }
+        // }
 
         $address = $request->address;
         $phone = $request->phone;
@@ -46,28 +46,16 @@ class ProfileController extends Controller
        }
     }
     public function updatePassword(Request $request){
-        $v = Validator::make($request->all(), [
-            'oldPassword' => 'required', 
-            'newPassword' => 'required|min:6|max:50',
-            'confirmPassword' => 'required|min:6|max:50|same:newPassword'
-
-        ]);
-        if ($v->fails())
-        {
-            return redirect()->back()->withErrors($v->errors());
-        }
         $oldPassword = $request->oldPassword;
         $newPassword = $request->newPassword;
-        $confirmPassword = $request->confirmPassword;
-        $data = (array)json_decode($request->data);
-        $data['info'] = (array)(json_decode(json_encode($data['info'])));
-
         $responseData = QuizzService::getInstance()->updatePassword(['email'=>session('email',''),'old_password'=>$oldPassword,'new_password'=>$newPassword]);
         if ($responseData->error != null) {
-        return view("teacher.profile",['data'=>$data,'update'=>0,'status'=>'Mật khẫu không đúng']);
+        // return view("student.manageProfile",['data'=>$data,'update'=>0,'status'=>'Mật khẫu không đúng']);
+
+            return json_encode("Lỗi");
+        } else{
+            return json_encode("Thành công");
         }
-        return view("teacher.profile",['data'=>$data, 'status'=>'Thay đổi mật khẩu thành công']);
-        
     }
 
 }

@@ -11,7 +11,7 @@
           </div>
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-hover table-bordered table-striped table-order-column dataTable" width="100%" id="dataTable" cellspacing="0">
+              <table class="table table-hover table-bordered table-striped table-order-column dataTable" width="100%"  cellspacing="0">
                 <thead>
                   <tr>
                     <th>ID</th>
@@ -37,18 +37,20 @@
                     <td>{{$data[$i]['username']}}</td>
                     <td>{{$data[$i]['fullname']}}</td>
                     <td>{{$data[$i]['email']}}</td>
-                    <td>
+                    <td><center>
                     <?php 
-                    $detail=$data[$i]['user_id'];
-                    $userId=json_encode($detail);
-                    if($data[$i]['is_active']==1){
+                      $detail=$data[$i]['user_id'];
+                      $userId=json_encode($detail);
+                      echo "<button style='color: red; border: 0; background:none;' id='btnBlock.$i' data-toggle='modal' title='Chặn' data-target='#showProfile' onclick='showProfile($userId)'><i class='fa fa-info-circle'></i></button>";
+                      
+                      if($data[$i]['is_active']==1){
                         $status=json_encode("1");
-                        echo "<center><button class='btn btn-danger ' id='btnBlock.$i' data-toggle='modal' title='Chặn' data-target='#' onclick='blockUser($userId,$status)'>Chặn</button></center>";
-                    }else {
+                        echo "<button style='color: red; border: 0; background:none;' id='btnBlock.$i' data-toggle='modal' title='Chặn' data-target='#' onclick='blockUser($userId,$status)'><i class='fa fa-lock'></i></button>";
+                      }else {
                         $status=json_encode("0");
-                        echo "<center><button class='btn btn-danger ' id='btnUnblock.$i' data-toggle='modal' title='Bỏ chặn' data-target='#' onclick='blockUser($userId,$status)'>Bỏ chặn</button></center>";
-                    } 
-                    ?>
+                        echo "<button style='color: red; border: 0; background:none;' id='btnUnblock.$i' data-toggle='modal' title='Bỏ chặn' data-target='#' onclick='blockUser($userId,$status)'><i class='fa fa-unlock'></i></button>";
+                      } 
+                      ?><center>
                     </td>
                     </tr>
                     @endfor
@@ -65,7 +67,7 @@
       <!-- Modal content-->
        <div class="modal-content">
            <div class="modal-header">
-             <h4 class="modal-tittle">THÔNG TIN THÍ SINH</h4>
+             <h4 class="modal-tittle">THÔNG TIN GIÁO VIÊN</h4>
              <button type="button" class="close" data-dismiss="modal">&times;</button>
            </div>
            <div class="modal-body" style="margin: 10px;">

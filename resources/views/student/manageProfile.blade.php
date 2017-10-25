@@ -1,4 +1,5 @@
 @extends('layouts.student.app')
+<meta name="csrf_token" content="{{ csrf_token() }}" />
 @section('title_page')
 <title>Thông tin cá nhân</title>
 @endsection
@@ -34,17 +35,19 @@
         <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
         <span aria-hidden='true'>&times;</span>
         </button>
-        <strong>Thành công</strong> Cập nhật thành công
+        <strong>Thành công: </strong> Cập nhật thành công
     </div>
 @endif
 @endif
-
+<div id="result">
+</div>
 <div class= "container-fluid" style="margin-top:20px;">
 <div class="row">
 
 <div class="col-sm-12">
 <h4 ><i class="fa fa-user"></i> Thông tin tài khoản  </h4>
 <hr>
+
 <div class="row">
     <div class="col-lg-12">
         <div class="row" >
@@ -62,33 +65,33 @@
                 <legend style = "padding-left: 20px;">Thông tin cá nhân</legend>
                 <div class="row" style=" padding-left: 20px; padding-right: 20px;">
                     <div class="col-lg-6 padding-top-25">
-                        <div class="form-group {{ $errors->has('username') ? 'has-error' : '' }}">
+                        <div class="form-group ">
                             <label for="username"><b>Username <span class="text-danger">*</span></b></label>
-                            <input type="text" name = "username" class="form-control" id="username"  placeholder="Nhập username" value = "{{ $errors->has('username') ? old('username') : $data['username'] }}" >
-                            <!-- <span class="text-danger">{{ $errors->first('username') }}</span> -->
+                            <input type="text" name = "username" class="form-control" id="username"  placeholder="Nhập username" value = "{{ $data['username'] }}" >
+                           
                         </div>
                         <div class="form-group ">
-                            <label for="fullname"><b>Ngày sinh</b></label>
-                            <input type="date" data-format="Y-m-d" name = "birthday" class="form-control" id="birthday"  value = "{{ $data['info']['day_of_birth'] }}" >
+                            <label for="fullname"><b>Ngày sinh <span class="text-danger">*</span></b></label>
+                            <input type="date" data-format="Y-m-d" name = "birthday" class="form-control " id="birthday"  value = "{{ $data['info']['day_of_birth'] }}" >
                             <!-- <span class="text-danger">{{ $errors->first('birthday') }}</span> -->
                         </div>
           
-                        <div class="form-group {{ $errors->has('address') ? 'has-error' : '' }}">
+                        <div class="form-group ">
                             <label for="address"><b>Địa chỉ</b></label>
-                            <input type="text" name = "address" class="form-control" id="address"  placeholder="Nhập địa chỉ" value = "{{ $errors->has('address') ? old('address') : $data['info']['address'] }}" >
+                            <input type="text" name = "address" class="form-control" id="address"  placeholder="Nhập địa chỉ" value = "{{  $data['info']['address'] }}" >
                             <!-- <span class="text-danger">{{ $errors->first('address') }}</span> -->
                         </div>
         
-                        <div class="form-group {{ $errors->has('phone') ? 'has-error' : '' }}">
+                        <div class="form-group ">
                             <label for="email"><b>Số điện thoại</b></label>
-                            <input type="text" name = "phone" class="form-control" id="phone"  value = "{{ $errors->has('phone') ? old('phone') : $data['info']['phone'] }}" >
+                            <input type="text" name = "phone" class="form-control" id="phone"  value = "{{ $data['info']['phone'] }}" >
                         <!-- <span class="text-danger">{{ $errors->first('phone') }}</span> -->
                       </div>
                     </div>
                     <div class="col-lg-6 padding-top-25">
-                        <div class="form-group {{ $errors->has('fullname') ? 'has-error' : '' }}">
+                        <div class="form-group ">
                             <label for="fullname"><b>Tên đầy đủ <span class="text-danger">*</span></b></label>
-                            <input type="text" name = "fullname" class="form-control" id="fullname"  placeholder="Nhập tên đầy đủ" value = "{{ $errors->has('fullname') ? old('fullname') : $data['info']['fullname'] }}" >
+                            <input type="text" name = "fullname" class="form-control" id="fullname"  placeholder="Nhập tên đầy đủ" value = "{{ $data['info']['fullname'] }}" >
                             <!-- <span class="text-danger">{{ $errors->first('fullname') }}</span> -->
                         </div>
       
@@ -102,7 +105,7 @@
           
                         <div class="form-group">
                             <label for="email"><b>Email</b></label>
-                            <input type="text" name = "email" class="form-control" id="email"  value = "{{ $errors->has('email') ? old('email') : $data['email'] }}" readonly>
+                            <input type="text" name = "email" class="form-control" id="email"  value = "{{  $data['email'] }}" readonly>
                         <!-- <span class="text-danger">{{ $errors->first('email') }}</span> -->
                         </div>
           
@@ -120,7 +123,7 @@
                 <form  class="cmxform" method="POST" id="formUpdatePassword">
                     {!! csrf_field() !!}
                     <fieldset>
-                    <legend style = "padding-left: 20px; width: 200px; ">Mật khẩu:</legend>
+                    <legend style = "padding-left: 20px; width: 200px; ">Mật khẩu</legend>
                     <div class="input-group">
                         <input type = "hidden" class="form-control" value = '{{json_encode($data)}}' id="data" name="data" />
                     </div>
@@ -128,17 +131,17 @@
                         <div class="col-lg-3">
                         </div>
                         <div class="col-lg-8 padding-top-25">
-                            <div class="form-group {{ $errors->has('oldPassword') ? 'has-error' : '' }}">
+                            <div class="form-group ">
                                 <label for="oldPassword"><b>Mật khẩu cũ <span class="text-danger">*</span></b></label>
                                 <input type="password" class="form-control" id="oldPassword" name="oldPassword"  >
                             </div>
           
-                            <div class="form-group {{ $errors->has('newPassword') ? 'has-error' : '' }}">
+                            <div class="form-group ">
                                 <label for="newPassword"><b>Mật khẩu mới <span class="text-danger">*</span></b></label>
                                 <input type="password" class="form-control" id="newPassword" name="newPassword"  >
                             </div>
               
-                            <div class="form-group {{ $errors->has('confirmPassword') ? 'has-error' : '' }}">
+                            <div class="form-group ">
                                 <label for="confirmPassword"><b>Xác nhận mật khẩu mới <span class="text-danger">*</span></b></label>
                                 <input type="password" name = "confirmPassword" class="form-control" id="confirmPassword"   >
                             </div>
@@ -148,7 +151,7 @@
                             <!-- <center><button class="btn btn-success btn-block col-lg-5" id="updatePass" >Lưu mật khẩu</button></center> -->
                         </div> 
 
-</fieldset>
+                    </fieldset>
                     </div>
 
                 </form>

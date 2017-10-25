@@ -82,21 +82,24 @@
 
     <!-- Bootstrap core JavaScript -->
     <script src="{{ URL::asset("vendor/jquery/jquery.min.js") }}"></script>
-    <script src="{{ URL::asset("vendor/popper/popper.min.js") }}"></script>
-    <script src="{{ URL::asset("vendor/bootstrap/js/bootstrap.min.js") }}"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="{{ URL::asset("vendor/jquery-easing/jquery.easing.min.js") }}"></script>
-    <!-- <script src="{{ URL::asset("vendor/chart.js/Chart.min.js") }}"></script> -->
-    <script src="{{ URL::asset("vendor/datatables/jquery.dataTables.js") }}"></script>
-    <script src="{{ URL::asset("vendor/datatables/dataTables.bootstrap4.js") }}"></script>
     
-    <!-- Custom scripts for this template -->
-    <script src="{{ URL::asset("user/js/sb-admin.js") }}"></script>
-    <script src="{{ URL::asset("user/js/teacher.js") }}"></script>
-
-    <script src="{{ URL::asset("http://code.jquery.com/jquery-1.12.4.min.js") }}"></script>
-    <script src="{{ URL::asset("loading/dist/jquery.loading.min.js") }}"></script>
+      <script src="{{ URL::asset("vendor/popper/popper.min.js") }}"></script>
+      <script src="{{ URL::asset("vendor/bootstrap/js/bootstrap.min.js") }}"></script>
+  
+      <!-- Plugin JavaScript -->
+      <script src="{{ URL::asset("vendor/jquery-easing/jquery.easing.min.js") }}"></script>
+      <script src="{{ URL::asset("vendor/chart.js/Chart.min.js") }}"></script>
+      <script src="{{ URL::asset("vendor/datatables/jquery.dataTables.js") }}"></script>
+      <script src="{{ URL::asset("vendor/datatables/dataTables.bootstrap4.js") }}"></script>
+      
+      <!-- Custom scripts for this template -->
+      <script src="{{ URL::asset("user/js/sb-admin.js") }}"></script>
+      <script src="{{ URL::asset("user/js/teacher.js") }}"></script>
+      <script src="{{ URL::asset("user/js/validate.js") }}"></script>
+      <script src="{{ URL::asset("http://code.jquery.com/jquery-1.12.4.min.js") }}"></script>
+  
+      <script src="{{ URL::asset("validation/lib/jquery.js") }}"></script>
+      <script src="{{ URL::asset("validation/dist/jquery.validate.js") }}"></script>
     @yield('script')
 </body>
 </html>

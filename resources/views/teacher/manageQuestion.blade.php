@@ -30,18 +30,17 @@
       <div class="container-fluid">
         <div class="">
           <div class="card-header">
-          <div class="row">
-             <div class="col-sm-11">
-                <h5><i class="fa fa-table"></i> Danh sách câu hỏi</h5>
+            <div class="row">
+              <div class="col-sm-11">
+                  <h5><i class="fa fa-table"></i> Danh sách câu hỏi</h5>
+                </div>
+              
+                <div class="col-sm-1">
+                <a href="AddNewQuestion"> <button  class="btn btn-danger" title='Add new question' onclick="loadSubject()"><b><i class="fa fa-plus"></i></b></button></a>
+                </div>
               </div>
-              <div id="error_message" class="ajax_response" style="float:left"></div>
-	            <div id="success_message" class="ajax_response" style="float:left"></div>
-              <div class="col-sm-1">
-               <a href="AddNewQuestion"> <button  class="btn btn-danger" title='Add new question' onclick="loadSubject()"><b><i class="fa fa-plus"></i></b></button></a>
-              </div>
+              
             </div>
-            
-          </div>
           
           <div class="card-body">
             <div class="table-responsive">
@@ -93,122 +92,4 @@
         
       </div>
 
-  <!--UPDATE QUESTION-->
-   <div class="modal fade" id="updateQuestion" role="dialog">
-      <div class="modal-dialog modal-lg" style="width:1000px;">
-         <!-- Modal content-->
-         <div class="modal-content">
-            <form id="formUpdateQuestion" method="" class="form-horizontal" >
-            {{ csrf_field() }}
-                <div class="modal-header">
-                  <h4 class="modal-tittle">CẬP NHẬT CÂU HỎI</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-               <div class="modal-body" >
-                  <div class="col-sm-12">
-                    <div class="row">
-                      <div class="row col-sm-4">
-                        <div class="control-label col-sm-4">
-                        
-                          <h7 style="font-size:16px; margin-top:5px;"><b>Lớp</b></h7>
-                        </div>
-                        <div class="col-sm-8">
-                          <select name="updateQuestionClass" id="updateQuestionClass" class="form-control">
-                            <option value="1">Lớp 1</option>
-                            <option value="2">Lớp 2</option>
-                            <option value="3">Lớp 3</option>
-                            <option value="4">Lớp 4</option>
-                            <option value="5">Lớp 5</option>
-                            <option value="6">Lớp 6</option>
-                            <option value="7">Lớp 7</option>
-                            <option value="8">Lớp 8</option>
-                            <option value="9">Lớp 9</option>
-                            <option value="10">Lớp 10</option>
-                            <option value="11">Lớp 11</option>
-                            <option value="12">Lớp 12</option>
-                          </select>
-                        </div>
-                      </div>
-                      <br>
-                      <div class="row col-sm-4">
-                        <div class="control-label col-sm-4">
-                          <h7 style="font-size:16px; margin-top:5px;"><b>Mức độ</b></h7>
-                        </div>
-                        <div class="col-sm-8">
-                          <select name="updateQuestionLevel" id="updateQuestionLevel" class="form-control">
-                            <option value="1" id="1">Dễ</option>
-                            <option value="2" id="2">Trung bình</option>
-                            <option value="3" id="3">Khó</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="row col-sm-4">
-                        <div class="control-label col-sm-5">
-                          <h7 style="font-size:16px; margin-top:5px;"><b>Môn học</b></h7>
-                        </div>
-                        <div class="col-sm-7">
-                          <select name="updateQuestionSubject" id="updateQuestionSubject" class="form-control">
-                            <!-- <option value="1">Toán</option>
-                            <option value="2">Vật lý</option>
-                            <option value="3">Hoá học</option>
-                            <option value="4">Sinh học</option>
-                            <option value="5">Ngũ văn</option>
-                            <option value="6">Lịch sử</option>
-                            <option value="7">Tiếng anh</option> -->
-                          </select>
-                        </div>
-                      </div>  
-                    </div>
-                  </div>
-                  <br>
-                  <div class="modal-body-answer">
-                    <div class="addMoreAnswer" id="addMoreAnswer"> 
-                      <!-- <div class="form-group">
-                          <label for="addQuestion"><b>Câu hỏi</b></label>
-                          <Textarea class="form-control" id="addQuestion" cols="40" rows="3"></Textarea> 
-                      </div>
-
-                      <div class="input-group">
-                          <span class="input-group-addon">
-                            <input type="checkbox" aria-label="The right answer" id="radio1" >
-                          </span>
-                          <input type="text" class="form-control" id="answer1" >
-                      </div>
-                      <br>
-                      <div class="input-group">
-                          <span class="input-group-addon">
-                            <input type="checkbox" aria-label="The right answer" id="radio2" >
-                          </span>
-                          <input type="text" class="form-control" id="answer2" >
-                      </div>
-                      <br>
-                      <div class="input-group">
-                          <span class="input-group-addon">
-                            <input type="checkbox" aria-label="The right answer" id="radio3" >
-                          </span>
-                          <input type="text" class="form-control" id="answer3" >
-                      </div>
-                      <br>
-                      <div class="input-group">
-                          <span class="input-group-addon">
-                            <input type="checkbox" aria-label="The right answer" id="radio4" >
-                          </span>
-                          <input type="text" class="form-control" id="answer4" >
-                      </div> -->
-                    </div>
-                    <br>
-                    <div class="input-group" style="margin-bottom:30px;">
-                        <button  name="addAnswerForUpdate" id="addAnswerForUpdate" class="btn btn-primary" style="position: absolute; right: 0;">More answers</button> 
-                    </div>
-                    <input type="hidden" id="numberOfAnswer" name="numberOfAnswer" value="4">
-                  </div>
-              </div>
-             <div class="modal-footer">
-                <input type="submit" id="btnUpdateQuestion" class="btn btn-success btnUpdate" value='Add'>
-                <button class="btn btn-default btn-close-popup" data-dismiss="modal">Cancel</button>
-             </div>
-          </form>
-        </div>
-      </div>
-  </div>
 @endsection

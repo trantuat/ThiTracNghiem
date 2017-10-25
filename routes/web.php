@@ -28,6 +28,7 @@ Route::post('/PerformRegister', 'Auth\RegisterController@register');
 */
 Route::group(['prefix'=> 'Admins'], function() {
     Route::get('/', 'Admin\IndexController@index')->name('Admins');
+
     Route::get('/Profile', 'Admin\ProfileController@showProfile');
     Route::get('/Student', 'Admin\ManageStudentController@showListOfStudent');
     Route::get('/GetInfoUser', 'Admin\ManageStudentController@showProfileUser');
@@ -67,23 +68,24 @@ Route::group(['prefix'=> 'Students'], function() {
 */
 Route::group(['prefix'=> 'Teachers'], function() {
     Route::get('/', 'Teacher\IndexController@index')->name('Teachers');
+    Route::get('/Statistic', 'Teacher\IndexController@staticsQuestion');
     Route::get('/Profile', 'Teacher\ProfileController@showProfile');
     Route::get('/Question', 'Teacher\ManageQuestionController@showQuestionPublicByTeacher');
     Route::post('/AddNewQuestion', 'Teacher\ManageQuestionController@addQuestion');
+    Route::get('/GetClass', 'Teacher\ManageQuestionController@getClass');
     Route::get('/GetSubject', 'Teacher\ManageQuestionController@getSubject');
+    Route::get('/GetLevel', 'Teacher\ManageQuestionController@getLevel');
     Route::get('/GetSubjectForUpdate', 'Teacher\DetailQuestionController@getSubjectForUpdate');
     Route::get('/GetClassForUpdate', 'Teacher\DetailQuestionController@getClassForUpdate');
-    // Route::get('/GetSubject/id', 'Teacher\ManageQuestionController@getSubject1');
-    Route::get('/GetLevel', 'Teacher\ManageQuestionController@getLevel');
     Route::get('/GetLevelForUpdate', 'Teacher\DetailQuestionController@getLevelForUpdate');
     Route::get('/AddNewQuestion', 'Teacher\AddNewQuestionController@showAddNewQuestion');
     Route::get('/ShowDetailQuestion/{id}', 'Teacher\DetailQuestionController@showDetailQuestion');
     Route::get('/ShowDetailQuestionNonPublic/{id}', 'Teacher\DetailQuestionController@showDetailQuestionNonPublic');
     Route::put('/UpdateQuestion', 'Teacher\DetailQuestionController@updateQuestion');
-
     Route::post('/UpdateAccount', 'Teacher\ProfileController@updateAccount');
     Route::post('/UpdatePassword', 'Teacher\ProfileController@updatePassword');
     Route::get('/UncheckedQuestion', 'Teacher\ManageNonPublicQuestionController@showQuestionNonPublicByTeacher');
+    Route::delete('/DeleteQuestion', 'Teacher\ManageNonPublicQuestionController@deleteQuestion');
      // add route here
 });
 //dsadassdasd

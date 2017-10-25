@@ -24,7 +24,7 @@ class ManageHistoryController extends Controller
         if ($responseData->error != null) {
             return view("student.seeTestTime",['error'=>$responseData->error ]);
         }
-        return view("student.seeTestTime",['data'=>$responseData->data]);
+        return view("student.seeTestTime",['data'=>$responseData->data,'quizzId'=>$quizzId,'duration'=>$responseData->data[0]['duration']]);
        
     }
 }

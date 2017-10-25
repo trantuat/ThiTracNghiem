@@ -16,6 +16,20 @@ class ManageQuestionController extends Controller
         }
         return view("teacher.manageQuestion",['data'=>$responseData->data]);
     }
+
+    public function getClass(Request $request){
+        $responseData = QuizzService::getInstance()->getAllClass();
+        $data=$responseData->data;
+        $html="";
+        if($data){
+            foreach($data as $row){
+                $text= htmlspecialchars($row['class_name']);
+                $html=$html."<option value='".$row["id"]."'>".$text."</option>";
+            }
+		} else{
+        }
+        return $html;
+    }
     
     public function getSubject(Request $request){
         $classId=$request->classId;
@@ -50,7 +64,6 @@ class ManageQuestionController extends Controller
     }
     public function addQuestion(Request $request){
         $json=$request->sendJson;
-        // return $json;
         $responseData = QuizzService::getInstance()->addQuestion($json);
         if ($responseData->error != null) {
                 return json_encode($responseData->error);

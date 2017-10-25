@@ -113,8 +113,10 @@
                     
                   ?>
                     <center><button id="btnCheckQuestion" class="btn btn-success btnCheck" >Duyệt</button>
-                    <input type="submit" id="btnUncheckedQuestion" class="btn btn-success btnUncheked" value='Không đạt'></center>
-                    
+                    <?php 
+                    $id=json_encode($questionId);
+                    echo "<button id='btnUncheckedQuestion' class='btn btn-success btnUncheked' onclick='deleteQuestion($id)'>Không đạt</button>"; ?></center>
+                  
                   <?php }?>
                 </div>
               <br>

@@ -42,8 +42,8 @@
       });
 
       $(document).ready(function() {
-        // $('.dataTable').DataTable( {
-      // } );
+        $('.dataTable').DataTable( {
+      } );
 
       // Configure tooltips globally
       $('[data-toggle="tooltip"]').tooltip()
@@ -120,7 +120,6 @@
       });
     }
     function showProfile(userId){
-      alert(userId);
       $.ajax({
         url: '/Admins/GetInfoUser',
         type: "GET",
@@ -142,6 +141,62 @@
             console.log(response);
             alert("Đã xảy ra lỗi");
         }
+      });
+    }
+
+    function checkQuestion(questionId){
+      if(!confirm("Bạn muốn duyệt câu hỏi này?")) return;
+      $.ajax({
+        url: '/Admins/CheckQuestion',
+        type: "PUT",
+        beforeSend: function (xhr) {
+          var token = $('meta[name="csrf_token"]').attr('content');
+          if (token) {
+                return xhr.setRequestHeader('X-CSRF-TOKEN', token);
+          } else{
+          }
+        },
+        dataType: "json",
+        data: {
+          questionId: questionId
+        },
+        success: function (response) {
+            console.log(response);
+            alert("Câu hỏi đã được xét duyệt");
+            location.reload();
+        },
+        error: function (response) {
+            console.log(response);
+            alert("Đã xảy ra lỗi");
+        }
+      });
+    }
+
+    function deleteQuestion(questionId){
+      if(!confirm("Bạn muốn xoá câu hỏi này?")) return;
+      $.ajax({
+        url: '/Teachers/DeleteQuestion',
+        type: "DELETE",
+        beforeSend: function (xhr) {
+          var token = $('meta[name="csrf_token"]').attr('content');
+
+          if (token) {
+                return xhr.setRequestHeader('X-CSRF-TOKEN', token);
+          } else{
+          }
+        },
+        dataType : "json",
+        data: {
+          questionId: questionId
+        },
+         success: function(response){ // What to do if we succeed
+            console.log(response);
+            alert("Xoá câu hỏi thành công");
+            window.location.href="/Admins/UncheckedQuestion";
+        },
+        error: function(response){
+            alert('Error'+response);
+            }
       });
     }
   
