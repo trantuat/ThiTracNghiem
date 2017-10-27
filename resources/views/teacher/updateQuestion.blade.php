@@ -104,10 +104,7 @@
                              </span>
                               <input type="text" class="form-control"  value="Ðáp án đúng" style="border-bottom: none; border-radius: 0px;" readonly>
                             <span class="input-group-btn">
-                                <button class="btn btn-secondary" type="button" id ="<?php echo 'editor'.$i ?>" onclick="deleteAnswer(this.id)" style="height: 38px; border-bottom: none; border-radius: 0px; background-color: #e9ecef; border-color: rgba(0,0,0,.15);" ><img src="/img/ic_delete.png" ></button>
-                            </span>
-                            <span class="input-group-btn">
-                                <button class="btn btn-secondary" name="addAnswerForUpdate" id="addAnswerForUpdate" style="height: 38px; border-bottom: none; border-radius: 0px;  background-color: #e9ecef; border-color: rgba(0,0,0,.15);" ><img src="/img/ic_add.png" ></button>
+                                <button class="btn btn-secondary" type="button" id ="<?php echo 'editor'.$i ?>" onclick="deleteAnswerUpdate(this.id)" style="height: 38px; border-bottom: none; border-radius: 0px; background-color: #e9ecef; border-color: rgba(0,0,0,.15);" ><img src="/img/ic_delete.png" ></button>
                             </span>
                          </div>
                         <!-- //  <input type="text" class="form-control" id="answer1" > -->
@@ -143,9 +140,6 @@
                       <span class="input-group-btn">
                           <button class="btn btn-secondary" type="button" id ="<?php echo 'editor'.$i ?>" onclick="deleteAnswerUpdate(this.id)" style="height: 38px; border-bottom: none; border-radius: 0px; background-color: #e9ecef; border-color: rgba(0,0,0,.15);" ><img src="/img/ic_delete.png" ></button>
                       </span>
-                      <span class="input-group-btn">
-                          <button class="btn btn-secondary" name="addAnswerForUpdate" id="addAnswerForUpdate" style="height: 38px; border-bottom: none; border-radius: 0px;  background-color: #e9ecef; border-color: rgba(0,0,0,.15);" ><img src="/img/ic_add.png" ></button>
-                      </span>
                    </div>
                   <!-- //  <input type="text" class="form-control" id="answer1" > -->
                   <Textarea class="form-control" id="<?php echo 'answer'.$i ;?>"  name="<?php echo 'answer'.$i; ?>"><?php echo $data[0]['answer'][$i]['content'];?></Textarea>
@@ -175,6 +169,8 @@
                    </div>
                       <input type="hidden" id="numberOfAnswerUpdate" name="numberOfAnswerUpdate" value="<?php echo $data[0]['number_answer'];?>">
                     </div>
+                    <input type = "button" style="height: 40px;border-style: dotted;background-color: #fff; color: gray;outline: none;" id = "addAnswerForUpdate" value="Thêm câu trả lời" class="col-md-12">
+
                      <center><input type="submit" id="btnUpdateQuestion" class="btn btn-success btnUpdate" value='CẬP NHẬT CÂU HỎI' style="margin-top: 20px;"></center>
                      
               </div>

@@ -25,7 +25,7 @@
 
     <!-- <link href="{{ URL::asset("css/teacher.css") }}" rel="stylesheet"> -->
 
-    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="{{ URL::asset("js/jquery-1.11.2.min.js")}}"></script>
 
     <script type="text/javascript" src="{{ URL::asset("chart.js") }}"></script>
     <link href="{{ URL::asset("loading/dist/loading.min.css") }}" rel="stylesheet" type="text/css">
@@ -96,7 +96,7 @@
       <script src="{{ URL::asset("user/js/sb-admin.js") }}"></script>
       <script src="{{ URL::asset("user/js/teacher.js") }}"></script>
       <script src="{{ URL::asset("user/js/validate.js") }}"></script>
-      <script src="{{ URL::asset("http://code.jquery.com/jquery-1.12.4.min.js") }}"></script>
+      <!-- <script src="{{ URL::asset("js/jquery-1.11.2.min.js") }}"></script> -->
   
       <script src="{{ URL::asset("validation/lib/jquery.js") }}"></script>
       <script src="{{ URL::asset("validation/dist/jquery.validate.js") }}"></script>

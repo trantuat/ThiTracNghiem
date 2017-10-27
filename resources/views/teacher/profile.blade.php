@@ -45,7 +45,7 @@
 
 <div class= "container-fluid">
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-6" style = "padding-bottom: 60px;">
             <div class="card mb-3">
                 <div class="card-header">
                     <i class="fa fa-area-chart"></i>
@@ -55,22 +55,22 @@
                     <form class="form-horizontal" class="cmxform" method="POST" action="UpdateAccount" name="formUpdateProfile" id="formUpdateProfile">
                         {!! csrf_field() !!}
                         <div class="row">
-                            <div class="col-sm-offset-2 col-sm-3">
+                            <div class="col-sm-offset-2 col-sm-3" style="padding-left: 0px;padding-right: 0px;">
                                 <h7 style="margin-left:20px; font-size:15px; margin-top:5px;"><b>Username <span class="text-danger">*</span></b></h7>
                             </div>
-                            <div class="form-group input-group col-sm-9 " style="position:relative">
-                                <div class="row col-sm-9">
+                            <div class="form-group input-group col-sm-9 " style="position:relative; ">
+                                <div class="row col-sm-12">
                                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
                                     <input type="text" class="form-control" placeholder="lehainghi" name="username" id="username" value="{{ $data['username'] }}" >
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-3">
+                            <div class="col-sm-3" style="padding-left: 0px;padding-right: 0px;">
                                 <h7 style="margin-left:20px; font-size:15px; margin-top:5px;"><b>Tên đầy đủ <span class="text-danger">*</span></b></h7>
                             </div>
                             <div class=" form-group input-group col-sm-9 ">
-                                <div class="row col-sm-9">
+                                <div class="row col-sm-12">
                                     <span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
                                     <input type="text" class="form-control" placeholder="le hai nghi" name="fullname" id="fullname" value = "{{ $data['info']['fullname'] }}" >
                                 </div>
@@ -78,11 +78,11 @@
                         </div>
                        
                         <div class="row">
-                            <div class="col-sm-3">
+                            <div class="col-sm-3" style="padding-left: 0px;padding-right: 0px;">
                                 <h7 style="margin-left:20px; font-size:15px; margin-top:5px;"><b>Ngày sinh <span class="text-danger">*</span></b></h7>
                             </div>
                             <div class="form-group input-group col-sm-9">
-                                <div class="row col-sm-9">
+                                <div class="row col-sm-12">
                                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                     <input type="date"  class="form-control" data-format="Y-m-d" name = "birthday" class="form-control" id="birthday"  value = "{{ $data['info']['day_of_birth'] }}" >
                                 </div>
@@ -90,11 +90,11 @@
                             <br>
                         </div>
                         <div class="row">
-                            <div class="col-sm-3">
+                            <div class="col-sm-3" style="padding-left: 0px;padding-right: 0px;">
                                 <h7 style="margin-left:20px; font-size:15px; margin-top:5px;"><b>Giới tính</b></h7>
                             </div>
                             <div class="form-group input-group col-sm-9">
-                                <div class="row col-sm-9">
+                                <div class="row col-sm-12">
                                     <span class="input-group-addon"><i class="fa fa-transgender"></i></span>
                                     <select name="gender" id="gender" class="form-control" value="{{$data['info']['gender']}}">
                                         <option value="Nam" <?php echo $data['info']['gender'] == 'Nam'? 'selected="selected"':'';?>>Nam</option>
@@ -105,11 +105,11 @@
                         </div>
                       
                         <div class="row">
-                            <div class="col-sm-3">
+                            <div class="col-sm-3" style="padding-left: 0px;padding-right: 0px;">
                                 <h7 style="margin-left:20px; font-size:15px; margin-top:5px;"><b>Địa chỉ</b></h7>
                             </div>
                             <div class="form-group input-group col-sm-9 ">
-                                <div class="row col-sm-9">
+                                <div class="row col-sm-12">
                                     <span class="input-group-addon"><i class="fa fa-location-arrow"></i></span>
                                     <input type="text" class="form-control" placeholder="Danang" name="address" id="address" value = "{{ $data['info']['address'] }}">
                                 </div>
@@ -117,22 +117,22 @@
                         </div>
                         
                         <div class="row">
-                            <div class="col-sm-3">
+                            <div class="col-sm-3" style="padding-left: 0px;padding-right: 0px;">
                                 <h7 style="margin-left:20px; font-size:15px; margin-top:5px;"><b>Email</b></h7>
                             </div>
                             <div class="form-group input-group col-sm-9">
-                                <div class="row col-sm-9">
+                                <div class="row col-sm-12">
                                     <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
                                     <input type="email" class="form-control" placeholder="123@gmail.com" name="email" id="email" value = "{{ $data['email'] }}" readonly>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-3">
+                            <div class="col-sm-3" style="padding-left: 0px;padding-right: 0px;">
                                 <h7 style="margin-left:20px; font-size:15px; margin-top:5px;"><b>Điện thoại</b></h7>
                             </div>
                             <div class="form-group input-group col-sm-9 ">
-                                <div class="row col-sm-9">
+                                <div class="row col-sm-12">
                                     <span class="input-group-addon"><i class="fa fa-phone"></i></span>
                                     <input type="text" maxlength="11" minlength="10"  class="form-control" placeholder="0111111111" name="phone" id="phoneNumber" value = "{{ $data['info']['phone'] }}">
                                 </div>
@@ -140,7 +140,7 @@
                         </div>
                         <br>
                         <!-- <button class="btn btn-primary" type="button">Cập nhật</button> -->
-                        <center><input type="submit" class="btn btn-primary " style="text-align:center;" value="Cập nhật"></center>
+                        <center><input type="submit" class="btn btn-primary col-sm-6" style="text-align:center;" value="Cập nhật"></center>
                     </form>
                 </div>
                 <br>
@@ -166,7 +166,7 @@
                                 <h7 style="margin-left:20px; font-size:15px; margin-top:5px;"><b>Mật khẩu cũ <span class="text-danger">*</span></b></h7>
                             </div>
                             <div class="input-group col-sm-8 ">
-                                <div class="row col-sm-8">
+                                <div class="row col-sm-12">
                                     <span class="input-group-addon"><i class="fa fa-lock"></i></span>
                                     <input type="password" class="form-control" id="oldPassword" name="oldPassword" >
                                 </div>
@@ -178,7 +178,7 @@
                                 <h7 style="margin-left:20px; font-size:15px; margin-top:5px;"><b>Mật khẩu mới <span class="text-danger">*</span></b></h7>
                             </div>
                             <div class="input-group col-sm-8">
-                                <div class="row col-sm-8">
+                                <div class="row col-sm-12">
                                     <span class="input-group-addon"><i class="fa fa-lock"></i></span>
                                     <input type="password" class="form-control" id="newPassword" name="newPassword">
                                 </div>
@@ -190,16 +190,14 @@
                                 <h7 style="margin-left:20px; font-size:15px; margin-top:5px;"><b>Xác nhận <span class="text-danger">*</span></b></h7>
                             </div>
                             <div class="input-group col-sm-8 ">
-                                <div class="row col-sm-8">
+                                <div class="row col-sm-12">
                                     <span class="input-group-addon"><i class="fa fa-lock"></i></span>
                                     <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
                                 </div>
                             </div>
                         </div>
                         <br>
-                        
-                            <!-- <button class="btn btn-primary" type="button">Cập nhật</button> -->
-                            <center><input type="submit" class="btn btn-primary " style="text-align:center;" value="Lưu mật khẩu"></center>
+                           <center><input type="submit" class="btn btn-primary col-sm-6 " style="text-align:center;" value="Lưu mật khẩu"></center>
                         </form>
                     </div>
                     <br>

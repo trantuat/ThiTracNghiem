@@ -64,7 +64,7 @@ Route::group(['prefix'=> 'Students'], function() {
 });
 
 /**
-*  Route for teachermin page
+*  Route for teacher page
 */
 Route::group(['prefix'=> 'Teachers'], function() {
     Route::get('/', 'Teacher\IndexController@index')->name('Teachers');
@@ -81,7 +81,7 @@ Route::group(['prefix'=> 'Teachers'], function() {
     Route::get('/AddNewQuestion', 'Teacher\AddNewQuestionController@showAddNewQuestion');
     Route::get('/ShowDetailQuestion/{id}', 'Teacher\DetailQuestionController@showDetailQuestion');
     Route::get('/ShowDetailQuestionNonPublic/{id}', 'Teacher\DetailQuestionController@showDetailQuestionNonPublic');
-    Route::put('/UpdateQuestion', 'Teacher\DetailQuestionController@updateQuestion');
+    Route::post('/UpdateQuestion', 'Teacher\DetailQuestionController@updateQuestion');
     Route::post('/UpdateAccount', 'Teacher\ProfileController@updateAccount');
     Route::post('/UpdatePassword', 'Teacher\ProfileController@updatePassword');
     Route::get('/UncheckedQuestion', 'Teacher\ManageNonPublicQuestionController@showQuestionNonPublicByTeacher');
