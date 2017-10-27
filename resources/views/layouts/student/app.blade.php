@@ -23,6 +23,7 @@
     <link href="{{ URL::asset("user/css/sb-admin.css") }}" rel="stylesheet">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <script type="text/javascript" src="{{ URL::asset("js/jquery-1.11.2.min.js")}}"></script>
 
     <!-- <link href="{{ URL::asset("css/teacher.css") }}" rel="stylesheet"> -->
 

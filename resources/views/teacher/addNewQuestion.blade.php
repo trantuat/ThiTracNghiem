@@ -110,9 +110,7 @@
                             <span class="input-group-btn">
                                 <button class="btn btn-secondary" type="button" id ="editor1" onclick="deleteAnswer(this.id)" style="height: 38px; border-bottom: none; border-radius: 0px; background-color: #e9ecef; border-color: rgba(0,0,0,.15);" ><img src="/img/ic_delete.png" ></button>
                             </span>
-                            <span class="input-group-btn">
-                                <button class="btn btn-secondary" name="addAnswer" id="addAnswer" style="height: 38px; border-bottom: none; border-radius: 0px;  background-color: #e9ecef; border-color: rgba(0,0,0,.15);" ><img src="/img/ic_add.png" ></button>
-                            </span>
+                           
                           </div>
                           <Textarea class="form-control" id="answer1"  name="answer1" ></Textarea>
                             <script>
@@ -142,9 +140,7 @@
                             <span class="input-group-btn">
                                <button class="btn btn-secondary" type="button" id ="editor2" onclick="deleteAnswer(this.id)" style="height: 38px; border-bottom: none; border-radius: 0px; background-color: #e9ecef; border-color: rgba(0,0,0,.15);" ><img src="/img/ic_delete.png" ></button>
                             </span>
-                            <span class="input-group-btn">
-                               <button class="btn btn-secondary" name="addAnswer" id="addAnswer" style="height: 38px; border-bottom: none; border-radius: 0px;  background-color: #e9ecef; border-color: rgba(0,0,0,.15);" ><img src="/img/ic_add.png" ></button>
-                            </span>
+                    
                           </div>
                          <!-- //  <input type="text" class="form-control" id="answer1" > -->
                          <Textarea class="form-control" id="answer2"  name="answer2"></Textarea>
@@ -169,6 +165,7 @@
                       </div>
                       <input type="hidden" id="numberOfAnswer" name="numberOfAnswer" value="2">
                     </div>
+                    <input type = "button" style="height: 40px;border-style: dotted;background-color: #fff; color: gray;outline: none;" id = "addAnswer" value="Thêm câu trả lời" class="col-md-12">
                   <center><input type="submit" id="btnAddQuestion" class="btn btn-success btnAdd" value='THÊM CÂU HỎI' style="margin-top: 20px;"></center>
                     
                   </div>

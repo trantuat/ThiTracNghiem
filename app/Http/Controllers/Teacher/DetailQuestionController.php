@@ -90,15 +90,16 @@ class DetailQuestionController extends Controller
     }
 
     public function updateQuestion(Request $request){
-        $json=$request->sendJson;
+        // $json=$request->sendJson;
         $updateAnswer=$request->updateAnswer;
-        // return $updateAnswer;
-        $responseData = QuizzService::getInstance()->updateQuestion($json);
+      
+        $responseData = QuizzService::getInstance()->updateAnswer($updateAnswer);
+
         if ($responseData->error != null) {
             return json_encode($responseData->error);
         } else{
-            $responseUpdateAnswer= QuizzService::getInstance()->updateAnswer($updateAnswer);
-            return json_encode($responseUpdateAnswer->data);
+            // echo $responseData->data;
+            return json_encode($responseData->data);
         }
         
     }
