@@ -59,10 +59,8 @@
 
 <body class="fixed-nav sticky-footer " id="page-top">
     @include('layouts.home.header')
-    @yield('carousel')
-    <div class="content-wrapper" >     
+    @yield('carousel')       
     @yield('content')
-    </div>
     @include('layouts.home.footer')
     @yield('script')
     <!-- Scripts -->
