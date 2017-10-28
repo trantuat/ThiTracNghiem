@@ -49,9 +49,9 @@
 <body class="fixed-nav sticky-footer " id="page-top">
     @include('layouts.student.header')
     @yield('carousel')
-    <div class="content-wrapper" >     
+    <!-- <div class="content-wrapper" >      -->
     @yield('content')
-    </div>
+    <!-- </div> -->
     @include('layouts.student.footer')
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>

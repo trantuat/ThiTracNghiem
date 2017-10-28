@@ -3,7 +3,7 @@
 <title>Trang chủ</title>
 @endsection
 @section('carousel')
-<div id="myCarousel" class="carousel slide" data-ride="carousel" style = "width: 100%;">
+<div id="myCarousel" class="carousel slide" data-ride="carousel" style = "width: 100%; margin-bottom:0px;">
 <ol class="carousel-indicators">
   <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
   <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -15,19 +15,16 @@
     <div class="container">
       <div class="carousel-caption d-none d-md-block text-left">
         <h1 class="">Thành công chỉ đến với những người luôn bận rộn tìm nó</h1>
-        <p><a class="btn btn-lg btn-success" href="Login" role="button">Thi Thử</a></p>
-        <!-- <p>.</p> -->
       </div>
     </div>
   </div>
   
-  <div class="carousel-item">
+  <div class="carousel-item" >
     <img class="third-slide" src="img/slide-5.jpg" alt="Second slide">
     <div class="container">
       <div class="carousel-caption d-none d-md-block text-right">
         <h1>Thất bại đơn giản chỉ là cơ hội để bắt đầu lại mọi thứ thông minh hơn</h1>
-        <p><a class="btn btn-lg btn-success" href="Login" role="button">Thi Thử</a></p>
-        <!-- <p>Thất bại đơn giản chỉ là cơ hội để bắt đầu lại mọi thứ thông minh hơn.</p> -->
+       
       </div>
     </div>
   </div>
@@ -36,8 +33,7 @@
     <div class="container">
       <div class="carousel-caption d-none d-md-block text-right">
         <h1>Thà học muộn còn hơn không bao giờ học</h1>
-        <p><a class="btn btn-lg btn-success" href="Login" role="button">Thi Thử</a></p>
-        <!-- <p>Thất bại đơn giản chỉ là cơ hội để bắt đầu lại mọi thứ thông minh hơn.</p> -->
+       
       </div>
     </div>
   </div>
@@ -64,7 +60,7 @@
                 <div class="col-md-12">
                     <div class="carousel slide media-carousel" id="media">
                         <div class="carousel-inner">
-                            <div class="item">
+                            <div class="item active " >
                                 <div class="row">
                                     <div class="col-md-3">
                                         <div class="skill-home">
@@ -72,8 +68,8 @@
                                                 <div class="text-center col-md-12 subject-card">
                                                     <span class="icons c1">
                             
-                                <img class="subject-icon" src="http://789.vn/Content/nganhangdethi/img/toan.png" title="Toán"/>
-                            </span>
+                                                        <img class="subject-icon" src="{{URL::asset('img/toan.png')}}" title="Toán"/>
+                                                    </span>
                                                 
                                                     <div class="box-area">
                                                         <h3 class="subject-title">Toán học</h3>
@@ -81,7 +77,7 @@
                                                             Đề thi THPT Quốc gia gồm 50 câu, thời gian thi 90 phút
                                                         </p>
                                                         <p class="exam-now">
-                                                            <a href="javascript:examNow(&#39;1&#39;)" class="btn btn-medium btn-theme btn-exam-now">Thi ngay</a>
+                                                            <center><a href="/Login" class="btn btn-medium btn-theme btn-exam-now" >Thi ngay</a><center>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -93,14 +89,14 @@
                                             <div class="skill-home-solid">
                                                 <div class="text-center col-md-12 subject-card">
                                                     <span class="icons c2">
-                                                        <img class="subject-icon" src="http://789.vn/Content/nganhangdethi/img/ly.png" title="Lý">
+                                                        <img class="subject-icon" src="{{URL::asset('img/ly.png')}}" title="Lý">
                                                     </span> <div class="box-area">
                                                     <h3 class="subject-title">Vật lý</h3>
                                                     <p class="p-subject">
                                                         Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút
                                                     </p>
                                                     <p class="exam-now">
-                                                        <a href="javascript:examNow(&#39;6&#39;)" class="btn btn-medium btn-theme btn-exam-now">Thi ngay</a>
+                                                        <center><a href="/Login" class="btn btn-medium btn-theme btn-exam-now">Thi ngay</a></center>
                                                     </p>
                                                 </div>
                                                 </div>
@@ -112,12 +108,12 @@
                                             <div class="skill-home-solid">
                                                 <div class="text-center col-md-12 subject-card">
                                                     <span class="icons c3">
-                                                        <img class="subject-icon" src="http://789.vn/Content/nganhangdethi/img/hoa.png" title="Hóa">
+                                                        <img class="subject-icon" src="{{URL::asset('img/hoa.png')}}" title="Hóa">
                                                     </span> <div class="box-area">
                                                     <h3 class="subject-title">Hóa học</h3> <p class="p-subject">
                                                     Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút
                                                     </p><p class="exam-now">
-                                                        <a href="javascript:examNow(&#39;7&#39;)" class="btn btn-medium btn-theme btn-exam-now">Thi ngay</a>
+                                                        <center><a href="/Login" class="btn btn-medium btn-theme btn-exam-now">Thi ngay</a></center>
                                                     </p>
                                                     </div>
                                                 </div>
@@ -129,12 +125,12 @@
                                             <div class="skill-home-solid">
                                                 <div class="text-center col-md-12 subject-card">
                                                     <span class="icons c4">
-                                                        <img class="subject-icon" src="http://789.vn/Content/nganhangdethi/img/sinh.png" title="Sinh">
+                                                        <img class="subject-icon" src="{{URL::asset('img/sinh.png')}}" title="Sinh">
                                                     </span> <div class="box-area">
                                                     <h3 class="subject-title">Sinh học</h3> <p class="p-subject">
                                                     Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút
                                                     </p><p class="exam-now">
-                                                        <a href="javascript:examNow(&#39;9&#39;)" class="btn btn-medium btn-theme btn-exam-now">Thi ngay</a>
+                                                        <center><a href="/Login" class="btn btn-medium btn-theme btn-exam-now">Thi ngay</a></center>
                                                     </p>
                                                     </div>
                                                 </div>
@@ -143,19 +139,19 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="item active">
+                            <div class="item">
                                 <div class="row">
                                     <div class="col-md-3">
                                         <div class="skill-home">
                                             <div class="skill-home-solid">
                                                 <div class="text-center col-md-12 subject-card">
                                                     <span class="icons c4 c5">
-                                                        <img class="subject-icon" src="http://789.vn/Content/nganhangdethi/img/anh.png" title="Anh văn">
+                                                        <img class="subject-icon" src="{{URL::asset('img/anh.png')}}" title="Anh văn">
                                                     </span> <div class="box-area">
                                                     <h3 class="subject-title">Tiếng anh</h3> <p class="p-subject">
                                                     Đề thi THPT Quốc gia gồm 50 câu, thời gian thi 60 phút
                                                     </p><p class="exam-now">
-                                                        <a href="javascript:examNow(&#39;8&#39;)" class="btn btn-medium btn-theme btn-exam-now">Thi ngay</a>
+                                                        <center><a href="/Login" class="btn btn-medium btn-theme btn-exam-now">Thi ngay</a></center>
                                                     </p>
                                                     </div>
                                                 </div>
@@ -168,12 +164,12 @@
                                                 <div class="text-center col-md-12 subject-card">
                                                     <span class="icons c3">
                                                         
-                                                        <img class="subject-icon" src="http://789.vn/Content/nganhangdethi/img/lichsu.png" title="Lịch sử">
+                                                        <img class="subject-icon" src="{{URL::asset('img/lichsu.png')}}" title="Lịch sử">
                                                     </span> <div class="box-area">
                                                     <h3 class="subject-title">Lịch sử</h3> <p class="p-subject">
                                                     Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút
                                                     </p><p class="exam-now">
-                                                        <a href="javascript:examNow(&#39;10&#39;)" class="btn btn-medium btn-theme btn-exam-now">Thi ngay</a>
+                                                        <center><a href="/Login" class="btn btn-medium btn-theme btn-exam-now">Thi ngay</a></center>
                                                     </p>
                                                 </div>
                                                 </div>
@@ -186,12 +182,12 @@
                                                 <div class="text-center col-md-12 subject-card">
                                                     <span class="icons c2">
                                                         
-                                                        <img class="subject-icon" src="http://789.vn/Content/nganhangdethi/img/dialy.png" title="Địa lý">
+                                                        <img class="subject-icon" src="{{URL::asset('img/dialy.png')}}" title="Địa lý">
                                                     </span> <div class="box-area">
                                                     <h3 class="subject-title">Địa lý</h3> <p class="p-subject">
                                                     Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút
                                                     </p><p class="exam-now">
-                                                        <a href="javascript:examNow(&#39;11&#39;)" class="btn btn-medium btn-theme btn-exam-now">Thi ngay</a>
+                                                        <center><a href="/Login" class="btn btn-medium btn-theme btn-exam-now">Thi ngay</a></center>
                                                     </p>
                                                     </div>
                                                 </div>
@@ -204,15 +200,17 @@
                                             <div class="skill-home-solid">
                                                 <div class="text-center col-md-12 subject-card">
                                                     <span class="icons c4">
-                                                        <img class="rounded-circle subject-icon" src="https://www.caldicotschool.com/wp-content/uploads/2016/02/icons760_r11_c5-300x300.jpg" title="Tin học">
+                                                        <img class="rounded-circle subject-icon" src="{{URL::asset('img/tinhoc.jpg')}}" title="Tin học">
                                                     </span> <div class="box-area">
-                                                    <h3 class="subject-title">Tin học</h3> <p class="p-subject">
-                                                    Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút
-                                                </p><p class="exam-now">
-                                                    <a href="javascript:examNow(&#39;9&#39;)" class="btn btn-medium btn-theme btn-exam-now">Thi ngay</a>
-                                                </p>
-                                                </div>
-                                                </div>
+                                                    <h3 class="subject-title">Tin học</h3> 
+                                                        <p class="p-subject">
+                                                            Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút
+                                                        </p>
+                                                        <p class="exam-now">
+                                                            <center><a href="/Login" class="btn btn-medium btn-theme btn-exam-now">Thi ngay</a></center>
+                                                        </p>
+                                                        </div>
+                                                    </div>
                                             </div>
                                         </div>
                                     </div>
@@ -221,12 +219,14 @@
                             <div class="item">
                                 <div class="row">
                                     <div class="col-md-3">
+                                    </div>
+                                    <div class="col-md-3">
                                         <div class="skill-home">
                                             <div class="skill-home-solid">
                                                 <div class="text-center col-md-12 subject-card">
                                                 <span class="icons c1">
                                                 
-                                                    <img class="rounded-circle subject-icon" src="https://i0.wp.com/www.acegamsat.com/wp-content/uploads/2016/06/GAMSAT-Essay-Questions.png?resize=400%2C400&ssl=1" title="Sinh học">
+                                                    <img class="rounded-circle subject-icon" src="{{URL::asset('img/nguvan.png')}}" title="Ngữ văn">
                                                 </span>
                                                     <div class="box-area">
                                                         <h3 class="subject-title">Ngữ Văn</h3>
@@ -234,7 +234,7 @@
                                                             Đề thi THPT Quốc gia gồm 50 câu, thời gian thi 90 phút
                                                         </p>
                                                         <p class="exam-now">
-                                                            <a href="javascript:examNow(&#39;1&#39;)" class="btn btn-medium btn-theme btn-exam-now">Thi ngay</a>
+                                                            <center><a href="/Login" class="btn btn-medium btn-theme btn-exam-now">Thi ngay</a></center>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -246,54 +246,24 @@
                                             <div class="skill-home-solid">
                                                 <div class="text-center col-md-12 subject-card">
                                                     <span class="icons c2">
-                                                        <img class="subject-icon" src="http://www.pacific.edu/Images/school-education/Icons%202016/Picture7.png" title="gdcd">
-                                                    </span> <div class="box-area">
-                                                    <h3 class="subject-title">GDCD</h3>
-                                                    <p class="p-subject">
-                                                        Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút
-                                                    </p>
-                                                    <p class="exam-now">
-                                                        <a href="javascript:examNow(&#39;6&#39;)" class="btn btn-medium btn-theme btn-exam-now">Thi ngay</a>
-                                                    </p>
-                                                </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="skill-home">
-                                            <div class="skill-home-solid">
-                                                <div class="text-center col-md-12 subject-card">
-                                                    <span class="icons c3">
-                                                        <img class="subject-icon" src="http://789.vn/Content/nganhangdethi/img/hoa.png" title="Hóa">
-                                                    </span> <div class="box-area">
-                                                    <h3 class="subject-title">Hóa học</h3> <p class="p-subject">
-                                                    Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút
-                                                </p><p class="exam-now">
-                                                    <a href="javascript:examNow(&#39;7&#39;)" class="btn btn-medium btn-theme btn-exam-now">Thi ngay</a>
-                                                </p>
-                                                </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="skill-home">
-                                            <div class="skill-home-solid">
-                                                <div class="text-center col-md-12 subject-card">
-                                                    <span class="icons c4 c5">
-                                                        <img class="subject-icon" src="http://789.vn/Content/nganhangdethi/img/anh.png" title="Anh văn">
-                                                    </span> <div class="box-area">
-                                                    <h3 class="subject-title">Tiếng anh</h3> <p class="p-subject">
-                                                    Đề thi THPT Quốc gia gồm 50 câu, thời gian thi 60 phút
-                                                </p><p class="exam-now">
-                                                    <a href="javascript:examNow(&#39;8&#39;)" class="btn btn-medium btn-theme btn-exam-now">Thi ngay</a>
-                                                </p>
+                                                        <img class="subject-icon" src="{{URL::asset('img/gdcd.png')}}" title="gdcd">
+                                                    </span> 
+                                                    <div class="box-area">
+                                                        <h3 class="subject-title">GDCD</h3>
+                                                        <p class="p-subject">
+                                                            Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút
+                                                        </p>
+                                                        <p class="exam-now">
+                                                            <center><a href="/Login" class="btn btn-medium btn-theme btn-exam-now">Thi ngay</a></center>
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-md-3">
+                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -308,12 +278,7 @@
     <input type="hidden" id="hidden_class" name="hidden_class" value="3">
     <input type="hidden" id="ExamType" name="ExamType" value="thptqg">
 </form>
-<script>
-    function examNow(subjectId) {
-        $('#subjectId').val(subjectId);
-        $('#frmExam').submit();
-    }
-</script>
+
 <section class="callaction">
     <div class="container">
         <div class="row">

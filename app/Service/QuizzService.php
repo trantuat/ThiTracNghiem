@@ -163,6 +163,10 @@
             return ApiHelper::getInstance()->delete('api/admin/deleteQuestion/questionID='.$questionId);
         }
 
+        public function getClassBySubjectId($topicId){
+            return ApiHelper::getInstance()->get('api/user/getClassByTopicId/topicID='.$topicId);
+        }
+
 
     }
 

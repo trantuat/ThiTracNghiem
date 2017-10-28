@@ -1,4 +1,4 @@
-<ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+<ul class="navbar-nav navbar-sidenav" >
     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="profile">
         <a class="nav-link" href="/Teachers/Profile">
             <i class="fa fa-user-circle"></i>

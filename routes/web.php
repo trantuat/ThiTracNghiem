@@ -49,6 +49,7 @@ Route::group(['prefix'=> 'Admins'], function() {
 */
 Route::group(['prefix'=> 'Students'], function() {
     Route::get('/', 'Student\IndexController@index')->name('Students');
+    Route::get('/GetClass', 'Student\IndexController@getClassBySubjectId');
     Route::get('/Profile', 'Student\ManageProfileController@showProfile');
     Route::get('/History', 'Student\ManageHistoryController@showHistory');
     Route::get('/TestTime/{quizzId}', 'Student\ManageHistoryController@showTestTime');

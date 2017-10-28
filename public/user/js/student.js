@@ -180,6 +180,27 @@
             }
       });
     }
+
+    function showClass(id,topicName){
+      $('#formDoQuizz').find("input[id='doTestSubjectIndex']").val(topicName);
+      $('#formDoQuizz').find("input[id='doTestSubject']").val(id);
+        $.ajax({
+          url: '/Students/GetClass',
+          type: "GET",
+          dataType : "html",
+          data: {
+            topicId: id
+          },
+          success: function(response){ 
+            console.log(response);
+            $('#formDoQuizz').find("select[id='doTestClass']").html(response);
+          },
+          error: function(response){
+              alert('Error'+response);
+              }
+        });
+
+    }
     
 
     

@@ -29,7 +29,7 @@
 
 @endif
 
-
+<div class="content-wrapper">
 <div class="container-fluid" >
 
     <div id="clocktimer" style="font-size:40px; float:right" class="clock">
@@ -133,6 +133,7 @@
 
     </div>
     
+</div>
 </div>
 
 

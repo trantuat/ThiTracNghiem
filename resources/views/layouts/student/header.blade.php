@@ -7,10 +7,10 @@
     
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="/Students" style="margin-right:50px;"><i class='fa fa-home'><b> Trang chủ </b></i> <span class="sr-only">(current)</span></a>
-            </li>
             <li class="nav-item">
+                <a class="nav-link" href="/Students" style="margin-right:50px;"><i class='fa fa-home'><b> Trang chủ </b></i></a>
+            </li>
+            <li class="nav-item ">
                 <a class="nav-link" href="/Students/Profile" style="margin-right:50px;"><i class='fa fa-user'><b> Thông tin cá nhân </b></i></a>
             </li>
             <li class="nav-item">
@@ -89,7 +89,15 @@
                                     <h7 style="font-size:16px; margin-top:5px;"><b>Số câu</b></h7>
                                 </div>
                                 <div class="col-sm-7">
-                                    <input type="number" id="doTestTotal" name="doTestTotal" min="1" max="45" class="form-control" required>
+                                        <select name="doTestTotal" id="doTestTotal" class="form-control">
+                                            <option value="5">5</option>
+                                            <option value="10">10</option>
+                                            <option value="30">30</option>
+                                            <option value="45">45</option>
+                                            <option value="60">60</option>
+                                            
+                                    </select>
+                                    <!-- <input type="number" id="doTestTotal" name="doTestTotal" min="1" max="45" class="form-control" required> -->
                                 </div>
                             </div>
                         </div>

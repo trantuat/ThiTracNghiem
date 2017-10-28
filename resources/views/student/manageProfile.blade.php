@@ -41,6 +41,7 @@
 @endif
 <div id="result">
 </div>
+<div class="content-wrapper" >
 <div class= "container-fluid" style="margin-top:20px;">
 <div class="row">
 
@@ -160,6 +161,7 @@
     </div>
         
 
+</div>
 </div>
 </div>
 </div>

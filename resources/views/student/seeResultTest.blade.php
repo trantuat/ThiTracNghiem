@@ -23,6 +23,7 @@
 </script>
 @endif
 
+<div class="content-wrapper">
 <div class="container-fluid" >
     <input type="hidden" id="numberQuestion" name="numberQuestion" value="{{ count($data)}}">
     
@@ -201,6 +202,7 @@
 
     </div>
     
+</div>
 </div>
 
 

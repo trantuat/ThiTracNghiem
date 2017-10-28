@@ -9,7 +9,7 @@
   alert(" {{ $error }}");
 </script>
 @endif
-
+    <div class="content-wrapper">
       <div class="container-fluid">
         <div class="">
           <div class="card-header" style="background-color:white;">
@@ -69,6 +69,7 @@
           </div>
         </div>
       </div>
+    </div>
 
 
 
