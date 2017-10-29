@@ -78,5 +78,7 @@
         public function deleteQuestion($questionId);
 
         public function getClassBySubjectId($topicId);
+
+        public function getAllTopic();
     }
 ?>

@@ -10,7 +10,8 @@ class IndexController extends Controller
 {
     public function index() 
     {
-        return view("student.index");
+        $responseData = QuizzService::getInstance()->getAllTopic();
+        return view("student.index",["data"=>$responseData->data]);
     }
 
     public function getClassBySubjectId(Request $request){
@@ -28,4 +29,5 @@ class IndexController extends Controller
         }
         return $html;
     }
+
 }

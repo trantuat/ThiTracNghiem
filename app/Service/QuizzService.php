@@ -166,6 +166,10 @@
         public function getClassBySubjectId($topicId){
             return ApiHelper::getInstance()->get('api/user/getClassByTopicId/topicID='.$topicId);
         }
+        
+        public function getAllTopic(){
+            return ApiHelper::getInstance()->get('api/user/getAllTopic');
+        }
 
 
     }

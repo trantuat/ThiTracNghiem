@@ -15,6 +15,7 @@
     <div class="container">
       <div class="carousel-caption d-none d-md-block text-left">
         <h1 class="">Thành công chỉ đến với những người luôn bận rộn tìm nó</h1>
+       
       </div>
     </div>
   </div>
@@ -24,7 +25,7 @@
     <div class="container">
       <div class="carousel-caption d-none d-md-block text-right">
         <h1>Thất bại đơn giản chỉ là cơ hội để bắt đầu lại mọi thứ thông minh hơn</h1>
-       
+        
       </div>
     </div>
   </div>
@@ -33,7 +34,6 @@
     <div class="container">
       <div class="carousel-caption d-none d-md-block text-right">
         <h1>Thà học muộn còn hơn không bao giờ học</h1>
-       
       </div>
     </div>
   </div>
@@ -49,7 +49,6 @@
 </div>
 @endsection
 @section('content')    
-
     <form method="post" action="thitracnghiem" id="frmExam" name="frmExam">
     <div id="content" style="background: #EFEFEF;">
         <div class="container">
@@ -60,210 +59,107 @@
                 <div class="col-md-12">
                     <div class="carousel slide media-carousel" id="media">
                         <div class="carousel-inner">
-                            <div class="item active " >
+                            <div class="item active" >
                                 <div class="row">
+                                <?php 
+                                $i=0;
+                                $j=1;
+                                while ($i<4){
+                                ?>   
                                     <div class="col-md-3">
                                         <div class="skill-home">
                                             <div class="skill-home-solid">
                                                 <div class="text-center col-md-12 subject-card">
-                                                    <span class="icons c1">
-                            
-                                                        <img class="subject-icon" src="{{URL::asset('img/toan.png')}}" title="Toán"/>
+                                                    <span class="icons <?php echo 'c'.$j ;?>">
+                                                        <?php
+                                                            switch ($data[$i]['topic_name']){
+                                                                case "Toán": echo "<img class='subject-icon' src='img/toan.png' title='Toán'/>"; break;
+                                                                case "Vật Lý": echo "<img class='subject-icon' src='img/ly.png' title='Lý'/>"; break;
+                                                                case "Hóa Học": echo "<img class='subject-icon' src='img/hoa.png' title='Hoá'/>"; break;
+                                                                case "Sinh Học": echo "<img class='subject-icon' src='img/sinh.png' title='Sinh'/>"; break;
+                                                                
+                                                            }
+                                                        ?>
                                                     </span>
                                                 
                                                     <div class="box-area">
-                                                        <h3 class="subject-title">Toán học</h3>
+                                                        <h3 class="subject-title">
+                                                        <?php
+                                                            switch ($data[$i]['topic_name']){
+                                                                case "Toán": echo "Toán Học"; break;
+                                                                case "Vật Lý": echo "Vật Lý"; break;
+                                                                case "Hóa Học": echo "Hóa Học"; break;
+                                                                case "Sinh Học": echo "Sinh học"; break;
+                                                                
+                                                            }
+                                                        ?>
+                                                        </h3>
                                                         <p class="p-subject">
-                                                            Đề thi THPT Quốc gia gồm 50 câu, thời gian thi 90 phút
+                                                            Hệ thống câu hỏi <b><?php echo $data[$i]['topic_name'] ?></b> đa dạng phong phú, được xắp sếp ngẫu nhiên từ dễ đến khó, bấm <b>"Thi Ngay"</b> để trải nghiệm
                                                         </p>
                                                         <p class="exam-now">
-                                                            <center><a href="/Login" class="btn btn-medium btn-theme btn-exam-now" >Thi ngay</a><center>
+                                                            <?php 
+                                                                echo "<center><a href='/Login' >Thi ngay</a></center>";
+                                                                $i++;
+                                                                $j++;
+                                                            ?>
                                                         </p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
-                                        <div class="skill-home">
-                                            <div class="skill-home-solid">
-                                                <div class="text-center col-md-12 subject-card">
-                                                    <span class="icons c2">
-                                                        <img class="subject-icon" src="{{URL::asset('img/ly.png')}}" title="Lý">
-                                                    </span> <div class="box-area">
-                                                    <h3 class="subject-title">Vật lý</h3>
-                                                    <p class="p-subject">
-                                                        Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút
-                                                    </p>
-                                                    <p class="exam-now">
-                                                        <center><a href="/Login" class="btn btn-medium btn-theme btn-exam-now">Thi ngay</a></center>
-                                                    </p>
-                                                </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="skill-home">
-                                            <div class="skill-home-solid">
-                                                <div class="text-center col-md-12 subject-card">
-                                                    <span class="icons c3">
-                                                        <img class="subject-icon" src="{{URL::asset('img/hoa.png')}}" title="Hóa">
-                                                    </span> <div class="box-area">
-                                                    <h3 class="subject-title">Hóa học</h3> <p class="p-subject">
-                                                    Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút
-                                                    </p><p class="exam-now">
-                                                        <center><a href="/Login" class="btn btn-medium btn-theme btn-exam-now">Thi ngay</a></center>
-                                                    </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="skill-home">
-                                            <div class="skill-home-solid">
-                                                <div class="text-center col-md-12 subject-card">
-                                                    <span class="icons c4">
-                                                        <img class="subject-icon" src="{{URL::asset('img/sinh.png')}}" title="Sinh">
-                                                    </span> <div class="box-area">
-                                                    <h3 class="subject-title">Sinh học</h3> <p class="p-subject">
-                                                    Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút
-                                                    </p><p class="exam-now">
-                                                        <center><a href="/Login" class="btn btn-medium btn-theme btn-exam-now">Thi ngay</a></center>
-                                                    </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <?php }?>
+                                    
                                 </div>
                             </div>
                             <div class="item">
                                 <div class="row">
+                                    <?php 
+                                    while ($i>=4 && $i<8){
+                                    ?>   
                                     <div class="col-md-3">
                                         <div class="skill-home">
                                             <div class="skill-home-solid">
                                                 <div class="text-center col-md-12 subject-card">
-                                                    <span class="icons c4 c5">
-                                                        <img class="subject-icon" src="{{URL::asset('img/anh.png')}}" title="Anh văn">
-                                                    </span> <div class="box-area">
-                                                    <h3 class="subject-title">Tiếng anh</h3> <p class="p-subject">
-                                                    Đề thi THPT Quốc gia gồm 50 câu, thời gian thi 60 phút
-                                                    </p><p class="exam-now">
-                                                        <center><a href="/Login" class="btn btn-medium btn-theme btn-exam-now">Thi ngay</a></center>
-                                                    </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="skill-home">
-                                            <div class="skill-home-solid">
-                                                <div class="text-center col-md-12 subject-card">
-                                                    <span class="icons c3">
-                                                        
-                                                        <img class="subject-icon" src="{{URL::asset('img/lichsu.png')}}" title="Lịch sử">
-                                                    </span> <div class="box-area">
-                                                    <h3 class="subject-title">Lịch sử</h3> <p class="p-subject">
-                                                    Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút
-                                                    </p><p class="exam-now">
-                                                        <center><a href="/Login" class="btn btn-medium btn-theme btn-exam-now">Thi ngay</a></center>
-                                                    </p>
-                                                </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="skill-home">
-                                            <div class="skill-home-solid">
-                                                <div class="text-center col-md-12 subject-card">
-                                                    <span class="icons c2">
-                                                        
-                                                        <img class="subject-icon" src="{{URL::asset('img/dialy.png')}}" title="Địa lý">
-                                                    </span> <div class="box-area">
-                                                    <h3 class="subject-title">Địa lý</h3> <p class="p-subject">
-                                                    Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút
-                                                    </p><p class="exam-now">
-                                                        <center><a href="/Login" class="btn btn-medium btn-theme btn-exam-now">Thi ngay</a></center>
-                                                    </p>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="skill-home">
-                                            <div class="skill-home-solid">
-                                                <div class="text-center col-md-12 subject-card">
-                                                    <span class="icons c4">
-                                                        <img class="rounded-circle subject-icon" src="{{URL::asset('img/tinhoc.jpg')}}" title="Tin học">
-                                                    </span> <div class="box-area">
-                                                    <h3 class="subject-title">Tin học</h3> 
-                                                        <p class="p-subject">
-                                                            Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút
-                                                        </p>
-                                                        <p class="exam-now">
-                                                            <center><a href="/Login" class="btn btn-medium btn-theme btn-exam-now">Thi ngay</a></center>
-                                                        </p>
-                                                        </div>
-                                                    </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="skill-home">
-                                            <div class="skill-home-solid">
-                                                <div class="text-center col-md-12 subject-card">
-                                                <span class="icons c1">
-                                                
-                                                    <img class="rounded-circle subject-icon" src="{{URL::asset('img/nguvan.png')}}" title="Ngữ văn">
+                                                <span class="icons <?php echo 'c'.$j ;?>">
+                                                    <?php
+                                                        switch ($data[$i]['topic_name']){
+                                                            case "Tiếng Anh": echo "<img class='subject-icon' src='img/anh.png' title='Anh'/>"; break;
+                                                            case "Lịch Sử": echo "<img class='subject-icon' src='img/lichsu.png' title='Sử'/>"; break;
+                                                            case "Địa Lý": echo "<img class='subject-icon' src='img/dialy.png' title='Địa'/>"; break;
+                                                            case "Ngữ Văn": echo "<img class='subject-icon' src='img/nguvan.png' title='Ngữ Văn'/>"; break;
+                                                        }
+                                                    ?>
                                                 </span>
                                                     <div class="box-area">
-                                                        <h3 class="subject-title">Ngữ Văn</h3>
-                                                        <p class="p-subject">
-                                                            Đề thi THPT Quốc gia gồm 50 câu, thời gian thi 90 phút
-                                                        </p>
-                                                        <p class="exam-now">
-                                                            <center><a href="/Login" class="btn btn-medium btn-theme btn-exam-now">Thi ngay</a></center>
-                                                        </p>
+                                                    <h3 class="subject-title">
+                                                    <?php
+                                                    switch ($data[$i]['topic_name']){
+                                                        case "Tiếng Anh": echo "Tiếng Anh"; break;
+                                                        case "Lịch Sử": echo "Lịch Sử"; break;
+                                                        case "Địa Lý": echo "Địa Lý"; break;
+                                                        case "Ngữ Văn": echo "Ngữ Văn"; break;
+                                                        
+                                                    }
+                                                    ?></h3> 
+                                                    <p class="p-subject">
+                                                    Hệ thống câu hỏi <b><?php echo $data[$i]['topic_name']?></b> đa dạng phong phú, được xắp sếp ngẫu nhiên từ dễ đến khó, bấm <b>"Thi Ngay"</b> để trải nghiệm
+                                                    
+                                                    </p>
+                                                    <p class="exam-now">
+                                                    <?php 
+                                                         echo "<center><a href='/Login' >Thi ngay</a></center>";
+                                                        $i++;
+                                                        $j--;
+                                                    ?>
+                                                    </p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
-                                        <div class="skill-home">
-                                            <div class="skill-home-solid">
-                                                <div class="text-center col-md-12 subject-card">
-                                                    <span class="icons c2">
-                                                        <img class="subject-icon" src="{{URL::asset('img/gdcd.png')}}" title="gdcd">
-                                                    </span> 
-                                                    <div class="box-area">
-                                                        <h3 class="subject-title">GDCD</h3>
-                                                        <p class="p-subject">
-                                                            Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút
-                                                        </p>
-                                                        <p class="exam-now">
-                                                            <center><a href="/Login" class="btn btn-medium btn-theme btn-exam-now">Thi ngay</a></center>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                    </div>
-                                    
+                                    <?php }?>
                                 </div>
                             </div>
                         </div>
@@ -274,9 +170,7 @@
             </div>
         </div>
     </div>
-    <input type="hidden" id="subjectId" name="subjectId">
-    <input type="hidden" id="hidden_class" name="hidden_class" value="3">
-    <input type="hidden" id="ExamType" name="ExamType" value="thptqg">
+   
 </form>
 
 <section class="callaction">
@@ -284,25 +178,25 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="aligncenter">
-                    <h3 class="aligncenter">Tại sao bạn nên Luyện thi trắc nghiệm với TNT Team?</h3>
+                    <h3 class="aligncenter">Tại sao bạn nên Luyện thi trắc nghiệm với NTT Team?</h3>
                     <div class="why">
                         <div class="col-md-3 col-sm-3 col-xs-6 why-icon why-icon-online">
-                            <img src="img/why_3.png" width="150px" height="150px" class="rounded-circle" style="margin: 30px 0px 40px 0px">
+                            <img src="{{URL::asset('img/why_3.png')}}" width="150px" height="150px" class="rounded-circle" style="margin: 30px 0px 40px 0px">
                             <p>Thi trực tuyến mọi lúc mọi nơi, dễ dàng thao tác.</p>
                             <br>
                         </div>
                         <div class="col-md-3 col-sm-3 col-xs-6 why-icon why-icon-bank">
-                            <img src="img/why_1.jpg" width="150px" height="150px" class="rounded-circle" style="margin: 30px 0px 40px 0px">
+                            <img src="{{URL::asset('img/why_1.jpg')}}" width="150px" height="150px" class="rounded-circle" style="margin: 30px 0px 40px 0px">
                             <p>Ngân hàng câu hỏi phong phú, đa dạng cách thức ra đề thi, được xây dựng bởi hơn 50 chuyên gia hàng đầu trong lĩnh vực giáo dục</p>
                             <br>
                         </div>
                         <div class="col-md-3 col-sm-3 col-xs-6 why-icon why-icon-program">
-                            <img src="img/why_rr.jpg" width="150px" height="150px" class="rounded-circle" style="margin: 30px 0px 40px 0px">
+                            <img src="{{URL::asset('img/why_rr.jpg')}}" width="150px" height="150px" class="rounded-circle" style="margin: 30px 0px 40px 0px">
                             <p>Câu hỏi được sắp xếp rõ ràng thành từng chương, theo từng khối lớp, có đáp án và lời giải chi tiết cho từng câu</p>
                             <br>
                         </div>
                         <div class="col-md-3 col-sm-3 col-xs-6 why-icon why-icon-people">
-                            <img src="img/why_4.jpg" width="150px" height="150px" class="rounded-circle" style="margin: 30px 0px 40px 0px">
+                            <img src="{{URL::asset('img/why_4.jpg')}}" width="150px" height="150px" class="rounded-circle" style="margin: 30px 0px 40px 0px">
                             <p>Nội dung bám sát chương trình thi của Bộ giáo dục và đào tạo, được cập nhật và hiệu chỉnh hàng ngày</p>
                             <br>
                         </div>
@@ -314,4 +208,5 @@
         </div>
     </div>
 </section>
+
 @endsection

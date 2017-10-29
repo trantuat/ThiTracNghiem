@@ -181,15 +181,15 @@
       });
     }
 
-    function showClass(id,topicName){
-      $('#formDoQuizz').find("input[id='doTestSubjectIndex']").val(topicName);
-      $('#formDoQuizz').find("input[id='doTestSubject']").val(id);
+    function showClass(detail){
+      $('#formDoQuizz').find("input[id='doTestSubjectIndex']").val(detail.topic_name);
+      $('#formDoQuizz').find("input[id='doTestSubject']").val(detail.id);
         $.ajax({
           url: '/Students/GetClass',
           type: "GET",
           dataType : "html",
           data: {
-            topicId: id
+            topicId: detail.id
           },
           success: function(response){ 
             console.log(response);
