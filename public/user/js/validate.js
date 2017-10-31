@@ -145,20 +145,6 @@
 			return this.optional(element) || value == value.match(/^[A-Za-zÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ]+ [A-Za-zÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ]+ [A-Za-zÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ]+$/);
 			},"Nhập đúng định dạng tên ");
 
-		// $.validator.addMethod("fullname", function (value, element) {
-		// 	var unicodeWord = XRegExp('^[\\p{L} ]+$');
-		// 	return unicodeWord.test(value);
-		// 	},
-		// 	"Please enter a valid full name"
-		// );
-
-		// $.validator.addMethod("customemail",
-		// 	function (value, element) {
-		// 		var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-		// 		return re.test(value);
-		// 	},
-		// 	"Nhập đúng định dạng email. VD: johndoe@domain.com."
-		// );
 
 		$("#formUpdateProfile").validate({
 			rules: {
@@ -176,23 +162,27 @@
 					fullname: true
 				},
 				phone:{
-					number: true
+					number: true,
+					digits: true,
+					rangelength:[10,11]
 				}
 			},
 			messages: {
                 username: {
 					required: "Không được để trống trường username",
-					minlength: "Username phải từ 6 kí tự trở lên"
+					minlength: "Username phải có từ 6 kí tự trở lên"
 				},
 				birthday: {
-					required: "Phải nhập ngày sinh",
+					required: "Phải nhập ngày sinh đầy đủ cho trường này",
 				},
 				fullname: {
 					required: "Không được để trống trường tên đầy đủ",
-					minlength: "Tên đầy đủ phải từ 6 kí tự trở lên",
+					minlength: "Tên đầy đủ phải có từ 6 kí tự trở lên",
 				},
 				phone: {
-					number: "Nhập định dạng số"
+					number: "Phải nhập định dạng số. VD: 01111111111",
+					digits: "Nhập sai định dạng kiểu số điện thoại",
+					rangelength: "Số điện thoại giới hạn từ 10 - 11 chữ số"
 				}
             },
             submitHandler: function (form) {

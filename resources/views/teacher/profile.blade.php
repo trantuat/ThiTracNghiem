@@ -55,10 +55,10 @@
                     <form class="form-horizontal" class="cmxform" method="POST" action="UpdateAccount" name="formUpdateProfile" id="formUpdateProfile">
                         {!! csrf_field() !!}
                         <div class="row">
-                            <div class="col-sm-offset-2 col-sm-3" style="padding-left: 0px;padding-right: 0px;">
+                            <div class="col-sm-3" style="padding-left: 0px;padding-right: 0px;">
                                 <h7 style="margin-left:20px; font-size:15px; margin-top:5px;"><b>Username <span class="text-danger">*</span></b></h7>
                             </div>
-                            <div class="form-group input-group col-sm-9 " style="position:relative; ">
+                            <div class="form-group input-group col-sm-9 ">
                                 <div class="row col-sm-12">
                                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
                                     <input type="text" class="form-control" placeholder="lehainghi" name="username" id="username" value="{{ $data['username'] }}" >
@@ -134,7 +134,7 @@
                             <div class="form-group input-group col-sm-9 ">
                                 <div class="row col-sm-12">
                                     <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                                    <input type="text" maxlength="11" minlength="10"  class="form-control" placeholder="0111111111" name="phone" id="phoneNumber" value = "{{ $data['info']['phone'] }}">
+                                    <input type="text" class="form-control" placeholder="0111111111" name="phone" id="phoneNumber" value = "{{ $data['info']['phone'] }}">
                                 </div>
                             </div>
                         </div>

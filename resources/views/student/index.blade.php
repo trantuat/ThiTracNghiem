@@ -77,12 +77,11 @@
                                                                 case "Vật Lý": echo "<img class='subject-icon' src='img/ly.png' title='Lý'/>"; break;
                                                                 case "Hóa Học": echo "<img class='subject-icon' src='img/hoa.png' title='Hoá'/>"; break;
                                                                 case "Sinh Học": echo "<img class='subject-icon' src='img/sinh.png' title='Sinh'/>"; break;
-                                                                case "Tiếng Anh": echo "<img class='subject-icon' src='img/anhvan.png' title='Anh'/>"; break;
+                                                                case "Tiếng Anh": echo "<img class='subject-icon' src='img/anh.png' title='Anh'/>"; break;
                                                                 case "Lịch Sử": echo "<img class='subject-icon' src='img/lichsu.png' title='Sử'/>"; break;
                                                                 case "Địa Lý": echo "<img class='subject-icon' src='img/dialy.png' title='Địa'/>"; break;
-                                                                case "Tin Học": echo "<img class='subject-icon' src='img/tinhoc.jpg'title='Tin'/>"; break;
-                                                                case "Ngũ Văn": echo "<img class='subject-icon' src='img/nguvan.png' title='Văn'/>"; break;
-                                                                case "GDCD": echo "<img class='subject-icon' src='img/gdcd.png' title=GDCD'/>"; break;
+                                                                case "Ngữ Văn": echo "<img class='subject-icon' src='img/nguvan.png' title='Ngữ Văn'/>"; break;
+                                                                
                                                             }
                                                         ?>
                                                     </span>
@@ -95,6 +94,10 @@
                                                                 case "Vật Lý": echo "Vật Lý"; break;
                                                                 case "Hóa Học": echo "Hóa Học"; break;
                                                                 case "Sinh Học": echo "Sinh học"; break;
+                                                                case "Tiếng Anh": echo "Tiếng Anh"; break;
+                                                                case "Lịch Sử": echo "Lịch Sử"; break;
+                                                                case "Địa Lý": echo "Địa Lý"; break;
+                                                                case "Ngữ Văn": echo "Ngữ Văn"; break;
                                                                 
                                                             }
                                                         ?>
@@ -132,6 +135,10 @@
                                                 <span class="icons <?php echo 'c'.$j ;?>">
                                                     <?php
                                                         switch ($data[$i]['topic_name']){
+                                                            case "Toán": echo "<img class='subject-icon' src='img/toan.png' title='Toán'/>"; break;
+                                                            case "Vật Lý": echo "<img class='subject-icon' src='img/ly.png' title='Lý'/>"; break;
+                                                            case "Hóa Học": echo "<img class='subject-icon' src='img/hoa.png' title='Hoá'/>"; break;
+                                                            case "Sinh Học": echo "<img class='subject-icon' src='img/sinh.png' title='Sinh'/>"; break;
                                                             case "Tiếng Anh": echo "<img class='subject-icon' src='img/anh.png' title='Anh'/>"; break;
                                                             case "Lịch Sử": echo "<img class='subject-icon' src='img/lichsu.png' title='Sử'/>"; break;
                                                             case "Địa Lý": echo "<img class='subject-icon' src='img/dialy.png' title='Địa'/>"; break;
@@ -143,6 +150,10 @@
                                                     <h3 class="subject-title">
                                                     <?php
                                                     switch ($data[$i]['topic_name']){
+                                                        case "Toán": echo "Toán Học"; break;
+                                                        case "Vật Lý": echo "Vật Lý"; break;
+                                                        case "Hóa Học": echo "Hóa Học"; break;
+                                                        case "Sinh Học": echo "Sinh học"; break;
                                                         case "Tiếng Anh": echo "Tiếng Anh"; break;
                                                         case "Lịch Sử": echo "Lịch Sử"; break;
                                                         case "Địa Lý": echo "Địa Lý"; break;
