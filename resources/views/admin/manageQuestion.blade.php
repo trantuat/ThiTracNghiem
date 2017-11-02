@@ -4,9 +4,15 @@
 @endsection
 @section('content')
       <div class="container-fluid">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <b>Quản lý câu hỏi </b>
+          </li>
+          <li class="breadcrumb-item active">Danh sách câu hỏi</li>
+        </ol>
         <div class="">
           <div class="card-header">
-          <h5 style="color:red;"><i class="fa fa-question-circle"></i> Danh sách câu hỏi trong hệ thống</h5>
+          <h4><i class="fa fa-question-circle"></i> TỔNG HỢP DANH SÁCH CÂU HỎI</h4>
           </div>
           <div class="card-body">
             <div class="table-responsive">
@@ -68,7 +74,7 @@
          <div class="modal-content">
             <!-- <form id="formupdateQuestion" method="" class="form-horizontal" > -->
                <div class="modal-header">
-                <h4 class="modal-tittle">NỘI DUNG CÂU HỎI</h4>
+                <h5 class="modal-tittle">NỘI DUNG CÂU HỎI</h5>
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                </div>
                <div class="modal-body" style="margin: 10px;">

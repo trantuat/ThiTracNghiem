@@ -9,13 +9,13 @@
   alert(" {{ $error }}");
 </script>
 @endif
-    <div class="content-wrapper">
+    <div class="content-wrapper animated slideInRight">
       <div class="container-fluid">
         <div class="">
           <div class="card-header" style="background-color:white;">
           <div class="row">
           <div class="col-sm-10">
-              <h5><i class="fa fa-table"></i> Chi tiết lịch sử bài thi</h5>
+              <h4><i class="fa fa-table"></i> CHI TIẾT SỐ LẦN THI</h4>
             </div>
             <div class="col-sm-1" style="margin-left:30px;">
             <a href="/Students/DoTest/{{$quizzId}}/{{$duration}}" class='btn btn-success' >Làm lại bài</a>

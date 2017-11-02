@@ -5,9 +5,15 @@
 @endsection
 @section('content')
       <div class="container-fluid">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <b>Quản lý thành viên </b>
+          </li>
+          <li class="breadcrumb-item active">Quản lý giáo viên</li>
+        </ol>
         <div class="">
           <div class="card-header">
-            <h5 style="color:red;"><i class="fa fa-user-secret"></i> Danh sách giáo viên</h5>
+            <h4><i class="fa fa-user-secret"></i> Danh sách giáo viên</h4>
           </div>
           <div class="card-body">
             <div class="table-responsive">
@@ -67,7 +73,7 @@
       <!-- Modal content-->
        <div class="modal-content">
            <div class="modal-header">
-             <h4 class="modal-tittle">THÔNG TIN GIÁO VIÊN</h4>
+             <h5 class="modal-tittle">THÔNG TIN GIÁO VIÊN</h5>
              <button type="button" class="close" data-dismiss="modal">&times;</button>
            </div>
            <div class="modal-body" style="margin: 10px;">

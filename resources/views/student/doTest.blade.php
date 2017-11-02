@@ -122,7 +122,7 @@
                  <br>
                     <center>
                         <!-- <input type = "submit" class="btn col-sm-2 btn-danger" id="btnSubmitTest" value="Submit"> -->
-                        <button class="btn col-sm-2 btn-danger" id="btnSubmitTest" >Submit</button>                                
+                        <button class="btn col-sm-2 btn-success" id="btnSubmitTest" >Nộp bài</button>                                
                     </center>
                 </br>
            

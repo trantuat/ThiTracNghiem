@@ -11,8 +11,11 @@
 
 @endsection
 @section('content')
+
+
+<div class="content-wrapper" >
 @if (isset($error)) 
-<div class='alert alert-danger alert-dismissible fade show'>
+<div class='alert alert-danger alert-dismissible fade show' style="margin-top:10px;">
     <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
     <span aria-hidden='true'>&times;</span>
     </button>
@@ -21,7 +24,7 @@
 @endif
 
 @if (isset($status))
-<div class='alert alert-warning alert-dismissible fade show'>
+<div class='alert alert-warning alert-dismissible fade show' style="margin-top:10px;">
 <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
 <span aria-hidden='true'>&times;</span>
 </button>
@@ -31,7 +34,7 @@
 
 @if (isset($update))
 @if ($update == 1) 
-    <div class='alert alert-success alert-dismissible fade show'>
+    <div class='alert alert-success alert-dismissible fade show' >
         <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
         <span aria-hidden='true'>&times;</span>
         </button>
@@ -39,20 +42,20 @@
     </div>
 @endif
 @endif
-<div id="result">
+<div id="result" style="margin-top:10px;">
 </div>
-<div class="content-wrapper" >
-<div class= "container-fluid" style="margin-top:20px;">
+<div class= "container-fluid animated slideInLeft" style="margin-top:20px;">
+
 <div class="row">
 
 <div class="col-sm-12">
-<h4 ><i class="fa fa-user"></i> Thông tin tài khoản  </h4>
+<h4 ><i class="fa fa-user"></i> THÔNG TIN TÀI KHOẢN  </h4>
 <hr>
 
-<div class="row">
+<div class="row ">
     <div class="col-lg-12">
-        <div class="row" >
-            <div class="col-lg-2">
+        <div class="row " >
+            <div class="col-lg-2 ">
                 <div class="col-lg-12 " style="margin-left:20px;">
                     <img class="rounded-circle img-fluid d-block mx-auto" src="../img/user.jpg" alt="">
                     <center><h6><b><?php echo session('username', ''); ?></b></h6>

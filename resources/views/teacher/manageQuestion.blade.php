@@ -32,15 +32,15 @@
           <div class="card-header">
             <div class="row">
               <div class="col-sm-11">
-                  <h5><i class="fa fa-table"></i> Danh sách câu hỏi</h5>
-                </div>
-              
-                <div class="col-sm-1">
-                <a href="AddNewQuestion"> <button  class="btn btn-danger" title='Add new question' onclick="loadSubject()"><b><i class="fa fa-plus"></i></b></button></a>
-                </div>
+                  <h4><i class="fa fa-table"></i> DANH SÁCH CÂU HỎI</h4>
               </div>
               
+              <div class="col-sm-1">
+              <a href="AddNewQuestion"> <button  class="btn btn-danger" title='Add new question' onclick="loadSubject()"><b><i class="fa fa-plus"></i></b></button></a>
+              </div>
             </div>
+              
+          </div>
           
           <div class="card-body">
             <div class="table-responsive">

@@ -9,12 +9,11 @@
   alert(" {{ $error }}");
 </script>
 @endif
-    <div class="content-wrapper">
+    <div class="content-wrapper animated fadeIn">
       <div class="container-fluid">
         <div class="">
           <div class="card-header" style="background-color:white;">
-            <i class="fa fa-table"></i>
-            <b style="font-size:20px;"> Danh sách đề thi</b>
+            <h4> <i class="fa fa-table"></i> TỔNG HỢP DANH SÁCH BÀI THI </h4>
           </div>
           <div class="card-body">
             <div class="table-responsive">

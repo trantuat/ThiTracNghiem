@@ -15,7 +15,7 @@
         <div class="">
         <input type="hidden" id="questionId" value="{{$data[0]['answer'][0]['question_id']}}">
           <div class="card-header">
-            <h5 style="color:red;"><i class="fa fa-asterisk"></i> Nội dung câu hỏi</b>
+            <h4><i class="fa fa-asterisk"></i> NỘI DUNG CÂU HỎI</h4>
           </div>
           <div class="card-body"  style="margin-bottom: 40px;">
           {{ csrf_field() }}

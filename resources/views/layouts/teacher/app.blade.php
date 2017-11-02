@@ -69,7 +69,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="/Logout">Đăng xuất</a>
+            <a class="btn btn-success" href="/Logout">Đăng xuất</a>
           </div>
         </div>
       </div>

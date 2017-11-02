@@ -26,10 +26,13 @@
       <input type="hidden" id="question_id" value="{{$data[0]['answer'][0]['question_id']}}">
             <div id="formUpdateQuestion" method="" class="form-horizontal">
             {{ csrf_field() }}
-                <div class="modal-header">
-                  <h4 class="modal-tittle">CẬP NHẬT CÂU HỎI</h4>
-                   
-                </div>
+            <div class="card-header">
+              <div class="row">
+                  <div class="col-sm-11">
+                  <h4><i class="fa fa-edit"></i> CẬP NHẬT CÂU HỎI</h4>
+                  </div>
+              </div>
+            </div>
                <div class="card-body"  style="margin-bottom: 40px; padding-bottom: 80px;" >
                   <div class="col-sm-12">
                     <div class="row">

@@ -19,6 +19,7 @@ body.fixed-nav {
 .content-wrapper {
   min-height: calc(100vh - 56px);
   padding-top: 1rem; 
+    
   }
 
 .scroll-to-top {
@@ -366,4 +367,8 @@ table th{
 }
 .card-header{
   background-color:white; 
+}
+
+h4{
+  color:#28a745;
 }

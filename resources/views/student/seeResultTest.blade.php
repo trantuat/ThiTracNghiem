@@ -77,7 +77,7 @@
                                     ?>
                                                     <div class="form-group form-group_radio" id="<?php echo $question_id; ?>" name="questionId">
                                                         <table>
-                                                            <td style= "width: 10px; vertical-align:top"><input type="radio" aria-label="The right answer" value="<?php echo $answer[$j]['id'];?>" id="<?php echo 'radio'.$i; ?>" name="<?php echo 'question'.$i; ?>" checked disabled></td>
+                                                            <td style= "width: 20px; vertical-align:top"><input type="radio" aria-label="The right answer" value="<?php echo $answer[$j]['id'];?>" id="<?php echo 'radio'.$i; ?>" name="<?php echo 'question'.$i; ?>" checked disabled></td>
                                                             <td><?php echo $answer[$j]['content'];?></td>
                                                            <td style= "width: 10px; vertical-align:top"><i class="fa fa-check" style="color:green;" aria-hidden="true"></i></td>
                                                         </table>
@@ -87,7 +87,7 @@
                                     ?>
                                                         <div class="form-group form-group_radio" id="<?php echo $question_id; ?>" name="questionId">
                                                             <table>
-                                                                 <td style= "width: 10px; vertical-align:top"><input type="radio" aria-label="The right answer" value="<?php echo $answer[$j]['id'];?>" id="<?php echo 'radio'.$i; ?>" name="<?php echo 'question'.$i; ?>"  disabled></td>
+                                                                 <td style= "width: 20px; vertical-align:top"><input type="radio" aria-label="The right answer" value="<?php echo $answer[$j]['id'];?>" id="<?php echo 'radio'.$i; ?>" name="<?php echo 'question'.$i; ?>"  disabled></td>
                                                                     <td><?php echo $answer[$j]['content'];?></td>
                                                                     <td style= "width: 10px; vertical-align:top"><i class="fa fa-check" style="color:green;" aria-hidden="true"></i></td>
                                                              </table>
@@ -102,9 +102,9 @@
                                     ?>
                                                     <div class="form-group form-group_radio" id="<?php echo $question_id; ?>" name="questionId">    
                                                         <table>
-                                                           <td style= "width: 10px; vertical-align:top"><input type="radio" aria-label="The right answer" value="<?php echo $answer[$j]['id'];?>" id="<?php echo 'radio'.$i; ?>" name="<?php echo 'question'.$i; ?>" checked disabled></td>
+                                                           <td style= "width: 20px; vertical-align:top"><input type="radio" aria-label="The right answer" value="<?php echo $answer[$j]['id'];?>" id="<?php echo 'radio'.$i; ?>" name="<?php echo 'question'.$i; ?>" checked disabled></td>
                                                            <td><?php echo $answer[$j]['content'];?></td>
-                                                           <td style= "width: 10px; vertical-align:top"><i class="fa fa-times" style="color:red;" aria-hidden="true"></i></td>
+                                                           <td style= "width: 20px; vertical-align:top"><i class="fa fa-times" style="color:red;" aria-hidden="true"></i></td>
                                                         </table>
                                                     </div>    
                                                     <br>       
@@ -112,7 +112,7 @@
                                     ?>
                                                         <div class="form-group form-group_radio" id="<?php echo $question_id;?>" name="questionId">
                                                             <table>
-                                                                <td style= "width: 10px; vertical-align:top"><input type="radio" aria-label="The right answer" value="<?php echo $answer[$j]['id'];?>" id="<?php echo 'radio'.$i; ?>" name="<?php echo 'question'.$i; ?>" disabled></td>
+                                                                <td style= "width: 20px; vertical-align:top"><input type="radio" aria-label="The right answer" value="<?php echo $answer[$j]['id'];?>" id="<?php echo 'radio'.$i; ?>" name="<?php echo 'question'.$i; ?>" disabled></td>
                                                                 <td><?php echo $answer[$j]['content'];?></td>
                                                             </table>
                                                         

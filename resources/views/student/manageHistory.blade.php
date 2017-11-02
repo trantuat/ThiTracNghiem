@@ -9,12 +9,11 @@
   alert(" {{ $error }}");
 </script>
 @endif
-    <div class="content-wrapper">
+    <div class="content-wrapper animated fadeInDownBig ">
       <div class="container-fluid">
         <div class="">
           <div class="card-header" style="background-color:white;">
-            <i class="fa fa-table"></i>
-            <b style="font-size:20px;"> Danh sách bài đã làm</b>
+            <h4 > <i class="fa fa-table"></i> DANH SÁCH BÀI ĐÃ LÀM</h4>
           </div>
           <div class="card-body">
             <div class="table-responsive">
@@ -52,7 +51,7 @@
                       
                       <a href="{{ url('/Students/TestTime', $data[$i]['id']) }}" ><button style="color: red; border: 0;background:none;" ><b><i class="fa fa-list"></i></b></button></a>
                       <!-- <button style="color: red; border: 0; background:none;" data-toggle='modal' title='Update info' data-target='#updateStudent'><b><i class="fa fa-pencil-square-o"></i></b></button> -->
-                      <button style="color: red; border: 0; background:none;" data-toggle='confirmation' title='Delete history' ><b><i class="fa fa-trash"></i></b></button>
+                      <!-- <button style="color: red; border: 0; background:none;" data-toggle='confirmation' title='Delete history' ><b><i class="fa fa-trash"></i></b></button> -->
                     </td>
                   </tr>
                   @endfor

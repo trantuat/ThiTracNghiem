@@ -21,6 +21,7 @@
 
     <!-- Custom styles for this template -->
     <link href="{{ URL::asset("user/css/sb-admin.css") }}" rel="stylesheet">
+    <link href="{{URL::asset("css/animate.css")}}" rel="stylesheet">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script type="text/javascript" src="{{ URL::asset("js/jquery-1.11.2.min.js")}}"></script>

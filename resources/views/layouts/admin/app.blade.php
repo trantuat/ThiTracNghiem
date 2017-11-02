@@ -41,27 +41,27 @@
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
     @include('layouts.admin.header')
-    <div class="content-wrapper" >     
+    <div class="content-wrapper" style="margin-right: none;" >     
     @yield('content')
      <!-- Logout Modal -->
      <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logutModal" aria-hidden="true">
-     <div class="modal-dialog" role="document">
-       <div class="modal-content">
-         <div class="modal-header">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
            <h5 class="modal-title" id="logout">Đăng xuất?</h5>
            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
              <span aria-hidden="true">&times;</span>
            </button>
          </div>
-         <div class="modal-body">
+        <div class="modal-body">
            Bạn chắc chắn muốn đăng xuất?
-         </div>
-         <div class="modal-footer">
-           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-           <a class="btn btn-primary" href="/Logout">Đăng xuất</a>
-         </div>
-       </div>
-     </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-success" href="/Logout">Đăng xuất</a>
+        </div>
+      </div>
+    </div>
    </div>
     @include('layouts.admin.footer')
 

@@ -140,7 +140,7 @@
                         </div>
                         <br>
                         <!-- <button class="btn btn-primary" type="button">Cập nhật</button> -->
-                        <center><input type="submit" class="btn btn-primary col-sm-6" style="text-align:center;" value="Cập nhật"></center>
+                        <center><input type="submit" class="btn btn-success col-sm-5" style="text-align:center;" value="Cập nhật"></center>
                     </form>
                 </div>
                 <br>
@@ -197,7 +197,8 @@
                             </div>
                         </div>
                         <br>
-                           <center><input type="submit" class="btn btn-primary col-sm-6 " style="text-align:center;" value="Lưu mật khẩu"></center>
+                        <br>
+                           <center><input type="submit" class="btn btn-success col-sm-5 " style="text-align:center;" value="Lưu mật khẩu"></center>
                         </form>
                     </div>
                     <br>

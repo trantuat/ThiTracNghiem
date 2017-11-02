@@ -3,7 +3,7 @@
 <title>Trang chủ</title>
 @endsection
 @section('carousel')
-<div id="myCarousel" class="carousel slide" data-ride="carousel" style = "width: 100%; margin-bottom:0px;">
+<div id="myCarousel" class="carousel slide " data-ride="carousel" style = "width: 100%; margin-bottom:0px;" >
 <ol class="carousel-indicators">
   <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
   <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -49,7 +49,6 @@
 </div>
 @endsection
 @section('content')    
-    <form method="post" action="thitracnghiem" id="frmExam" name="frmExam">
     <div id="content" style="background: #EFEFEF;">
         <div class="container">
             <div class="row text-center" style="margin-bottom: 0;">
@@ -99,7 +98,7 @@
                                                         </p>
                                                         <p class="exam-now">
                                                             <?php 
-                                                                echo "<center><a href='/Login' >Thi ngay</a></center>";
+                                                                echo "<center><a href='/Login' ><button class='btn btn-success'>Thi ngay</button></a></center>";
                                                                 $i++;
                                                                 $j++;
                                                             ?>
@@ -149,7 +148,7 @@
                                                     </p>
                                                     <p class="exam-now">
                                                     <?php 
-                                                         echo "<center><a href='/Login' >Thi ngay</a></center>";
+                                                         echo "<center><a href='/Login' ><button class='btn btn-success '>Thi ngay</button></a></center>";
                                                         $i++;
                                                         $j--;
                                                     ?>
@@ -171,8 +170,6 @@
         </div>
     </div>
    
-</form>
-
 <section class="callaction">
     <div class="container">
         <div class="row">

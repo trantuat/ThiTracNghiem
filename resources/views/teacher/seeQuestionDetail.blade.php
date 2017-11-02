@@ -21,15 +21,16 @@
     </script>
     
 @endif
-
-
       <div class="container-fluid">
             <div id="formUpdateQuestion" method="" class="form-horizontal" >
             {{ csrf_field() }}
-                <div class="modal-header">
-                  <h4 class="modal-tittle">XEM CHI TIẾT CÂU HỎI</h4>
-                   
+              <div class="card-header">
+                <div class="row">
+                    <div class="col-sm-11">
+                    <h5><i class="fa fa-ravelry"></i> NỘI DUNG CÂU HỎI</h5>
+                    </div>
                 </div>
+              </div>
                <div class="card-body"  style="margin-bottom: 40px; padding-bottom: 80px;" >
                   <div class="col-sm-12">
                     <div class="row">

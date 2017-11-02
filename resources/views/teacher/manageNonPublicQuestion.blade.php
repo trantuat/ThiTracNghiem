@@ -9,7 +9,7 @@
         <div class="card-header">
             <div class="row">
                 <div class="col-sm-11">
-                <h5><i class="fa fa-table"></i> Danh sách câu hỏi đang chờ xét duyệt</h5>
+                <h4><i class="fa fa-clock-o"></i> DANH SÁCH CÂU HỎI CHỜ XÉT DUYỆT</h4>
                 </div>
             </div>
         </div>

@@ -5,9 +5,15 @@
 @endsection
 @section('content')
       <div class="container-fluid">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <b>Quản lý câu hỏi </b>
+          </li>
+          <li class="breadcrumb-item active">Danh sách câu hỏi chờ xét duyệt</li>
+        </ol>
         <div class="">
           <div class="card-header">
-            <h5 style="color:red;"><i class="fa fa-pause"></i> Danh sách câu hỏi chờ xét duyệt</h5>
+            <h4 ><i class="fa fa-pause"></i> DANH SÁCH CÂU HỎI CHỜ XÉT DUYỆT</h4>
           </div>
           <div class="card-body">
             <div class="table-responsive">
@@ -41,9 +47,9 @@
                     <td>{{$data[$i]['class_name']}}</td>
                     <td>{{$data[$i]['topic_name']}}</td>
                     <td>{{$data[$i]['level_name']}}</td>
-                    <td><?php echo $data[$i]['content'];?></td>
+                    <td style="width:50px;"><?php echo $data[$i]['content'];?></td>
                     <td>{{$data[$i]['updated_at']}}</td>
-                    <td><center>
+                    <td ><center>
                       <a href="/Admins/ShowDetailNonPublicQuestion/{{$data[$i]['question_id']}}"><button style='color: red; border: 0; background:none;' ><b><i class='fa fa-info-circle'></i></b></button></a>
                       <?php 
                       $id=$data[$i]['question_id'];
