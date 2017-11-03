@@ -141,7 +141,7 @@
                   ]
                 },
                 options: {
-                  legend: { display: true },
+                  legend: { display: false },
                   title: {
                     display: true,
                     text: 'Top 5 thí sinh có điểm số cao nhất',

@@ -82,7 +82,6 @@
                                                            <td style= "width: 10px; vertical-align:top"><i class="fa fa-check" style="color:green;" aria-hidden="true"></i></td>
                                                         </table>
                                                     </div>
-                                                    <br>
                                     <?php                } else{
                                     ?>
                                                         <div class="form-group form-group_radio" id="<?php echo $question_id; ?>" name="questionId">
@@ -92,7 +91,6 @@
                                                                     <td style= "width: 10px; vertical-align:top"><i class="fa fa-check" style="color:green;" aria-hidden="true"></i></td>
                                                              </table>
                                                         </div>
-                                                        <br>       
                                     <?php                }
                                     
                                                 }
@@ -106,8 +104,7 @@
                                                            <td><?php echo $answer[$j]['content'];?></td>
                                                            <td style= "width: 20px; vertical-align:top"><i class="fa fa-times" style="color:red;" aria-hidden="true"></i></td>
                                                         </table>
-                                                    </div>    
-                                                    <br>       
+                                                    </div>     
                                     <?php           } else{
                                     ?>
                                                         <div class="form-group form-group_radio" id="<?php echo $question_id;?>" name="questionId">
@@ -117,7 +114,6 @@
                                                             </table>
                                                         
                                                         </div>
-                                                        <br>
                                     <?php
                                                     }
                                                 }
@@ -135,7 +131,6 @@
                                                             </table>
                                                             
                                                         </div>
-                                                        <br>
 
                                     <?php             
                                                     $check=1;
@@ -151,7 +146,6 @@
                                                        <td style= "width: 20px; vertical-align:top; align: center;"><i class="fa fa-check" style="color:green;" aria-hidden="true"></i></td>
                                                     </table>
                                                 </div>
-                                                <br>
 
                                     <?php       }
                                             } else{
@@ -165,8 +159,7 @@
                                                                 <td style= "width: 20px; vertical-align:top; align: center;"><i class="fa fa-times" style="color:red;" aria-hidden="true"></i></td>
                                                             </table>
                                                         </div>
-                                                        <br>
-
+                                                        
                                     <?php               $check=1; 
                                                         }
                                                     }
@@ -178,7 +171,6 @@
                                                         <td><?php echo $answer[$j]['content'];?></td>
                                                     </table>
                                                 </div>
-                                                <br>
 
                                     <?php           }
                                                 }
