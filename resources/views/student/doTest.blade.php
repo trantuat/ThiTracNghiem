@@ -17,6 +17,9 @@
         }
        
     });
+    window.onbeforeunload = function() {
+        return "";
+    }
 </script>
 @endsection
 @section('content')
@@ -59,7 +62,7 @@
                 <div class="card mb-3" style="background-color:#EEEEEE;">
                     <div class="card-body" id="questionContent">
                         <table>
-                            <td style= "width: 120px; vertical-align:top"><b>Question {{$i+1}}:</td>
+                            <td style= "width: 120px; vertical-align:top"><b>Câu {{$i+1}}:</td>
                             <td><?php echo $data[$i]['content'];?></td>
                         </table>
                     </div>

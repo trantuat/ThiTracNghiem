@@ -30,9 +30,13 @@
 
       <div class="container-fluid">
             {{ csrf_field() }}
-                <div class="modal-header">
-                  <h4 class="modal-tittle">THÊM MỚI CÂU HỎI</h4>
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-sm-11">
+                    <h4><i class="fa fa-ravelry"></i> THÊM CÂU HỎI</h4>
+                    </div>
                 </div>
+              </div>
                 <div id = "formAddQuestion">
                   <div class="card-body" style="margin-bottom:40px; "  >
                     <div class="col-sm-12">

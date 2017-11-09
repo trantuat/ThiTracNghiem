@@ -48,8 +48,8 @@
                 <thead>
                   <tr>
                     <th>STT</th>
-                    <th>Môn</th>
                     <th>Lớp</th>
+                    <th>Môn</th>
                     <th>Mức độ</th>
                     <th>Câu hỏi</th>
                     <th>Ngày Đăng</th>
@@ -59,8 +59,8 @@
                 <tfoot>
                   <tr>
                     <th>STT</th>
-                    <th>Môn</th>
                     <th>Lớp</th>
+                    <th>Môn</th>
                     <th>Mức độ</th>
                     <th>Câu hỏi</th>
                     <th>Ngày Đăng</th>

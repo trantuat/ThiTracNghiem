@@ -54,17 +54,6 @@
                   answer=answer.concat(answerQuestion);
                } else{
                  k++;
-              // if (v == null) { 
-              //   alert("Chose answer cb")
-              // } else {
-              //   alert(v);
-              // }
-            // }
-            // if(l==numberAnswer){
-            //   answerQuestion=[{'question_id':questionId,'option_choose':'0'}];
-            // } else{
-            //   answerQuestion=[{'question_id':questionId,'option_choose':answerForEachQuestion}];
-            //   answerForEachQuestion=[];
             }
             if(k==numberAnswer){
               answerQuestion=[{'question_id':questionId,'option_choose':'0'}];
@@ -72,6 +61,7 @@
               k=0;
             }
           }
+          k=0;
   
           } else {
             var answerId =$(".question".concat(i).concat(" .form-group_radio #radio").concat(i).concat(":checked")).val();
@@ -82,11 +72,7 @@
             }
             answer=answer.concat(answerQuestion);
   
-            // if (v == null) { 
-            //   alert("Chose answer")
-            // } else {
-            // alert(v);
-            // }
+           
           }
          }
          var object1 = {"answer":answer};
@@ -110,9 +96,10 @@
             sendJson: data
           },
           success: function (response) {
-              $("#correctAnswer").text(response['result']['correct_answer']);
-              $("#wrongAnswer").text(response['result']['wrong_answer']);
-              $("#point").text(response['result']['score']);
+              
+              $("#correctAnswer").text(response['result']['correct_answer'].toFixed(2));
+              $("#wrongAnswer").text(response['result']['wrong_answer'].toFixed(2));
+              $("#point").text(response['result']['score'].toFixed(2));
               $("#historyId").val(response['history_id']['data']);
               $('#showResultQuizz').modal({backdrop: 'static', keyboard: false});
               $('#showResultQuizz').modal('show');
@@ -121,8 +108,6 @@
               
           },
           error: function (response) {
-              // console.log(response);
-              // alert("Đã xảy ra lỗi");
           }
         });
       }

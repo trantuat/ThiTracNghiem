@@ -54,7 +54,7 @@
             <div class="row text-center" style="margin-bottom: 0;">
                 <h3>LUYỆN THI TRẮC NGHIỆM 2017</h3>
             </div>
-            <div class="row">
+            <div class="row screen-desktop">
                 <div class="col-md-12">
                     <div class="carousel slide media-carousel" id="media">
                         <div class="carousel-inner">
@@ -167,6 +167,121 @@
                     </div>
                 </div>
             </div>
+            <div class="row screen-mobile">
+                    <div class="col-md-12">
+                        <div class="carousel slide media-carousel" id="media-mobile">
+                        <div class="carousel-inner">
+                            <div class="item active" >
+                                <div class="row">
+                                <?php 
+                                $i=0;
+                                $j=1;
+                                while ($i<4){
+                                ?>   
+                                    <div class="col-md-12">
+                                        <div class="skill-home">
+                                            <div class="skill-home-solid">
+                                                <div class="text-center col-md-12 subject-card">
+                                                    <span class="icons <?php echo 'c'.$j ;?>">
+                                                        <?php
+                                                            switch ($data[$i]['topic_name']){
+                                                                case "Toán": echo "<img class='subject-icon' src='img/toan.png' title='Toán'/>"; break;
+                                                                case "Vật Lý": echo "<img class='subject-icon' src='img/ly.png' title='Lý'/>"; break;
+                                                                case "Hóa Học": echo "<img class='subject-icon' src='img/hoa.png' title='Hoá'/>"; break;
+                                                                case "Sinh Học": echo "<img class='subject-icon' src='img/sinh.png' title='Sinh'/>"; break;
+                                                                
+                                                            }
+                                                        ?>
+                                                    </span>
+                                                
+                                                    <div class="box-area">
+                                                        <h3 class="subject-title">
+                                                        <?php
+                                                            switch ($data[$i]['topic_name']){
+                                                                case "Toán": echo "Toán Học"; break;
+                                                                case "Vật Lý": echo "Vật Lý"; break;
+                                                                case "Hóa Học": echo "Hóa Học"; break;
+                                                                case "Sinh Học": echo "Sinh học"; break;
+                                                                
+                                                            }
+                                                        ?>
+                                                        </h3>
+                                                        <p class="p-subject">
+                                                            Hệ thống câu hỏi <b><?php echo $data[$i]['topic_name'] ?></b> đa dạng phong phú, được xắp sếp ngẫu nhiên từ dễ đến khó, bấm <b>"Thi Ngay"</b> để trải nghiệm
+                                                        </p>
+                                                        <p class="exam-now">
+                                                            <?php 
+                                                                echo "<center><a href='/Login' ><button class='btn btn-success'>Thi ngay</button></a></center>";
+                                                                $i++;
+                                                                $j++;
+                                                            ?>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php }?>
+                                    
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <?php 
+                                    while ($i>=4 && $i<8){
+                                    ?>   
+                                    <div class="col-md-12">
+                                        <div class="skill-home">
+                                            <div class="skill-home-solid">
+                                                <div class="text-center col-md-12 subject-card">
+                                                <span class="icons <?php echo 'c'.$j ;?>">
+                                                    <?php
+                                                        switch ($data[$i]['topic_name']){
+                                                            case "Tiếng Anh": echo "<img class='subject-icon' src='img/anh.png' title='Anh'/>"; break;
+                                                            case "Lịch Sử": echo "<img class='subject-icon' src='img/lichsu.png' title='Sử'/>"; break;
+                                                            case "Địa Lý": echo "<img class='subject-icon' src='img/dialy.png' title='Địa'/>"; break;
+                                                            case "Ngữ Văn": echo "<img class='subject-icon' src='img/nguvan.png' title='Ngữ Văn'/>"; break;
+                                                        }
+                                                    ?>
+                                                </span>
+                                                    <div class="box-area">
+                                                    <h3 class="subject-title">
+                                                    <?php
+                                                    switch ($data[$i]['topic_name']){
+                                                        case "Tiếng Anh": echo "Tiếng Anh"; break;
+                                                        case "Lịch Sử": echo "Lịch Sử"; break;
+                                                        case "Địa Lý": echo "Địa Lý"; break;
+                                                        case "Ngữ Văn": echo "Ngữ Văn"; break;
+                                                        
+                                                    }
+                                                    ?></h3> 
+                                                    <p class="p-subject">
+                                                    Hệ thống câu hỏi <b><?php echo $data[$i]['topic_name']?></b> đa dạng phong phú, được xắp sếp ngẫu nhiên từ dễ đến khó, bấm <b>"Thi Ngay"</b> để trải nghiệm
+                                                    
+                                                    </p>
+                                                    <p class="exam-now">
+                                                    <?php 
+                                                         echo "<center><a href='/Login' ><button class='btn btn-success '>Thi ngay</button></a></center>";
+                                                        $i++;
+                                                        $j--;
+                                                    ?>
+                                                    </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php }?>
+                                </div>
+                            </div>
+                        </div>
+                        <a data-slide="prev" href="http://789.vn/#media" class="left carousel-control screen-desktop">‹</a>
+                            <a data-slide="next" href="http://789.vn/#media" class="right carousel-control screen-desktop">›</a>
+                            <a data-slide="prev" href="http://789.vn/#media-mobile" class="left carousel-control screen-mobile">‹</a>
+                            <a data-slide="next" href="http://789.vn/#media-mobile" class="right carousel-control screen-mobile">›</a>
+                        </div>
+                    </div>
+            </div>                
         </div>
     </div>
    

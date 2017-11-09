@@ -37,6 +37,10 @@
             alert("Phải check ít nhất 1 đáp án đúng!");
             return;
           }
+          if(right_answer==number_answer){
+            alert("Không được check hết đáp án!");
+            return;
+          }
           var is_multichoise= (right_answer>1 ? 1:0); 
           var content = CKEDITOR.instances['questionContent'].getData();
           var level_id=$('#addQuestionLevel').val();
@@ -111,6 +115,10 @@
           var right_answer=document.querySelectorAll('input[type="checkbox"]:checked').length ;
           if(right_answer==0){
             alert("Phải check ít nhất 1 đáp án đúng!");
+            return;
+          }
+          if(right_answer==number_answer){
+            alert("Không được check hết đáp án!");
             return;
           }
           var is_multichoise= (right_answer>1 ? 1:0); 

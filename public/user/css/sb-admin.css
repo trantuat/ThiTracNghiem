@@ -929,7 +929,46 @@ padding-left: 15px;
     background-position: 50% 35px;
 }*/
 
+.screen-mobile {
+  display: none;
+}
 
+.screen-desktop {
+  display: block;
+}
+@media (max-width: 1010px) {
+  .fixed-contact-info {
+      display: none !important;
+  }
+
+  .td-home {
+      width: 100%;
+      display: block;
+  }
+
+  .div-home {
+      width: 100%;
+  }
+
+  .div-home-1 {
+      float: none;
+  }
+
+  .div-home-2 {
+      float: none;
+  }
+
+  .screen-mobile {
+      display: block;
+  }
+
+  .screen-desktop {
+      display: none;
+  }
+
+  
+
+}
 
 
 

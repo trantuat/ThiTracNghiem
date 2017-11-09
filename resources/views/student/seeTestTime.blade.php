@@ -63,7 +63,7 @@
                     <td>{{$data[$i]['duration']}}</td>
                     <td>{{$data[$i]['created_at']}}</td>
                     <td>{{$data[$i]['quizz_times']}}</td>
-                    <td>{{$data[$i]['score']}}</td>
+                    <td><?php echo round($data[$i]['score'],2); ?></td>
                     <td>
                       <input type="hidden" id="historiesId" value="{{$data[$i]['histories_id']}}">
                       <!-- <button style="color: red; border: 0; background:none;" data-toggle='modal' title='see result' data-target='#seeResultOfStudent'><b><i class="fa fa-list"></i></b></button> -->

@@ -39,7 +39,6 @@
                 }
             },
             submitHandler: function (form) {
-				alert("OK");
                 $.ajax({
 					url: '/Students/UpdatePassword',
 					type: "POST", 
@@ -232,7 +231,7 @@
 					minlength: 6,
 					fullname: true
 				},
-				birthday:{
+				dayOfBirth:{
 					required: true
 				},
 				email: {
@@ -252,7 +251,7 @@
 				},
 				phone:{
 					number: true,
-					digits:true,
+					digits: true,
 					rangelength:[10,11]
 				}
 				
@@ -266,7 +265,7 @@
 					required: "Không được để trống trường tên đầy đủ",
 					minlength: "Tên đầy đủ phải từ 6 kí tự trở lên",
 				},
-				birthday: {
+				dayOfBirth: {
 					required: "Phải nhập ngày sinh",
 				},
 				email: {
