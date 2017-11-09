@@ -82,6 +82,7 @@
     <!-- Custom scripts for this template -->
     <script src="{{ URL::asset("admin/js/sb-admin.min.js") }}"></script>
     <script src="{{ URL::asset("admin/js/sb-admin.js") }}"></script>
+    <!-- <script src="{{ URL::asset("user/js/teacher.js") }}"></script> -->
 
     <script src="{{ URL::asset("http://code.jquery.com/jquery-1.12.4.min.js") }}"></script>
     <script src="{{ URL::asset("loading/dist/jquery.loading.min.js") }}"></script>

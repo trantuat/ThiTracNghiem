@@ -31,7 +31,7 @@
 
 
 @endif
-
+<input type="hidden" id="startTime" value="<?php echo date('Y-m-d H:i:s')?>">
 <div class="content-wrapper">
 <div class="container-fluid" >
 

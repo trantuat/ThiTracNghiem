@@ -8,19 +8,22 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="/Students" style="margin-right:50px;"><i class='fa fa-home'><b> Trang chủ </b></i></a>
+                <a class="nav-link" href="/Students" style="margin-right:30px;"><i class='fa fa-home'><b> Trang chủ </b></i></a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="/Students/Profile" style="margin-right:50px;"><i class='fa fa-user'><b> Thông tin cá nhân </b></i></a>
+                <a class="nav-link" href="/Students/Profile" style="margin-right:30px;"><i class='fa fa-user'><b> Thông tin cá nhân </b></i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/Students/History" style="margin-right:50px;"><i class='fa fa-history'><b> Lịch sử thi </b></i></a>
+                <a class="nav-link" href="/Students/History" style="margin-right:30px;"><i class='fa fa-history'><b> Lịch sử thi </b></i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link"  data-toggle='modal' title='test' data-target='#formTest' onclick="showOptionChoose()" style="margin-right:50px;"><i class='fa fa-diamond'><b> Làm bài thi </b></i></a>
+                <a class="nav-link"  data-toggle='modal' title='test' data-target='#formTest' onclick="showOptionChoose()" style="margin-right:30px;"><i class='fa fa-diamond'><b> Làm bài thi </b></i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link"  href="/Students/Quizz"  style="margin-right:50px;"><i class='fa fa-list'><b> Danh sách đề thi </b></i></a>
+                <a class="nav-link"  href="/Students/Quizz"  style="margin-right:30px;"><i class='fa fa-list'><b> Danh sách đề thi </b></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"  href="/Students/QuizzTemplate"  style="margin-right:30px;"><i class='fa fa-list'><b> Đề thi mẫu </b></i></a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">

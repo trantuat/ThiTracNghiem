@@ -2,6 +2,28 @@
 (function($) {
     $(document).ready(function() {
         $('.dataTable').DataTable();
+        $('.dataTable tfoot th').each( function () {
+          var title = $(this).text();
+          if(title!="Hành động"){
+            $(this).html( '<input type="text" class="form-control" placeholder="'+title+'"/>' );
+          }
+      } );
+   
+      // DataTable
+      var table = $('.dataTable').DataTable();
+   
+      // Apply the search
+      table.columns().every( function () {
+          var that = this;
+   
+          $( 'input', this.footer() ).on( 'keyup change', function () {
+              if ( that.search() !== this.value ) {
+                  that
+                      .search( this.value )
+                      .draw();
+              }
+          } );
+      } );
     
        //add more answers for question
         var ans=3;
@@ -152,6 +174,7 @@
           var object1 = {"answer":jsonArray1};
           question={"question_id":question_id,"question_content":content,"class_id":class_id,"level_id":level_id,"topic_id":topic_id};
           $.extend(question, object1);
+          alert(JSON.stringify(question));
           $.ajax({
             url: '/Teachers/UpdateQuestion',
             type: "POST",
@@ -169,7 +192,7 @@
             success: function (response) {
               console.log(response);
               alert("Cập nhật câu hỏi thành công");
-              window.location.href="/Teachers/UncheckedQuestion";
+              location.replace(document.referrer);
             },
             error: function (response) {
               console.log(response);

@@ -21,6 +21,13 @@
             </li>
         </ul>
     </li>
+    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="templateQuizz">
+        <a class="nav-link" href="/Teachers/QuizzTemplate">
+            <i class="fa fa-text-width"></i>
+            <span class="nav-link-text">
+            Đề thi mẫu</span>
+        </a>
+    </li>
     
        
 </ul>

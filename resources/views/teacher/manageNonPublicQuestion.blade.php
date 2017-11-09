@@ -49,7 +49,7 @@
                 <td>{{$data[$i]['updated_at']}}</td>
                 <td> <center>
                 <input type="hidden" id="question_id" name="question_id" value="{{$data[$i]['question_id']}}">
-                 <a href="ShowDetailQuestionNonPublic/{{$data[$i]['question_id']}}"> <button style='color: red; border: 0; background:none;' title='update' ><b><i class='fa fa-pencil-square-o'></i></b></button> </a>                    
+                 <a href="ShowDetailQuestion/{{$data[$i]['question_id']}}"> <button style='color: red; border: 0; background:none;' title='update' ><b><i class='fa fa-pencil-square-o'></i></b></button> </a>                    
                  <?php 
                   $id=$data[$i]['question_id'];
                   $questionId=json_encode($id);
