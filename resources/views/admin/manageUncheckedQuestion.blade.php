@@ -49,7 +49,7 @@
                     <td>{{$data[$i]['level_name']}}</td>
                     <td style="width:50px;"><?php echo $data[$i]['content'];?></td>
                     <td>{{$data[$i]['updated_at']}}</td>
-                    <td ><center>
+                    <td style="width:50px;">
                       <a href="/Admins/ShowDetailNonPublicQuestion/{{$data[$i]['question_id']}}"><button style='color: red; border: 0; background:none;' ><b><i class='fa fa-info-circle'></i></b></button></a>
                       <?php 
                       $id=$data[$i]['question_id'];
@@ -58,7 +58,7 @@
                       
                       echo"<button style='color: red; border: 0; background:none;'  title='uncheck' onclick='deleteQuestion($questionId)' ><b><i class='fa fa-trash'></i></b></button>";
                     ?>
-                      </center></td>
+                      </td>
                   </tr>
                   @endfor
                 </tbody>

@@ -74,13 +74,11 @@
                     <td>{{$data[$i]['class_name']}}</td>
                     <td>{{$data[$i]['topic_name']}}</td>
                     <td>{{$data[$i]['level_name']}}</td>
-                    <td > <?php echo $data[$i]['content'];?></td>
+                    <td> <?php echo $data[$i]['content'];?></td>
                     <td>{{$data[$i]['updated_at']}}</td>
                     <td> <center>
                     <input type="hidden" id="question_id" name="question_id" value="{{$data[$i]['question_id']}}">
-                     <!-- <a href="ShowDetailQuestion/{{$data[$i]['question_id']}}"> <button style='color: red; border: 0; background:none;' title='update' ><b><i class='fa fa-info-circle'></i></b></button> </a>                     -->
-                     <a href="ShowDetailQuestion/{{$data[$i]['question_id']}}"> <button style='color: red; border: 0; background:none;' title='update' ><b><i class='fa fa-pencil-square-o'></i></b></button> </a>                    
-
+                     <a href="ShowDetailQuestion/{{$data[$i]['question_id']}}"> <button style='color: red; border: 0; background:none;' title='update' ><b><i class='fa fa-info-circle'></i></b></button> </a>                    
                     </center>
                   </tr>
                   @endfor

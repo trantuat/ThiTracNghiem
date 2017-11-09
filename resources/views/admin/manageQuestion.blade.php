@@ -16,7 +16,7 @@
           </div>
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-hover table-bordered table-striped table-order-column dataTable" width="100%"  cellspacing="0">
+              <table class="table table-hover table-bordered table-striped table-order-column dataTable" cellspacing="0" width="100%"  cellspacing="0">
                 <thead>
                   <tr>
                     <th>ID</th>
@@ -52,7 +52,7 @@
                     <td>{{$data[$i]['updated_at']}}</td>
                     <td><center>
                       
-                      <a href="/Admins/ShowDetailQuestion/{{$data[$i]['question_id']}}"><button style='color: red; border: 0; background:none;' ><b><i class='fa fa-info-circle'></i></b></button></a>
+                      <a href="/Admins/ShowDetailQuestion/{{$data[$i]['question_id']}}"><button style='color: red; border: 0; background:none;' ><b><i class='fa fa-pencil-square-o'></i></b></button></a>
                       <!-- <button style='color: red; border: 0; background:none;' data-toggle="modal" data-target="#detailQuestion" onclick="showDetailQuestion()"><b><i class='fa fa-info-circle'></i></b></button> -->
                     
                     </center</td>

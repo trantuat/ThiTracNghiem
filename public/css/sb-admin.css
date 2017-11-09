@@ -372,3 +372,9 @@ table th{
 h4{
   color:#28a745;
 }
+
+tfoot input {
+  width: 100%;
+  padding: 2px;
+  box-sizing: border-box;
+}

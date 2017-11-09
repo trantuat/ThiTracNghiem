@@ -37,6 +37,12 @@
       });
       var clock=null;
       function submitQuizz(){
+        var today = new Date();
+        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        var endTime = date+' '+time;
+        var startTime=$('#startTime').val();
+        
         var quizzId=$('#quizzId').val();
         var numberQuestion=$('#numberQuestion').val();
         var data={'quizz_id':quizzId,};
