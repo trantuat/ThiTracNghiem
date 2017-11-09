@@ -17,13 +17,12 @@ Auth::routes();
 */
 
 Route::get('/', 'Home\IndexController@index')->name('home');
-Route::get('/Reset', 'Auth\ResetPasswordController@show')->name('Reset');
 Route::get('/Login', 'Auth\LoginController@show')->name('Login');
 Route::get('/Logout', 'Auth\LogoutController@logout')->name('Logout');
 Route::get('/Register', 'Auth\RegisterController@show')->name('Register');
 Route::post('/PerformLogin', 'Auth\LoginController@login');
 Route::post('/PerformRegister', 'Auth\RegisterController@register');
-Route::post('/PerformReset', 'Auth\ResetPasswordController@reset')->name('PerformReset');
+
 /**
 *  Route for admin page
 */
@@ -85,8 +84,8 @@ Route::group(['prefix'=> 'Teachers'], function() {
     Route::get('/GetClassForUpdate', 'Teacher\DetailQuestionController@getClassForUpdate');
     Route::get('/GetLevelForUpdate', 'Teacher\DetailQuestionController@getLevelForUpdate');
     Route::get('/AddNewQuestion', 'Teacher\AddNewQuestionController@showAddNewQuestion');
-    // Route::get('/ShowDetailQuestion/{id}', 'Teacher\DetailQuestionController@showDetailQuestion');
-    Route::get('/ShowDetailQuestion/{id}', 'Teacher\DetailQuestionController@showDetailQuestionNonPublic');
+    Route::get('/ShowDetailQuestion/{id}', 'Teacher\DetailQuestionController@showDetailQuestion');
+    // Route::get('/ShowDetailQuestion/{id}', 'Teacher\DetailQuestionController@showDetailQuestionNonPublic');
     Route::post('/UpdateQuestion', 'Teacher\DetailQuestionController@updateQuestion');
     Route::post('/UpdateAccount', 'Teacher\ProfileController@updateAccount');
     Route::post('/UpdatePassword', 'Teacher\ProfileController@updatePassword');

@@ -14,17 +14,17 @@ class DetailQuestionController extends Controller
         if($responseData->error!=null){
             return redirect()->back()->with(['error'=>"Đã xảy ra lỗi"]);
         }
-        return view("teacher.seeQuestionDetail",['data'=>$responseData->data]);
-    }
-
-    public function showDetailQuestionNonPublic(Request $request) {
-        $question_id=$request->id;
-        $responseData=QuizzService::getInstance()->showDetailQuestion($question_id);
-        if($responseData->error!=null){
-            return redirect()->back()->with(['error'=>"Đã xảy ra lỗi"]);
-        }
         return view("teacher.updateQuestion",['data'=>$responseData->data]);
     }
+
+    // public function showDetailQuestionNonPublic(Request $request) {
+    //     $question_id=$request->id;
+    //     $responseData=QuizzService::getInstance()->showDetailQuestion($question_id);
+    //     if($responseData->error!=null){
+    //         return redirect()->back()->with(['error'=>"Đã xảy ra lỗi"]);
+    //     }
+    //     return view("teacher.updateQuestion",['data'=>$responseData->data]);
+    // }
 
     public function getClassForUpdate(Request $request){
         $classId=$request->classId;
@@ -96,10 +96,10 @@ class DetailQuestionController extends Controller
         $responseData = QuizzService::getInstance()->updateAnswer($updateAnswer);
 
         if ($responseData->error != null) {
-            return json_encode($responseData->error);
+            return json_encode($responseData);
         } else{
             // echo $responseData->data;
-            return json_encode($responseData->data);
+            return json_encode($responseData);
         }
         
     }

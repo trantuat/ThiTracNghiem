@@ -10,6 +10,7 @@
         });
 
         $(document).on("click","#btnDetailResult",function() {
+          window.onbeforeunload = null;
           historyId=$('#historyId').val();
           window.location.href = '/Students/Result/'+historyId;
          
@@ -42,7 +43,7 @@
         var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
         var endTime = date+' '+time;
         var startTime=$('#startTime').val();
-        
+
         var quizzId=$('#quizzId').val();
         var numberQuestion=$('#numberQuestion').val();
         var data={'quizz_id':quizzId,};
@@ -83,14 +84,16 @@
          }
          var object1 = {"answer":answer};
          $.extend(data, object1);
+         var object2 ={"start_time":startTime,"end_time":endTime};
+         $.extend(data, object2);
          let json = JSON.stringify(data);
+         alert(json);
   
          $.ajax({
           url: '/Students/Answer',
           type: "POST", /* or type:"GET" or type:"PUT" */
           beforeSend: function (xhr) {
             var token = $('meta[name="csrf_token"]').attr('content');
-  
             if (token) {
                   return xhr.setRequestHeader('X-CSRF-TOKEN', token);
             } else{

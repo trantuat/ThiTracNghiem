@@ -105,6 +105,15 @@
         });
       });
 
+      var ans_update=$('#numberOfAnswerUpdate').val();
+      $(document).on("click","#addAnswerForUpdate",function() {
+        $('#updateMoreAnswer').append('<div class="editor'+ans_update+'" > <div class="input-group"><span class="input-group-addon" style="border-bottom: none; border-radius: 0px;"><input type="checkbox" aria-label="The right answer" id="checkbox_answer'+ans_update+'" ></span><input type="text" class="form-control" value="Ðáp án đúng" style="border-bottom: none; border-radius: 0px;" readonly><span class="input-group-btn"><button class="btn btn-secondary" type="button" id ="editor'+ans_update+'" onclick="deleteAnswerUpdate(this.id)" style="height: 38px; border-bottom: none; border-radius: 0px; background-color: #e9ecef; border-color: rgba(0,0,0,.15);" ><img src="/img/ic_delete.png" ></button></span></div><Textarea class="form-control" id="answer'+ans_update+'"  name="answer'+ans_update+'" ></Textarea><script>CKEDITOR.replace( "answer'+ans_update+'",{filebrowserBrowseUrl : "/editor/ckfinder/ckfinder.html",filebrowserImageBrowseUrl : "/editor/ckfinder/ckfinder.html?type=Images",filebrowserFlashBrowseUrl : "/editor/ckfinder/ckfinder.html?type=Flash",filebrowserUploadUrl : "/editor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files",filebrowserImageUploadUrl : "/editor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images",filebrowserFlashUploadUrl : "/editor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash"});</script><br></div></div>');
+
+        ans_update++;
+       $('#numberOfAnswerUpdate').val(ans_update);
+       event.preventDefault();
+     });
+
 
       $(document).on("click","#btnUpdateQuestion",function() {
         if (!confirm("Bạn có muốn cập nhật câu hỏi này?")) return;
