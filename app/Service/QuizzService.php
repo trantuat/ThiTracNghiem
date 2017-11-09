@@ -22,6 +22,11 @@
            return ApiHelper::getInstance()->post('api/user/login',$parameters);
         }
 
+        public function resetPassword($email) {
+            $parameters =  ['email'=>$email];
+            return ApiHelper::getInstance()->post('api/admin/forgotPassword',$parameters);
+        }
+
         public function getInfor() {
             return ApiHelper::getInstance()->get('api/user');
         }

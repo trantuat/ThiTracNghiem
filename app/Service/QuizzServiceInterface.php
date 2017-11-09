@@ -5,6 +5,8 @@
        
         public function login($username, $password);
 
+        public function resetPassword($email);
+
         public function getInfor();
 
         public function updateAccount($parameters);

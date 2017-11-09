@@ -17,12 +17,13 @@ Auth::routes();
 */
 
 Route::get('/', 'Home\IndexController@index')->name('home');
+Route::get('/Reset', 'Auth\ResetPasswordController@show')->name('Reset');
 Route::get('/Login', 'Auth\LoginController@show')->name('Login');
 Route::get('/Logout', 'Auth\LogoutController@logout')->name('Logout');
 Route::get('/Register', 'Auth\RegisterController@show')->name('Register');
 Route::post('/PerformLogin', 'Auth\LoginController@login');
 Route::post('/PerformRegister', 'Auth\RegisterController@register');
-
+Route::post('/PerformReset', 'Auth\ResetPasswordController@reset')->name('PerformReset');
 /**
 *  Route for admin page
 */

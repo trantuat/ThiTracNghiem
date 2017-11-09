@@ -91,6 +91,8 @@
         </div>
         <input type="submit" class="btn " value="Đăng nhập" >
       </form>
+
+      <a class="d-block small mt-3" href="Reset">Quên mật khẩu</a>
 			<a class="d-block small mt-3" href="Register">Đăng ký tài khoản</a>
       
 		</div>
