@@ -82,5 +82,17 @@
         public function getClassBySubjectId($topicId);
 
         public function getAllTopic();
+
+        public function getQuizzTemplate();
+
+        public function createQuizzTemplate($parameters);
+
+        public function deleteQuizzTemplate($quizzTemplateId);
+
+        public function deleteHistory($historyId);
+
+        public function getQuizzTemplateById($quizzTemplateId);
+
+        public function updateQuizzTemplate($parameters);
     }
 ?>

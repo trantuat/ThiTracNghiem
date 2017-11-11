@@ -176,6 +176,30 @@
             return ApiHelper::getInstance()->get('api/user/getAllTopic');
         }
 
+        public function getQuizzTemplate(){
+            return ApiHelper::getInstance()->get('api/quizz/getQuizzTemplate');
+        }
+        
+        public function createQuizzTemplate($parameters){
+            return ApiHelper::getInstance()->post('api/quizz/createQuizzTemplate',$parameters);
+        }
+
+        public function deleteQuizzTemplate($quizzTemplateId){
+            return ApiHelper::getInstance()->delete('api/quizz/deleteQuizzTemplate/idQuizTemplate='.$quizzTemplateId);
+        }
+
+        public function deleteHistory($historyId){
+            return ApiHelper::getInstance()->delete('api/user/deleteHistory/HistoryID='.$historyId);
+        }
+
+        public function getQuizzTemplateById($quizzTemplateId){
+            return ApiHelper::getInstance()->get('api/quizz/getTemplateByTemplateID/id='.$quizzTemplateId);
+        }
+
+        public function updateQuizzTemplate($parameters){
+            return ApiHelper::getInstance()->post('api/quizz/updateQuizzTemplate',$parameters);
+        }
+
 
     }
 

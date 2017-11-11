@@ -109,7 +109,7 @@
             });
           </script>		
           </div>
-          <div class="col-sm-6" style="width: 400px; height: 200px;">
+          <div class="col-sm-6" style="width: 400px; height: 300px;">
             <canvas id="bar-chart" ></canvas>
             <script>
            new Chart(document.getElementById("bar-chart"), {

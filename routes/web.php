@@ -43,6 +43,11 @@ Route::group(['prefix'=> 'Admins'], function() {
     Route::get('/GetSubjectForUpdate', 'Admin\ManageQuestionController@getSubjectForUpdate');
     Route::get('/GetClassForUpdate', 'Admin\ManageQuestionController@getClassForUpdate');
     Route::get('/GetLevelForUpdate', 'Admin\ManageQuestionController@getLevelForUpdate');
+    Route::get('/QuizzTemplate', 'Admin\ManageQuizzTemplateController@showQuizzTemplate');
+    Route::post('/CreateQuizzTemplate', 'Admin\ManageQuizzTemplateController@createQuizzTemplate');
+    Route::delete('/DeleteQuizzTemplate', 'Admin\ManageQuizzTemplateController@deleteQuizzTemplate');
+    Route::get('/GetQuizzTemplateById', 'Admin\ManageQuizzTemplateController@getQuizzTemplateById');
+    Route::post('/UpdateQuizzTemplate', 'Admin\ManageQuizzTemplateController@updateQuizzTemplate');
     // add route here
 });
 
@@ -56,6 +61,7 @@ Route::group(['prefix'=> 'Students'], function() {
     Route::get('/Profile', 'Student\ManageProfileController@showProfile');
     Route::get('/History', 'Student\ManageHistoryController@showHistory');
     Route::get('/TestTime/{quizzId}', 'Student\ManageHistoryController@showTestTime');
+    Route::delete('/DeleteHistory', 'Student\ManageHistoryController@deleteHistory');
     Route::get('/CreateQuizz', 'Student\ManageTestController@createQuizz');
     Route::get('/Quizz', 'Student\ManageQuizzController@showListOfQuizz');
     Route::get('/DoTest/{quizzId}/{duration}', 'Student\DoTestController@doTest');
@@ -65,6 +71,9 @@ Route::group(['prefix'=> 'Students'], function() {
     Route::post('/UpdatePassword', 'Student\ManageProfileController@updatePassword');
     Route::get('/Result/{historyId}', 'Student\SeeResultTestController@showResult');
     Route::get('/QuizzTemplate', 'Student\ManageQuizzTemplateController@showQuizzTemplate');
+    Route::get('/CreateQuizzFromTemplate', 'Student\ManageQuizzTemplateController@createQuizzFromTemplate');
+
+    
      
 });
 
@@ -91,7 +100,7 @@ Route::group(['prefix'=> 'Teachers'], function() {
     Route::post('/UpdatePassword', 'Teacher\ProfileController@updatePassword');
     Route::get('/UncheckedQuestion', 'Teacher\ManageNonPublicQuestionController@showQuestionNonPublicByTeacher');
     Route::delete('/DeleteQuestion', 'Teacher\ManageNonPublicQuestionController@deleteQuestion');
-    Route::get('/QuizzTemplate', 'Teacher\ManageQuizzTemplateController@showQuizzTemplate');
+    
      // add route here
 });
 //dsadassdasd

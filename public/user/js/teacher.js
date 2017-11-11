@@ -263,16 +263,20 @@
               }
         });
       }
-      function loadSubjectForAdd(){
+      function loadDetail(form){
+        loadSubjectForAdd(form);
+        loadLevelForAdd(form);
+      }
+      function loadSubjectForAdd(form){
         $.ajax({
           url: '/Teachers/GetSubject',
           type: "GET",
           dataType : "html",
           data: {
-            classId: $('#addQuestionClass').val()
+            classId: $('#'.concat(form)).find("select[name='addQuestionClass']").val()
           },
            success: function(response){ // What to do if we succeed
-            $('#formAddQuestion').find("select[name='addQuestionSubject']").html(response);
+            $('#'.concat(form)).find("select[name='addQuestionSubject']").html(response);
               // console.log(response);
               //   alert("OK"); 
           },
@@ -281,7 +285,7 @@
               }
         });
       }
-      function loadLevelForAdd(){
+      function loadLevelForAdd(form){
         $.ajax({
           url: '/Teachers/GetLevel',
           type: "GET",
@@ -290,7 +294,7 @@
             // classId: $('#addQuestionClass').val()
           },
            success: function(response){ // What to do if we succeed
-            $('#formAddQuestion').find("select[name='addQuestionLevel']").html(response);
+            $('#'.concat(form)).find("select[name='addQuestionLevel']").html(response);
               // console.log(response);
               //   alert("OK"); 
           },

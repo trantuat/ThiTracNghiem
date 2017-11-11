@@ -8,8 +8,8 @@
 
   <script language='javascript'>
       window.addEventListener('load',function(){
-        loadSubjectForAdd();
-        loadLevelForAdd();
+        loadSubjectForAdd('formAddQuestion');
+        loadLevelForAdd('formAddQuestion');
       });
       
   </script>

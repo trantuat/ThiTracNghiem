@@ -48,16 +48,18 @@
                   @for ($i = 0; $i < count($data); $i++)
                   <tr>
                     <td>{{$i+1}}</td>
-                    
                     <td>{{$data[$i]['quizz_name']}}</td>
                     <td>{{$data[$i]['class_name']}}</td>
                     <td>{{$data[$i]['topic_name']}}</td>
                     <td>{{$data[$i]['level_name']}}</td>
                     <td>{{$data[$i]['total']}}</td>
                     <td>{{$data[$i]['duration']}}</td>
-                    <!-- <td>{{$data[$i]['updated_at']}}</td> -->
                     <td style="text-align:center;">
-                          <a href="/Students/DoTest/{{$data[$i]['quizz_id']}}/{{$data[$i]['duration']}}" class='btn btn-success' onclick='setTime($ob)'>Làm bài</a>
+                        <?php 
+                        $quizz=$data[$i];
+                        $quizzOb=json_encode($quizz);
+                        echo "<button class='btn btn-success' onclick='createQuizz($quizzOb)'>Làm bài</button>";
+                        ?>
                     </td>
                   </tr>
                   @endfor

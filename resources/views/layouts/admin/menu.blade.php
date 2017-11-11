@@ -29,9 +29,16 @@
                 </li>
             </ul>
         </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="templateQuizz">
+            <a class="nav-link" href="/Admins/QuizzTemplate">
+                <i class="fa fa-bank"></i>
+                <span class="nav-link-text">
+                 Đề thi mẫu</span>
+            </a>
+        </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
             <a class="nav-link" href="/Admins">
-                <i class="fa fa-fw fa-table"></i>
+                <i class="fa fa-fw fa-bar-chart-o"></i>
                 <span class="nav-link-text">
                 Thống kê</span>
             </a>

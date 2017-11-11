@@ -91,7 +91,7 @@
           },
           dataType: "json",
           data: {
-            questionId: $('#questionId').val()
+            questionId: $('#question_id').val()
           },
           success: function (response) {
               console.log(response);
@@ -193,9 +193,113 @@
         });
 
       });
+
+      $('#class').change(function() {
+        $.ajax({
+          url: '/Teachers/GetSubject',
+          type: "GET",
+          dataType : "html",
+          data: {
+            classId: $('#class').val()
+          },
+           success: function(response){ // What to do if we succeed
+            $('#formQuizzTemplate').find("select[name='addQuestionSubject']").html(response);
+              // console.log(response);
+              //   alert("OK"); 
+          },
+          error: function(response){
+              alert('Error'+response);
+              }
+        });
+      });
+
+      $('#updateClass').change(function() {
+        $.ajax({
+          url: '/Teachers/GetSubject',
+          type: "GET",
+          dataType : "html",
+          data: {
+            classId: $('#formUpdateQuizzTemplate').find("select[name='addQuestionClass']").val()
+          },
+           success: function(response){ // What to do if we succeed
+            $('#formUpdateQuizzTemplate').find("select[name='addQuestionSubject']").html(response);
+              
+          },
+          error: function(response){
+              alert('Error'+response);
+              }
+        });
+      });
+
+      $(document).on("click","#btnCreateQuizzTemplate",function() {
+        $.ajax({
+          url: '/Admins/CreateQuizzTemplate',
+          type: "POST",
+          beforeSend: function (xhr) {
+            var token = $('meta[name="csrf_token"]').attr('content');
+            if (token) {
+                  return xhr.setRequestHeader('X-CSRF-TOKEN', token);
+            } else{
+            }
+          },
+          dataType: "json",
+          data: {
+            quizz_name: $('#quizzName').val(),
+            duration: $('#duration').val(),
+            level_id: $('#level').val(),
+            class_id: $('#class').val(),
+            topic_id: $('#subject').val(),
+            total: $('#total').val(),
+          },
+          success: function (response) {
+              console.log(response);
+              alert("Thực hiện thành công");
+              window.location.reload();
+          },
+          error: function (response) {
+              console.log(response);
+              alert("Đã xảy ra lỗi");
+          }
+        });
+
+      });
+
+      $(document).on("click","#btnUpdateQuizzTemplate",function() {
+        $.ajax({
+          url: '/Admins/UpdateQuizzTemplate',
+          type: "POST",
+          beforeSend: function (xhr) {
+            var token = $('meta[name="csrf_token"]').attr('content');
+            if (token) {
+                  return xhr.setRequestHeader('X-CSRF-TOKEN', token);
+            } else{
+            }
+          },
+          dataType: "json",
+          data: {
+            templateId: $('#templateId').val(),
+            quizz_name: $('#updateQuizzName').val(),
+            duration: $('#updateDuration').val(),
+            level_id: $('#updateLevel').val(),
+            class_id: $('#updateClass').val(),
+            topic_id: $('#updateSubject').val(),
+            total: $('#updatetotal').val(),
+          },
+          success: function (response) {
+              console.log(response);
+              alert("Thực hiện thành công");
+              // window.location.reload();
+          },
+          error: function (response) {
+              console.log(response);
+              alert("Đã xảy ra lỗi");
+          }
+        });
+
+      });
       
+    });
   });
-});
     
     })(jQuery); 
     
@@ -310,47 +414,47 @@
             }
       });
     }
-    function loadClassForUpdate(){
-      $.ajax({
-        url: '/Teachers/GetClassForUpdate',
-        type: "GET",
-        dataType : "html",
-        data: {
-          classId: $('#class_id').val(),
-          question_id: $('#question_id').val()
-        },
-        success: function(response){ // What to do if we succeed
-          $('#formUpdateQuestion').find("select[name='updateQuestionClass']").html(response);
-            // console.log(response);
-            //   alert("OK"); 
-        },
-        error: function(response){
-            alert('Error'+response);
-            }
-          });
-      }
-
-          function loadSubjectForUpdate(){
-            $.ajax({
-              url: '/Teachers/GetSubjectForUpdate',
-              type: "GET",
-              dataType : "html",
-              data: {
-                topicId: $('#topic_id').val(),
-                classId: $('#class_id').val()
-              },
-              success: function(response){ // What to do if we succeed
-                $('#formUpdateQuestion').find("select[name='updateQuestionSubject']").html(response);
-                  // console.log(response);
-                  //   alert("OK"); 
-              },
-              error: function(response){
-                  alert('Error'+response);
-                  }
+      function loadClassForUpdate(){
+        $.ajax({
+          url: '/Teachers/GetClassForUpdate',
+          type: "GET",
+          dataType : "html",
+          data: {
+            classId: $('#class_id').val(),
+            question_id: $('#question_id').val()
+          },
+          success: function(response){ // What to do if we succeed
+            $('#formUpdateQuestion').find("select[name='updateQuestionClass']").html(response);
+              // console.log(response);
+              //   alert("OK"); 
+          },
+          error: function(response){
+              alert('Error'+response);
+              }
             });
         }
 
-        function loadLevelForUpdate(){
+        function loadSubjectForUpdate(){
+          $.ajax({
+            url: '/Teachers/GetSubjectForUpdate',
+            type: "GET",
+            dataType : "html",
+            data: {
+              topicId: $('#topic_id').val(),
+              classId: $('#class_id').val()
+            },
+            success: function(response){ // What to do if we succeed
+              $('#formUpdateQuestion').find("select[name='updateQuestionSubject']").html(response);
+                // console.log(response);
+                //   alert("OK"); 
+            },
+            error: function(response){
+                alert('Error'+response);
+                }
+          });
+        }
+
+        function loadLevelForUpdate(form){
           $.ajax({
             url: '/Teachers/GetLevelForUpdate',
             type: "GET",
@@ -369,6 +473,102 @@
                 }
           });
         }
+
+        function loadDetail(form){
+          loadSubjectForAdd(form);
+          loadLevelForAdd(form);
+        }
+        function loadSubjectForAdd(form){
+          $.ajax({
+            url: '/Teachers/GetSubject',
+            type: "GET",
+            dataType : "html",
+            data: {
+              classId: $('#'.concat(form)).find("select[name='addQuestionClass']").val()
+            },
+             success: function(response){ // What to do if we succeed
+              $('#'.concat(form)).find("select[name='addQuestionSubject']").html(response);
+                // console.log(response);
+                //   alert("OK"); 
+            },
+            error: function(response){
+                alert('Error'+response);
+                }
+          });
+        }
+        function loadLevelForAdd(form){
+          $.ajax({
+            url: '/Teachers/GetLevel',
+            type: "GET",
+            dataType : "html",
+            data: {
+              // classId: $('#addQuestionClass').val()
+            },
+             success: function(response){ // What to do if we succeed
+              $('#'.concat(form)).find("select[name='addQuestionLevel']").html(response);
+                
+            },
+            error: function(response){
+                alert('Error'+response);
+                }
+          });
+        }
+
+        function deleteQuizzTemplate(quizzTemplateId){
+          if(!confirm("Bạn có muốn xoá template này?")) return;
+          $.ajax({
+            url: '/Admins/DeleteQuizzTemplate',
+            type: "DELETE",
+            beforeSend: function (xhr) {
+
+              var token = $('meta[name="csrf_token"]').attr('content');
+    
+              if (token) {
+                    return xhr.setRequestHeader('X-CSRF-TOKEN', token);
+              } else{
+              }
+            },
+            dataType : "json",
+            data: {
+              quizzTemplateId: quizzTemplateId
+            },
+             success: function(response){ 
+                console.log(response);
+                  alert("Xoá thành công!"); 
+                  location.reload();
+            },
+              error: function(response){
+                  alert('Error'+response);
+                  }
+          });
+        }
+
+        function loadDetailQuizzTemplate(template,form){
+          $('#'.concat(form)).find("select[name='addQuestionClass']").val(template.class_id);
+          loadDetail(form);
+          $('#updateQuizzName').val(template.quizz_name);
+          $('#updateLevel').val(template.level_id);
+          $('#updateDuration').val(template.duration);
+          $('#updateTotal').val(template.total);
+          $('#templateId').val(template.id);
+          $.ajax({
+            url: '/Admins/GetQuizzTemplateById',
+            type: "GET",
+            dataType : "json",
+            data: {
+              quizzTemplateId: template.id
+            },
+             success: function(response){
+               console.log(response); 
+               $('#updateSubject').val(response[0].topic_id);
+            },
+            error: function(response){
+                alert('Error'+response);
+                }
+          });
+
+        }
+  
 
 
   

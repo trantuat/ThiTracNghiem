@@ -2,7 +2,29 @@
 (function($) {
   
       $(document).ready(function() {
-        // $('.datepicker').datepicker();
+        $('.dataTable').DataTable();
+        $('.dataTable tfoot th').each( function () {
+          var title = $(this).text();
+          if(title!="Hành động"){
+            $(this).html( '<input type="text" style="width:100px" class="form-control" placeholder="'+title+'"/>' );
+          }
+      } );
+   
+      // DataTable
+      var table = $('.dataTable').DataTable();
+   
+      // Apply the search
+      table.columns().every( function () {
+          var that = this;
+   
+          $( 'input', this.footer() ).on( 'keyup change', function () {
+              if ( that.search() !== this.value ) {
+                  that
+                      .search( this.value )
+                      .draw();
+              }
+          } );
+      } );
 
         $(document).on("click","#btnSubmitTest",function() {
           if(!confirm("Bạn có muốn nộp bài?")) return;
@@ -87,7 +109,6 @@
          var object2 ={"start_time":startTime,"end_time":endTime};
          $.extend(data, object2);
          let json = JSON.stringify(data);
-         alert(json);
   
          $.ajax({
           url: '/Students/Answer',
@@ -194,6 +215,61 @@
               }
         });
 
+    }
+
+    function createQuizz(data){
+      $.ajax({
+        url: '/Students/CreateQuizzFromTemplate',
+        type: "GET",
+        dataType : "json",
+        data: {
+          doTestQuizzName: data.quizz_name,
+          doTestClass: data.class_id,
+          doTestLevel: data.level_id,
+          doTestSubject: data.topic_id,
+          doTestTotal: data.total,
+          doTestTime: data.duration
+        },
+        success: function(response){ 
+          console.log(response);
+          if(response=="error"){
+            alert("Không đủ số lượng câu hỏi");
+          } else{
+          window.location.href="/Students/DoTest/"+response+"/"+data.duration;
+          }
+          
+        },
+        error: function(response){
+            alert('Error'+response);
+            }
+      });
+    }
+
+    function deleteHistory(historyId){
+      if(!confirm("Bạn muốn xoá lịch sử lần thi này?")) return;
+      $.ajax({
+        url: '/Students/DeleteHistory',
+        type: "DELETE", /* or type:"GET" or type:"PUT" */
+        beforeSend: function (xhr) {
+          var token = $('meta[name="csrf_token"]').attr('content');
+          if (token) {
+                return xhr.setRequestHeader('X-CSRF-TOKEN', token);
+          } else{
+          }
+        },
+        dataType: "json",
+        data: {
+          historyId:historyId
+        },
+        success: function (response) {
+            console.log(response);
+            alert("Đã xoá thành công");
+            location.reload();
+        },
+        error: function (response) {
+          alert("Error"+ response);
+        }
+      });
     }
     
 

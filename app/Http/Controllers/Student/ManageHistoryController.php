@@ -27,4 +27,14 @@ class ManageHistoryController extends Controller
         return view("student.seeTestTime",['data'=>$responseData->data,'quizzId'=>$quizzId,'duration'=>$responseData->data[0]['duration']]);
        
     }
+
+    public function deleteHistory(Request $request){
+        $historyId=$request->historyId;
+        $responseData = QuizzService::getInstance()->deleteHistory($historyId);
+        // var_dump($responseData);
+        if ($responseData->error != null) {
+            return json_encode($responseData->error);
+        }
+        return json_encode($responseData->data);
+    }
 }

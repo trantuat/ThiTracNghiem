@@ -12,7 +12,7 @@ class LogoutController extends Controller
     {
         $responseData = QuizzService::getInstance()->logout();
         if($responseData->error != null) {
-            return redirect()->back()->with(['error'=>'Loi']);
+            return redirect()->back()->with(['error'=>'Lỗi']);
         }
         session(['api_token' => null,'user_id'=>null]);
         return redirect()->route("home"); 

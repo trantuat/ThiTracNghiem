@@ -22,8 +22,8 @@
                     <th>ID</th>
                     <th>Lớp</th>
                     <th>Môn</th>
-                    <th>Nội dung</th>
                     <th>Mức độ</th>
+                    <th>Nội dung</th>
                     <th>Ngày đăng</th>
                     <th>Hành động</th>
                   </tr>

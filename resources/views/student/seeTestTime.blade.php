@@ -1,4 +1,5 @@
 @extends('layouts.student.app')
+<meta name="csrf_token" content="{{ csrf_token() }}" />
 @section('title_page')
 <title>Lịch sử bài thi</title>
 @endsection
@@ -36,7 +37,7 @@
                     <th>Ngày làm</th>
                     <th>Lần thi</th>
                     <th>Điểm số</th>
-                    <th>Chi tiết</th>
+                    <th>Hành động</th>
                   </tr>
                 </thead>
                 <tfoot>
@@ -48,7 +49,7 @@
                     <th>Ngày làm</th>
                     <th>Lần thi</th>
                     <th>Điểm số</th>
-                    <th>Chi tiết</th>
+                    <th>Hành động</th>
                   </tr>
                 </tfoot>
                 <tbody>
@@ -64,14 +65,15 @@
                     <td>{{$data[$i]['created_at']}}</td>
                     <td>{{$data[$i]['quizz_times']}}</td>
                     <td><?php echo round($data[$i]['score'],2); ?></td>
-                    <td>
+                    <td><center>
                       <input type="hidden" id="historiesId" value="{{$data[$i]['histories_id']}}">
-                      <!-- <button style="color: red; border: 0; background:none;" data-toggle='modal' title='see result' data-target='#seeResultOfStudent'><b><i class="fa fa-list"></i></b></button> -->
-                      
-                      <a href="{{ url('/Students/Result',$data[$i]['histories_id'])}}" ><center><button style="color: red; border: 0; background:none; " ><b><i class="fa fa-info-circle"></i></b></button></center></a>
-                      <!-- <button style="color: red; border: 0; background:none;" data-toggle='modal' title='Update info' data-target='#updateStudent'><b><i class="fa fa-pencil-square-o"></i></b></button> -->
-                      <!-- <button style="color: red; border: 0; background:none;" data-toggle='confirmation' title='Delete student' ><b><i class="fa fa-trash"></i></b></button> -->
-                    </td>
+                      <a href="{{ url('/Students/Result',$data[$i]['histories_id'])}}" ><button style="color: red; border: 0; background:none; " ><b><i class="fa fa-info-circle"></i></b></button></a>
+                      <?php
+                      $id=$data[$i]['histories_id'];
+                      $historyId=json_encode($id);
+                      echo "<button style='color: red; border: 0; background:none;'  title='Delete student' onclick='deleteHistory($historyId)'><b><i class='fa fa-trash'></i></b></button>";
+                      ?>
+                    </center></td>
                   </tr>
                   @endfor
                  

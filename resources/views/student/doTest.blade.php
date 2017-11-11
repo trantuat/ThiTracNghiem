@@ -63,7 +63,7 @@
                 <div class="card mb-3" style="background-color:#EEEEEE;">
                     <div class="card-body" id="questionContent">
                         <table>
-                            <td style= "width: 120px; vertical-align:top"><b>Câu {{$i+1}}:</td>
+                            <td style= "width: 80px; vertical-align:top"><b>Câu {{$i+1}}:</td>
                             <td><?php echo $data[$i]['content'];?></td>
                         </table>
                     </div>
@@ -125,7 +125,6 @@
                 <?php }?>
                  <br>
                     <center>
-                        <!-- <input type = "submit" class="btn col-sm-2 btn-danger" id="btnSubmitTest" value="Submit"> -->
                         <button class="btn col-sm-2 btn-success" id="btnSubmitTest" >Nộp bài</button>                                
                     </center>
                 </br>
