@@ -48,6 +48,7 @@ Route::group(['prefix'=> 'Admins'], function() {
     Route::delete('/DeleteQuizzTemplate', 'Admin\ManageQuizzTemplateController@deleteQuizzTemplate');
     Route::get('/GetQuizzTemplateById', 'Admin\ManageQuizzTemplateController@getQuizzTemplateById');
     Route::post('/UpdateQuizzTemplate', 'Admin\ManageQuizzTemplateController@updateQuizzTemplate');
+    Route::get('/BlockHistory', 'Admin\ManageStudentController@getBlockHistoryByUserId');
     // add route here
 });
 

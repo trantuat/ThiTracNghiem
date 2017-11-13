@@ -288,7 +288,7 @@
           success: function (response) {
               console.log(response);
               alert("Thực hiện thành công");
-              // window.location.reload();
+              window.location.reload();
           },
           error: function (response) {
               console.log(response);
@@ -335,6 +335,7 @@
       });
     }
     function showProfile(userId){
+      
       $.ajax({
         url: '/Admins/GetInfoUser',
         type: "GET",
@@ -351,6 +352,27 @@
             $('#dayOfBirth').val(response['info']['day_of_birth']);
             $('#gender').val(response['info']['gender']);
             $('#email').val(response['email']);
+            showBlockHistory(userId);
+            
+        },
+        error: function (response) {
+            console.log(response);
+            alert("Đã xảy ra lỗi");
+        }
+      });
+    }
+
+    function showBlockHistory(userId){
+      $.ajax({
+        url: '/Admins/BlockHistory',
+        type: "GET",
+        dataType: "json",
+        data: {
+          userId: userId
+        },
+        success: function (response) {
+            console.log(response);
+            $("#tableBlock > tbody").html(response);
         },
         error: function (response) {
             console.log(response);
@@ -414,6 +436,29 @@
             }
       });
     }
+
+
+    function deleteAnswer(id) {
+      var numberAnswer=$('#numberOfAnswer').val();
+      if(numberAnswer<=2){
+        alert("Câu hỏi phải có ít nhất 2 câu trả lời");
+      } else{
+         $(".".concat(id)).remove();
+         $('#numberOfAnswer').val(numberAnswer-1);
+      }
+     
+   }
+
+   function deleteAnswerUpdate(id) {
+     var numberAnswer=$('#numberOfAnswerUpdate').val();
+       if(numberAnswer<=2){
+         alert("Câu hỏi phải có ít nhất 2 câu trả lời");
+       } else{
+        $(".".concat(id)).remove();
+        $('#numberOfAnswerUpdate').val(numberAnswer-1);
+        
+     }
+   }
       function loadClassForUpdate(){
         $.ajax({
           url: '/Teachers/GetClassForUpdate',

@@ -69,7 +69,7 @@
 
    <!--SHOW PROFILE STUDENT-->
    <div class="modal fade" id="showProfile" role="dialog">
-   <div class="modal-dialog modal-lg" style="width:600px;">
+   <div class="modal-dialog modal-lg" style="width:800px;">
       <!-- Modal content-->
        <div class="modal-content">
            <div class="modal-header">
@@ -77,94 +77,112 @@
              <button type="button" class="close" data-dismiss="modal">&times;</button>
            </div>
            <div class="modal-body" style="margin: 10px;">
-               <div class="row">
-                 <div class="col-sm-1">
-                 </div>
-                 <div class="col-sm-3">
-                     <h7 style="margin-left:20px; font-size:15px; margin-top:5px;"><b>Username</b></h7>
-                 </div>
-                 <div class="input-group col-sm-6">
-                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                     <input type="text" class="form-control"  id="username" readonly style="background-color:white;">
-                 </div>
-             </div>
-             <br>
-             <div class="row">
-                 <div class="col-sm-1">
-                 </div>
-                 <div class="col-sm-3">
-                     <h7 style="margin-left:20px; font-size:15px; margin-top:5px;"><b>Tên đầy đủ</b></h7>
-                 </div>
-                 <div class="input-group col-sm-6">
-                     <span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
-                     <!-- <label>ABC</label> -->
-                     <input type="text" class="form-control"  id="fullname" readonly style="background-color:white;">
+           <div class="row">
+             <div class="col-sm-6">
+                 <div class="row">
+                     <div class="col-sm-4">
+                         <h7 style="font-size:15px; margin-top:5px;"><b>Username</b></h7>
+                     </div>
+                     <div class="input-group col-sm-8">
+                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                         <input type="text" class="form-control"  id="username" readonly style="background-color:white;">
+                     </div>
                  </div>
              </div>
-             <br>
-             <div class="row">
-               <div class="col-sm-1">
-                 </div>
-                 <div class="col-sm-3">
-                     <h7 style="margin-left:20px; font-size:15px; margin-top:5px;"><b>Ngày sinh</b></h7>
-                 </div>
-                 <div class="input-group col-sm-6">
-                     <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                     <input type="text" class="form-control"  id="dayOfBirth" readonly style="background-color:white;">
-                 </div>
-             </div>
-             <br>
-             <div class="row">
-                 <div class="col-sm-1">
-                 </div>
-                 <div class="col-sm-3">
-                     <h7 style="margin-left:20px; font-size:15px; margin-top:5px;"><b>Địa chỉ</b></h7>
-                 </div>
-                 <div class="input-group col-sm-6">
-                     <span class="input-group-addon"><i class="fa fa-location-arrow"></i></span>
-                     <input type="text" class="form-control"  id="address" readonly style="background-color:white;">
+             <div class="col-sm-6">
+                 <div class="row">
+                     <div class="col-sm-3">
+                         <h7 style="font-size:15px; margin-top:5px;"><b>Tên </b></h7>
+                     </div>
+                     <div class="input-group col-sm-9">
+                         <span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
+                         <!-- <label>ABC</label> -->
+                         <input type="text" class="form-control"  id="fullname" readonly style="background-color:white;">
+                     </div>
                  </div>
              </div>
-             <br>
-             <div class="row">
-               <div class="col-sm-1">
-                 </div>
-                 <div class="col-sm-3">
-                     <h7 style="margin-left:20px; font-size:15px; margin-top:5px;"><b>Giới tính</b></h7>
-                 </div>
-                 <div class="input-group col-sm-6">
-                     <span class="input-group-addon"><i class="fa fa-transgender"></i></span>
-                     <input type="text" class="form-control"  id="gender" readonly style="background-color:white;">
-                 </div>
-             </div>
-             <br>
-             <div class="row">
-                 <div class="col-sm-1">
-                 </div>
-                 <div class="col-sm-3">
-                     <h7 style="margin-left:20px; font-size:15px; margin-top:5px;"><b>Email</b></h7>
-                 </div>
-                 <div class="input-group col-sm-6">
-                     <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                     <input type="email" class="form-control" id="email" readonly style="background-color:white;">
+         </div>
+         <br>
+         <div class="row">
+             <div class="col-sm-6">
+                 <div class="row">
+                     <div class="col-sm-4">
+                         <h7 style="font-size:15px; margin-top:5px;"><b>Ngày sinh</b></h7>
+                     </div>
+                     <div class="input-group col-sm-8">
+                         <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                         <input type="text" class="form-control"  id="dayOfBirth" readonly style="background-color:white;">
+                     </div>
                  </div>
              </div>
-             <br>
-             <div class="row">
-                 <div class="col-sm-1">
-                 </div>
-                 <div class="col-sm-3">
-                     <h7 style="margin-left:20px; font-size:15px; margin-top:5px;"><b>Điện thoại</b></h7>
-                 </div>
-                 <div class="input-group col-sm-6">
-                     <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                     <input type="text" maxlength="11" minlength="10"  class="form-control" id="phone" readonly style="background-color:white;">
+             <div class="col-sm-6">
+                 <div class="row">
+                     <div class="col-sm-3">
+                         <h7 style="font-size:15px; margin-top:5px;"><b>Địa chỉ</b></h7>
+                     </div>
+                     <div class="input-group col-sm-9">
+                         <span class="input-group-addon"><i class="fa fa-location-arrow"></i></span>
+                         <input type="text" class="form-control"  id="address" readonly style="background-color:white;">
+                     </div>
                  </div>
              </div>
+         </div>
+         <br>
+         <div class="row">
+             <div class="col-sm-6">
+                 <div class="row">
+                     <div class="col-sm-4">
+                         <h7 style="font-size:15px; margin-top:5px;"><b>Giới tính</b></h7>
+                     </div>
+                     <div class="input-group col-sm-8">
+                         <span class="input-group-addon"><i class="fa fa-transgender"></i></span>
+                         <input type="text" class="form-control"  id="gender" readonly style="background-color:white;">
+                     </div>
+                 </div>
              </div>
-             <br>
+             <div class="col-sm-6">
+                 <div class="row">
+                     <div class="col-sm-3">
+                         <h7 style="font-size:15px; margin-top:5px;"><b>Email</b></h7>
+                     </div>
+                     <div class="input-group col-sm-9">
+                         <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                         <input type="email" class="form-control" id="email" readonly style="background-color:white;">
+                     </div>
+                 </div>
+             </div>
+         </div>
+         <br>
+         <div class="row">
+             <div class="col-sm-6">
+                 <div class="row">
+                     <div class="col-sm-4">
+                         <h7 style="font-size:15px; margin-top:5px;"><b>Điện thoại</b></h7>
+                     </div>
+                     <div class="input-group col-sm-8">
+                         <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                         <input type="text" maxlength="11" minlength="10"  class="form-control" id="phone" readonly style="background-color:white;">
+                     </div>
+                 </div>
+             </div>
+         </div>
+         </div>
+         <div class="container-fluid note" style="height: 250px; overflow-y:auto; overflow-x: hidden;">
+             <h6 style="color:red; margin-left:10px;"><b>Lịch sử chặn</b></h6>
+             <table id="tableBlock" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                 <thead>
+                     <tr>
+                         <th>STT</th>
+                         <th>Ngày chặn</th>
+                         <th>Ngày bỏ chặn</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                 </tbody>
+             </table>
+         </div>
+         <br>
            <div class="modal-footer">
-               
                <button class="btn btn-default btn-close-popup" data-dismiss="modal">Cancel</button>
            </div>
          </form>
