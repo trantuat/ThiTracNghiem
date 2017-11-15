@@ -60,7 +60,7 @@
                 
                 ?>
             
-                <div class="card mb-3" style="background-color:#EEEEEE;">
+                <div class="card mb-3" style="background-color:#d4edda;">
                     <div class="card-body" id="questionContent">
                         <table>
                             <td style= "width: 80px; vertical-align:top"><b>Câu {{$i+1}}:</td>

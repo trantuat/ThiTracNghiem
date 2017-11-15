@@ -438,27 +438,27 @@
     }
 
 
-    function deleteAnswer(id) {
-      var numberAnswer=$('#numberOfAnswer').val();
-      if(numberAnswer<=2){
-        alert("Câu hỏi phải có ít nhất 2 câu trả lời");
-      } else{
-         $(".".concat(id)).remove();
-         $('#numberOfAnswer').val(numberAnswer-1);
-      }
-     
-   }
-
-   function deleteAnswerUpdate(id) {
-     var numberAnswer=$('#numberOfAnswerUpdate').val();
-       if(numberAnswer<=2){
-         alert("Câu hỏi phải có ít nhất 2 câu trả lời");
-       } else{
-        $(".".concat(id)).remove();
-        $('#numberOfAnswerUpdate').val(numberAnswer-1);
+        function deleteAnswer(id) {
+          var numberAnswer=$('#numberOfAnswer').val();
+          if(numberAnswer<=2){
+            alert("Câu hỏi phải có ít nhất 2 câu trả lời");
+          } else{
+            $(".".concat(id)).remove();
+            $('#numberOfAnswer').val(numberAnswer-1);
+          }
         
-     }
-   }
+      }
+
+      function deleteAnswerUpdate(id) {
+        var numberAnswer=$('#numberOfAnswerUpdate').val();
+          if(numberAnswer<=2){
+            alert("Câu hỏi phải có ít nhất 2 câu trả lời");
+          } else{
+            $(".".concat(id)).remove();
+            $('#numberOfAnswerUpdate').val(numberAnswer-1);
+            
+        }
+      }
       function loadClassForUpdate(){
         $.ajax({
           url: '/Teachers/GetClassForUpdate',
