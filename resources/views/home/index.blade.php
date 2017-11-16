@@ -247,7 +247,7 @@
                             <p>Ngân hàng câu hỏi phong phú, đa dạng cách thức ra đề thi, được xây dựng bởi hơn 50 chuyên gia hàng đầu trong lĩnh vực giáo dục</p>
                             <br>
                         </div>
-                        <div class="col-md-3 col-sm-3 col-xs-6 why-icon why-icon-program">
+                        <div class="col-md-3 col-sm-3 col-xs-6 why-icon why-icon-bank">
                             <img src="{{URL::asset('img/answer.jpg')}}" width="150px" height="150px" class="rounded-circle" style="margin: 30px 0px 40px 0px">
                             <p>Câu hỏi được sắp xếp rõ ràng thành từng chương, theo từng khối lớp, có đáp án và lời giải chi tiết cho từng câu</p>
                             <br>
