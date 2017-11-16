@@ -1,7 +1,7 @@
 
 
 <footer class="py-5 mb-1 bg-dark text-white ">
-  <div class="container-fluid">
+  <div class="screen-des container-fluid">
     <div class="row" >
       <div class="col-md-4 col-sm-6 footerleft ">
           <div class="row">
@@ -48,11 +48,21 @@
         </div>
       </div>
     </div>
-<!--footer start from here-->
-      
-      <div class="m-1 text-center" style="position:absolute; width:100%; bottom:0;">
-        <p >© 2017 - The NTT team</p>
+    <div class="container-fluid mini">
+      <div>
+        
       </div>
     </div>
+<!--footer start from here-->
+      
+      <!-- <div class="m-1 text-center" style="position:absolute; width:100%; bottom:0;">
+        <p >© 2017 - The NTT team</p>
+      </div> -->
+    </div>
+  </div>
+  <div class="screen-mini">
+    <div class="m-1 text-center" style="position:absolute; width:100%; bottom:0;">
+        <p >© 2017 - The NTT team</p>
+      </div>
   </div>
 </footer>
