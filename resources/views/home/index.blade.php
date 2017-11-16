@@ -236,7 +236,7 @@
             <div class="col-lg-12">
                 <div class="aligncenter">
                     <h3 class="aligncenter">Tại sao bạn nên Luyện thi trắc nghiệm với NTT Team?</h3>
-                    <div class="why">
+                    <div class=" screen-d why ">
                         <div class="col-md-3 col-sm-3 col-xs-6 why-icon why-icon-online">
                             <img src="{{URL::asset('img/why_3.png')}}" width="150px" height="150px" class="rounded-circle" style="margin: 30px 0px 40px 0px">
                             <p>Thi trực tuyến mọi lúc mọi nơi, dễ dàng thao tác.</p>
@@ -260,12 +260,35 @@
                         
                     </div>
 
+                    <div class="screen-m why aligncenter">
+                        <div class="col-md-12 col-sm-6 col-xs-6 why-icon why-icon-online" >
+                            <img src="{{URL::asset('img/why_3.png')}}" width="150px" height="150px" class="rounded-circle" style="margin: 30px 0px 40px 0px">
+                            <p>Thi trực tuyến mọi lúc mọi nơi, dễ dàng thao tác.</p>
+                            <br>
+                        </div>
+                        <div class="col-md-12 col-sm-6 col-xs-6 why-icon why-icon-bank">
+                            <img src="{{URL::asset('img/why_1.jpg')}}" width="150px" height="150px" class="rounded-circle" style="margin: 30px 0px 40px 0px">
+                            <p>Ngân hàng câu hỏi phong phú, đa dạng cách thức ra đề thi, được xây dựng bởi hơn 50 chuyên gia hàng đầu trong lĩnh vực giáo dục</p>
+                            <br>
+                        </div>
+                        <div class="col-md-12 col-sm-6 col-xs-6 why-icon why-icon-program">
+                            <img src="{{URL::asset('img/answer.jpg')}}" width="150px" height="150px" class="rounded-circle" style="margin: 30px 0px 40px 0px">
+                            <p>Câu hỏi được sắp xếp rõ ràng thành từng chương, theo từng khối lớp, có đáp án và lời giải chi tiết cho từng câu</p>
+                            <br>
+                        </div>
+                        <div class="col-md-12 col-sm-6 col-xs-6 why-icon why-icon-people">
+                            <img src="{{URL::asset('img/why_4.jpg')}}" width="150px" height="150px" class="rounded-circle" style="margin: 30px 0px 40px 0px">
+                            <p>Nội dung bám sát chương trình thi của Bộ giáo dục và đào tạo, được cập nhật và hiệu chỉnh hàng ngày</p>
+                            <br>
+                        </div>
+                    </div>
+
+
+
                 </div>
             </div>
         </div>
-        <div>
-            
-        </div>
+        
     </div>
 </section>
 

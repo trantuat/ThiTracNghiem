@@ -1021,6 +1021,23 @@ padding-left: 15px;
       display: none;
   } 
 }
+.screen-m {
+  display: none;
+}
+
+.screen-d {
+  display: block;
+}
+@media (max-width: 1010px) {
+  .screen-m {
+      display: block;
+      text-align: center;
+  }
+
+  .screen-d {
+      display: none;
+  } 
+}
 
 
 
