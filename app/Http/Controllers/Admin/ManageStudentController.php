@@ -31,5 +31,26 @@ class ManageStudentController extends Controller
         return json_encode($responseData->data);
     }
 
+    public function getBlockHistoryByUserId(Request $request){
+        $userId=$request->userId;
+        $responseData = QuizzService::getInstance()->getBlockHistoryByUserId($userId);
+        
+        if ($responseData->error != null) {
+            return json_encode($responseData->error);
+        }
+        
+        $data=$responseData->data;
+        $i=1;
+        $html="";
+        if($data){
+            foreach($data as $row){
+                $html.="<tr>";
+                $html.="<td>".$i++."</td><td>".$row['block_date']."</td><td>".$row['unblock_date']."</td></tr>";
+            }
+		} else{
+        }
+        return json_encode($html);
+    }
+
 
 }

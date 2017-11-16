@@ -34,7 +34,8 @@
                     <th>Tên bài thi</th>
                     <th>Tổng số câu</th>
                     <th>Thời gian làm</th>
-                    <th>Ngày làm</th>
+                    <th>Bắt đầu</th>
+                    <th>Kết thúc</th>
                     <th>Lần thi</th>
                     <th>Điểm số</th>
                     <th>Hành động</th>
@@ -46,7 +47,8 @@
                     <th>Tên bài thi</th>
                     <th>Tổng số câu</th>
                     <th>Thời gian làm</th>
-                    <th>Ngày làm</th>
+                    <th>Bắt đầu</th>
+                    <th>Kết thúc</th>
                     <th>Lần thi</th>
                     <th>Điểm số</th>
                     <th>Hành động</th>
@@ -62,7 +64,8 @@
                     <td>{{$data[$i]['quizz_name']}}</td>
                     <td>{{$data[$i]['total']}}</td>
                     <td>{{$data[$i]['duration']}}</td>
-                    <td>{{$data[$i]['created_at']}}</td>
+                    <td>{{$data[$i]['start_time']}}</td>
+                    <td>{{$data[$i]['end_time']}}</td>
                     <td>{{$data[$i]['quizz_times']}}</td>
                     <td><?php echo round($data[$i]['score'],2); ?></td>
                     <td><center>

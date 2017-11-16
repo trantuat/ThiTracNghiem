@@ -26,10 +26,24 @@
 <div class="content-wrapper">
 <div class="container-fluid" >
     <input type="hidden" id="numberQuestion" name="numberQuestion" value="{{ count($data)}}">
-    
+    <div class="row col-sm-12">
+        <div class="col-sm-1">
+        </div>
+        <div class='alert alert-danger alert-dismissible fade show col-sm-10' style="margin-top:10px;margin-left:10px;">
+        <div class="row">
+            <div class="col-sm-8">
+                <label><b>Thời gian bắt đầu:</b> {{$data[0]['start_time']}}</label>
+            </div>
+            <div class="col-sm-4">
+                <label><b>Thời gian kết thúc:</b> {{$data[0]['end_time']}}</label>
+            </div>
+        </div>
+        </div>
+        <div class="col-sm-1">
+        </div>
+    </div>
     
     <div class="row" >
-    
         <div class="col-sm-1">
         </div>
         <div class="col-sm-10">
@@ -37,10 +51,9 @@
             {!! csrf_field() !!}
                 <?php 
                 for($i=0;$i<count($data);$i++){
-                
                 ?>
             
-                <div class="card mb-3" style="background-color:#EEEEEE;">
+                <div class="card mb-3" style="background-color:#d4edda;">
                     <div class="card-body" id="questionContent">
                     <table>
                     <td style= "width: 80px; vertical-align:top"><b>Câu {{$i+1}}:</td>

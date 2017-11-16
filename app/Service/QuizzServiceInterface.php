@@ -94,5 +94,7 @@
         public function getQuizzTemplateById($quizzTemplateId);
 
         public function updateQuizzTemplate($parameters);
+
+        public function getBlockHistoryByUserId($userId);
     }
 ?>

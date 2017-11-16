@@ -376,7 +376,7 @@ footer.sticky-footer {
 #clocktimer > div{
 	padding: 3px;
 	border-radius: 3px;
-	background: #E0E0E0;
+	background: #d4edda;
   display: inline-block;
   z-index: 10; position: fixed;
   float: right;

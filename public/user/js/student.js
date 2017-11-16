@@ -6,7 +6,7 @@
         $('.dataTable tfoot th').each( function () {
           var title = $(this).text();
           if(title!="Hành động"){
-            $(this).html( '<input type="text" style="width:100px" class="form-control" placeholder="'+title+'"/>' );
+            $(this).html( '<input type="text" style="width:95px" class="form-control" placeholder="'+title+'"/>' );
           }
       } );
    

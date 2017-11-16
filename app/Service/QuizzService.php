@@ -200,6 +200,10 @@
             return ApiHelper::getInstance()->post('api/quizz/updateQuizzTemplate',$parameters);
         }
 
+        public function getBlockHistoryByUserId($userId){
+            return ApiHelper::getInstance()->get('api/admin/getBlockHistoryByUserID/userID='.$userId);
+        }
+
 
     }
 
