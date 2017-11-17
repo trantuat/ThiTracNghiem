@@ -54,7 +54,7 @@
             <div class="row text-center" style="margin-bottom: 0;">
                 <h3>LUYỆN THI TRẮC NGHIỆM 2017</h3>
             </div>
-            <div class="row">
+            <div class="row screen-desktop">
                 <div class="col-md-12">
                     <div class="carousel slide media-carousel" id="media">
                         <div class="carousel-inner">
@@ -187,6 +187,72 @@
                     </div>
                 </div>
             </div>
+
+
+
+
+
+
+            <div class="row screen-mobile">
+                    <div class="col-md-12">
+                        <div class="carousel slide media-carousel" id="media-mobile">
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="skill-home">
+                                                <div class="skill-home-solid">
+                                                    <div class="text-center col-md-12 subject-card">
+                                                <span class="icons c1">
+                                                
+                                                    <img class="subject-icon" src="img/toan.png" title="Toán">
+                                                </span>
+                                                        <div class="box-area">
+                                                            <h3 class="subject-title">Toán học</h3>
+                                                            <p class="p-subject">
+                                                                Đề thi THPT Quốc gia gồm 50 câu, thời gian thi 90 phút
+                                                            </p>
+                                                            <p class="exam-now">
+                                                                <center><a href="#" ><button class='btn btn-success '>Thi ngay</button></a></center>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="item">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="skill-home">
+                                                <div class="skill-home-solid">
+                                                    <div class="text-center col-md-12 subject-card">
+                                                    <span class="icons c2">
+                                                        
+                                                        <img class="subject-icon" src="img/dialy.png" title="Địa lý">
+                                                    </span> <div class="box-area">
+                                                        <h3 class="subject-title">Địa lý</h3> <p class="p-subject">
+                                                        Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút
+                                                    </p><p class="exam-now">
+                                                        <center><a href="#" ><button class='btn btn-success '>Thi ngay</button></a></center>
+                                                    </p>
+                                                    </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a data-slide="prev" href="http://789.vn/#media" class="left carousel-control screen-desktop">‹</a>
+                            <a data-slide="next" href="http://789.vn/#media" class="right carousel-control screen-desktop">›</a>
+                            <a data-slide="prev" href="http://789.vn/#media-mobile" class="left carousel-control screen-mobile">‹</a>
+                            <a data-slide="next" href="http://789.vn/#media-mobile" class="right carousel-control screen-mobile">›</a>
+                        </div>
+                    </div>         
         </div>
     </div>
 
@@ -196,7 +262,7 @@
             <div class="col-lg-12">
                 <div class="aligncenter">
                     <h3 class="aligncenter">Tại sao bạn nên Luyện thi trắc nghiệm với NTT Team?</h3>
-                    <div class="why">
+                    <div class="screen-d why">
                         <div class="col-md-3 col-sm-3 col-xs-6 why-icon why-icon-online">
                             <img src="{{URL::asset('img/why_3.png')}}" width="150px" height="150px" class="rounded-circle" style="margin: 30px 0px 40px 0px">
                             <p>Thi trực tuyến mọi lúc mọi nơi, dễ dàng thao tác.</p>
@@ -218,6 +284,28 @@
                             <br>
                         </div>
                         
+                    </div>
+                    <div class="screen-m why aligncenter">
+                        <div class="col-md-12 col-sm-12 col-xs-6 why-icon why-icon-online" >
+                            <img src="{{URL::asset('img/why_3.png')}}" width="150px" height="150px" class="rounded-circle" style="margin: 30px 0px 40px 0px">
+                            <p>Thi trực tuyến mọi lúc mọi nơi, dễ dàng thao tác.</p>
+                            <br>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-6 why-icon why-icon-bank">
+                            <img src="{{URL::asset('img/why_1.jpg')}}" width="150px" height="150px" class="rounded-circle" style="margin: 30px 0px 40px 0px">
+                            <p>Ngân hàng câu hỏi phong phú, đa dạng cách thức ra đề thi, được xây dựng bởi hơn 50 chuyên gia hàng đầu trong lĩnh vực giáo dục</p>
+                            <br>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-6 why-icon why-icon-program">
+                            <img src="{{URL::asset('img/answer.jpg')}}" width="150px" height="150px" class="rounded-circle" style="margin: 30px 0px 40px 0px">
+                            <p>Câu hỏi được sắp xếp rõ ràng thành từng chương, theo từng khối lớp, có đáp án và lời giải chi tiết cho từng câu</p>
+                            <br>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-6 why-icon why-icon-people">
+                            <img src="{{URL::asset('img/why_4.jpg')}}" width="150px" height="150px" class="rounded-circle" style="margin: 30px 0px 40px 0px">
+                            <p>Nội dung bám sát chương trình thi của Bộ giáo dục và đào tạo, được cập nhật và hiệu chỉnh hàng ngày</p>
+                            <br>
+                        </div>
                     </div>
 
                 </div>

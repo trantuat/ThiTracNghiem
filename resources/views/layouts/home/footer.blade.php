@@ -1,8 +1,8 @@
 
 
-<footer class="py-5 mb-1 bg-dark text-white ">
-  <div class="screen-des container-fluid">
-    <div class="row" >
+<footer class="screen-des py-5 mb-1 bg-dark text-white ">
+  <div class="container-fluid">
+    <div class=" row" >
       <div class="col-md-4 col-sm-6 footerleft ">
           <div class="row">
               <div class="col-lg-3">
@@ -48,21 +48,16 @@
         </div>
       </div>
     </div>
-    <div class="container-fluid mini">
-      <div>
-        
-      </div>
-    </div>
-<!--footer start from here-->
-      
-      <!-- <div class="m-1 text-center" style="position:absolute; width:100%; bottom:0;">
-        <p >© 2017 - The NTT team</p>
-      </div> -->
-    </div>
-  </div>
-  <div class="screen-mini">
-    <div class="m-1 text-center" style="position:absolute; width:100%; bottom:0;">
+      <div class="m-1 text-center" style="position:absolute; width:100%; bottom:0;">
         <p >© 2017 - The NTT team</p>
       </div>
+    </div>
   </div>
+</footer>
+<footer class="screen-mini" style="margin-top: 50px;">
+    <div class="row">
+      <div class="m-1 text-center" style="background-color: #343a40;padding-top: 18px; position:absolute; width:100%; bottom:0;color: #ffffff"">
+        <p >© 2017 - The NTT team</p>
+      </div>
+    </div>
 </footer>

@@ -378,3 +378,6 @@ tfoot input {
   padding: 2px;
   box-sizing: border-box;
 }
+.py-5 {
+    padding-top: 1rem;
+    }

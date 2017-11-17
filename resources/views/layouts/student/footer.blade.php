@@ -1,9 +1,9 @@
 
 
-<footer class="py-5 mb-1 bg-dark text-white ">
-<div class="container-fluid">
+<footer class="screen-des py-5 mb-1 bg-dark text-white ">
+<div class=" container-fluid">
   <div class="row" >
-    <div class="col-md-4 col-sm-6 footerleft ">
+    <div class=" col-md-4 col-sm-6 footerleft ">
         <div class="row">
             <div class="col-lg-3">
               <img data-holder-rendered="true" class="rounded-circle img-fluid d-block "src="{{URL::asset("img/quiz.jpg")}}" style="width: 100px; height: 100px;"  class="img-thumbnail" alt="Team logo">
@@ -52,6 +52,15 @@
     <div class="m-1 text-center" style="position:absolute; width:100%; bottom:0;">
       <p >© 2017 - The NTT team</p>
     </div>
+
   </div>
 </div>
+
+</footer>
+<footer class="screen-mini" style="margin-top: 50px;">
+    <div class="row">
+      <div class="m-1 text-center" style="background-color: #343a40;padding-top: 18px; position:absolute; width:100%; bottom:0;color: #ffffff">
+        <p >© 2017 - The NTT team</p>
+      </div>
+    </div>
 </footer>
