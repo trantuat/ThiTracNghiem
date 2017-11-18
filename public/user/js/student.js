@@ -109,6 +109,7 @@
          var object2 ={"start_time":startTime,"end_time":endTime};
          $.extend(data, object2);
          let json = JSON.stringify(data);
+         clearTimeout(clock);
   
          $.ajax({
           url: '/Students/Answer',
@@ -134,7 +135,7 @@
               $('#showResultQuizz').modal({backdrop: 'static', keyboard: false});
               $('#showResultQuizz').modal('show');
               event.preventDefault();
-              clearTimeout(clock);
+              // clearTimeout(clock);
               
           },
           error: function (response) {

@@ -283,7 +283,7 @@
             level_id: $('#updateLevel').val(),
             class_id: $('#updateClass').val(),
             topic_id: $('#updateSubject').val(),
-            total: $('#updatetotal').val(),
+            total: $('#updateTotal').val(),
           },
           success: function (response) {
               console.log(response);
@@ -592,7 +592,6 @@
           $('#'.concat(form)).find("select[name='addQuestionClass']").val(template.class_id);
           loadDetail(form);
           $('#updateQuizzName').val(template.quizz_name);
-          $('#updateLevel').val(template.level_id);
           $('#updateDuration').val(template.duration);
           $('#updateTotal').val(template.total);
           $('#templateId').val(template.id);
@@ -606,6 +605,7 @@
              success: function(response){
                console.log(response); 
                $('#updateSubject').val(response[0].topic_id);
+               $('#updateLevel').val(response[0].level_id);
             },
             error: function(response){
                 alert('Error'+response);
