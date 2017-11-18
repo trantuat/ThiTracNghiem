@@ -182,7 +182,7 @@
               
              <div class="modal-footer">
                 <button id="btnDetailResult" class="btn btn-success" >Xem chi tiết</button>
-                <a href="/Students/Quizz"><button class="btn btn-default">Cancel</button></a>
+                <a href="/Students/Quizz"><button class="btn btn-secondary">Cancel</button></a>
              </div>
              <!-- </form> -->
         </div>

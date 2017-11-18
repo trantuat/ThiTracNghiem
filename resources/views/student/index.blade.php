@@ -188,73 +188,113 @@
                 </div>
             </div>
 
-
-
-
-
-
             <div class="row screen-mobile">
-                    <div class="col-md-12">
-                        <div class="carousel slide media-carousel" id="media-mobile">
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <div class="skill-home">
-                                                <div class="skill-home-solid">
-                                                    <div class="text-center col-md-12 subject-card">
-                                                <span class="icons c1">
-                                                
-                                                    <img class="subject-icon" src="img/toan.png" title="Toán">
-                                                </span>
-                                                        <div class="box-area">
-                                                            <h3 class="subject-title">Toán học</h3>
-                                                            <p class="p-subject">
-                                                                Đề thi THPT Quốc gia gồm 50 câu, thời gian thi 90 phút
-                                                            </p>
-                                                            <p class="exam-now">
-                                                                <center><a href="#" ><button class='btn btn-success '>Thi ngay</button></a></center>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="item">
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <div class="skill-home">
-                                                <div class="skill-home-solid">
-                                                    <div class="text-center col-md-12 subject-card">
-                                                    <span class="icons c2">
+                <div class="col-md-12">
+                    <div class="carousel slide media-carousel" id="media-mobile">
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="skill-home">
+                                            <div class="skill-home-solid">
+                                                <div class="text-center col-md-12 subject-card">
+                                                    <span class="icons c1">
+                                                        <img class='subject-icon' src='img/toan.png' title='Toán'/>
                                                         
-                                                        <img class="subject-icon" src="img/dialy.png" title="Địa lý">
-                                                    </span> <div class="box-area">
-                                                        <h3 class="subject-title">Địa lý</h3> <p class="p-subject">
-                                                        Đề thi THPT Quốc gia gồm 40 câu, thời gian thi 50 phút
-                                                    </p><p class="exam-now">
-                                                        <center><a href="#" ><button class='btn btn-success '>Thi ngay</button></a></center>
+                                                    </span>
+                                                    <div class="box-area">
+                                                    <h3 class="subject-title">
+                                                        Toán Học
+                                                    </h3>
+                                                    <p class="p-subject">
+                                                        Hệ thống câu hỏi Toán</b> đa dạng phong phú, được xắp sếp ngẫu nhiên từ dễ đến khó, bấm <b>"Thi Ngay"</b> để trải nghiệm
                                                     </p>
-                                                    </div>
-                                                    </div>
-
+                                                    <p class="exam-now">
+                                                        <?php 
+                                                            $detail=$data[0];
+                                                            $detail=json_encode($detail);
+                                                            echo "<center><a href='' data-toggle='modal' title='test' data-target='#formTestIndex' onclick='showClass($detail)' ><button class='btn btn-success'>Thi ngay</button></a></center>";
+                                                        ?>
+                                                    </p>
+                                                </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <a data-slide="prev" href="http://789.vn/#media" class="left carousel-control screen-desktop">‹</a>
-                            <a data-slide="next" href="http://789.vn/#media" class="right carousel-control screen-desktop">›</a>
-                            <a data-slide="prev" href="http://789.vn/#media-mobile" class="left carousel-control screen-mobile">‹</a>
-                            <a data-slide="next" href="http://789.vn/#media-mobile" class="right carousel-control screen-mobile">›</a>
+                            <?php 
+                            $i=1;
+                            $j=2;
+                            while($i<8){
+                            ?>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="skill-home">
+                                            <div class="skill-home-solid">
+                                                <div class="text-center col-md-12 subject-card">
+                                                    <span class="icons <?php echo 'c'.$j ;?>">
+                                                        <?php
+                                                            switch ($data[$i]['topic_name']){
+                                                                case "Vật Lý": echo "<img class='subject-icon' src='img/ly.png' title='Lý'/>"; break;
+                                                                case "Hóa Học": echo "<img class='subject-icon' src='img/hoa.png' title='Hoá'/>"; break;
+                                                                case "Sinh Học": echo "<img class='subject-icon' src='img/sinh.png' title='Sinh'/>"; break;
+                                                                case "Tiếng Anh": echo "<img class='subject-icon' src='img/anh.png' title='Anh'/>"; break;
+                                                                case "Lịch Sử": echo "<img class='subject-icon' src='img/lichsu.png' title='Sử'/>"; break;
+                                                                case "Địa Lý": echo "<img class='subject-icon' src='img/dialy.png' title='Địa'/>"; break;
+                                                                case "Ngữ Văn": echo "<img class='subject-icon' src='img/nguvan.png' title='Ngữ Văn'/>"; break;
+                                                                
+                                                            }
+                                                        ?>
+                                                    </span>
+                                                    <div class="box-area">
+                                                        <h3 class="subject-title">
+                                                        <?php
+                                                        switch ($data[$i]['topic_name']){
+                                                            case "Vật Lý": echo "Vật Lý"; break;
+                                                            case "Hóa Học": echo "Hóa Học"; break;
+                                                            case "Sinh Học": echo "Sinh học"; break;
+                                                            case "Tiếng Anh": echo "Tiếng Anh"; break;
+                                                            case "Lịch Sử": echo "Lịch Sử"; break;
+                                                            case "Địa Lý": echo "Địa Lý"; break;
+                                                            case "Ngữ Văn": echo "Ngữ Văn"; break;
+                                                            
+                                                        }
+                                                        ?></h3> 
+                                                        <p class="p-subject">
+                                                        Hệ thống câu hỏi <b><?php echo $data[$i]['topic_name']?></b> đa dạng phong phú, được xắp sếp ngẫu nhiên từ dễ đến khó, bấm <b>"Thi Ngay"</b> để trải nghiệm
+                                                        
+                                                        </p>
+                                                        <p class="exam-now">
+                                                        <?php 
+                                                            $detail=$data[$i];
+                                                            $detail=json_encode($detail);
+                                                            echo "<center><a href='' data-toggle='modal' title='test' data-target='#formTestIndex' onclick='showClass($detail)' ><button class='btn btn-success'>Thi ngay</button></a></center>";
+                                                            $i++;
+                                                            if($i<=4) $j++; else $j--;
+                                                        ?> 
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php }?>
                         </div>
-                    </div>         
+                        <a data-slide="prev" href="http://789.vn/#media" class="left carousel-control screen-desktop">‹</a>
+                        <a data-slide="next" href="http://789.vn/#media" class="right carousel-control screen-desktop">›</a>
+                        <a data-slide="prev" href="http://789.vn/#media-mobile" class="left carousel-control screen-mobile">‹</a>
+                        <a data-slide="next" href="http://789.vn/#media-mobile" class="right carousel-control screen-mobile">›</a>
+                    </div>
+                </div>          
+            </div>
         </div>
     </div>
+</div>
 
 <section class="callaction">
     <div class="container">
@@ -297,7 +337,7 @@
                             <br>
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-6 why-icon why-icon-program">
-                            <img src="{{URL::asset('img/answer.jpg')}}" width="150px" height="150px" class="rounded-circle" style="margin: 30px 0px 40px 0px">
+                            <img src="{{URL::asset('img/why_rr.jpg')}}" width="150px" height="150px" class="rounded-circle" style="margin: 30px 0px 40px 0px">
                             <p>Câu hỏi được sắp xếp rõ ràng thành từng chương, theo từng khối lớp, có đáp án và lời giải chi tiết cho từng câu</p>
                             <br>
                         </div>
@@ -412,7 +452,7 @@
                 </div>
                 <div class="modal-footer">
                     <input type="submit" id="btnDoTest" class="btn btn-success btnDo" value='Bắt đầu làm bài'>
-                    <button class="btn btn-default btn-close-popup" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-secondary btn-close-popup" data-dismiss="modal">Cancel</button>
                 </div>
           </form>
         </div>

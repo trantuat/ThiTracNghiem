@@ -201,7 +201,7 @@
                 </form>
                 <div class="modal-footer">
                     <button id="btnCreateQuizzTemplate" class="btn btn-success" >Tạo đề mẫu</button>
-                    <button class="btn btn-default btn-close-popup" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-secondary btn-close-popup" data-dismiss="modal">Cancel</button>
                 </div>
         </div>
       </div>
@@ -318,7 +318,7 @@
                 </form>
                 <div class="modal-footer">
                     <button id="btnUpdateQuizzTemplate" class="btn btn-success" >Cập nhật</button>
-                    <button class="btn btn-default btn-close-popup" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-secondary btn-close-popup" data-dismiss="modal">Cancel</button>
                 </div>
         </div>
       </div>

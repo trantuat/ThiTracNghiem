@@ -174,7 +174,7 @@
           var object1 = {"answer":jsonArray1};
           question={"question_id":question_id,"question_content":content,"class_id":class_id,"level_id":level_id,"topic_id":topic_id};
           $.extend(question, object1);
-          alert(JSON.stringify(question));
+          // alert(JSON.stringify(question));
           $.ajax({
             url: '/Teachers/UpdateQuestion',
             type: "POST",

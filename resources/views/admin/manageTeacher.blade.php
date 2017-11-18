@@ -183,7 +183,7 @@
          </div>
          <br>
            <div class="modal-footer">
-               <button class="btn btn-default btn-close-popup" data-dismiss="modal">Cancel</button>
+               <button class="btn btn-secondary btn-close-popup" data-dismiss="modal">Cancel</button>
            </div>
          </form>
        </div>
